@@ -9,7 +9,8 @@
 
 import random
 from math import log, sqrt
-from modules.skills_handler import Player, DEITIES
+from modules.skills_handler import Player
+from.modules.deities import DEITIES
 
 # Comprehensive combat data
 WEAPON_DAMAGES = {
