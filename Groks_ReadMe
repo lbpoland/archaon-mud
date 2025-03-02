@@ -1,0 +1,50 @@
+This is the mud directory layout for future references 
+
+mnt/home2/mud/
+├── mud.py               # Main server
+├── std/                 # Base classes
+│   ├── object.py
+│   ├── living.py
+│   ├── room.py
+│   ├── wearable.py
+│   ├── container.py
+│   ├── command.py
+├── modules/             # Core systems (handlers)
+│   ├── login_handler.py
+│   ├── spell_handler.py
+│   ├── combat_handler.py
+│   ├── skills_handler.py
+│   ├── ritual_handler.py
+│   ├── inventory_handler.py
+│   ├── soul_handler.py
+│   ├── term_handler.py
+│   ├── network_handler.py
+│   ├── quests_handler.py
+│   ├── spells/          # Individual spell files
+│   │   ├── arcane_aegis.py
+│   │   ├── flame_ward.py
+│   │   ├── abyssal_summons.py
+│   │   ├── thunder_lance.py
+│   │   ├── lunar_wyrm.py
+│   │   ├── shadow_gate.py
+│   ├── rituals/         # Individual ritual files (to be populated)
+│   └── commands/        # Individual command files
+│       ├── kill.py
+│       ├── look.py
+│       ├── inventory.py
+├── domains/             # Region-specific zones (partial list)
+│   ├── sword_coast/
+│   │   ├── waterdeep/
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   │   ├── guilds.py
+│   ├── underdark/
+│   ├── world/
+│   │   ├── terrain.py
+├── players/             # Player data
+├── logs/                # Logs
+└── ai/                  # AI scripts
+
+
+GROKS TO GIVE UPDATE WHEN CREATING NEW PYTHON FILE ADD THIS LAYOUT ABOVE AND UPDATE 
