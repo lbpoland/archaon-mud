@@ -8,7 +8,8 @@
 # - Plans: Integrate with login_handler.py (starting gear), combat_handler.py (equipping), expand with full item catalog (~1000 lines pending)
 
 import random
-from modules.skills_handler import Player, COLORS
+from modules.skills_handler import Player
+from modules.term_handler import COLORS
 from modules.combat_handler import WEAPON_DAMAGES, WEAPON_WEIGHTS, ARMOR_TYPES
 
 # Item definitions
