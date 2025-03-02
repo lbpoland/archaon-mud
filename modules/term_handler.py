@@ -5,10 +5,11 @@
 # - Done: Basic term type setting, color formatting
 # - Plans: Integrate with login_handler.py for seamless display, expand with full color palette and settings
 
+# term_handler.py
+# ... (keep all existing code up to imports)
 import re
-from modules.login_handler import LoginHandler  # Dependency for context
 
-# ANSI color codes (expanded palette)
+# Removed: from modules.login_handler import LoginHandler
 COLORS = {
     "red": "\033[31m", "green": "\033[32m", "blue": "\033[34m", "magenta": "\033[35m",
     "cyan": "\033[36m", "yellow": "\033[33m", "white": "\033[37m", "black": "\033[30m",
@@ -18,9 +19,10 @@ COLORS = {
 }
 
 class TermHandler:
-    def __init__(self, login_handler):
+    def __init__(self, login_handler=None):  # Optional, no hard dependency
         self.login_handler = login_handler
-        self.term_type = "ansi"  # Default
+        self.term_type = "ansi"
+        # ... (rest unchanged)  
         self.colors_enabled = True
         self.verbose = False
         self.line_width = 80  # Default line wrap
