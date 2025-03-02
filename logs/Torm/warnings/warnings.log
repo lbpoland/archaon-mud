@@ -1,0 +1,16 @@
+[2025-03-02 09:49:43] Task Torm_build_module_term.py_in_modules failed (attempt 1/3): Failed: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:52:13] Task Torm_build_module_term.py_in_modules failed (attempt 2/3): Failed: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:52:53] Task Torm_build_module_network.py_in_modules failed (attempt 1/3): Failed: name 'option' is not defined - honorable tone
+[2025-03-02 09:55:40] Task Torm_build_module_term.py_in_modules failed (attempt 3/3): Failed: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:56:45] Task Torm_build_module_network.py_in_modules failed (attempt 2/3): Failed: name 'option' is not defined - honorable tone
+[2025-03-02 09:57:16] Task Torm_build_module_syntax.py_in_modules failed (attempt 1/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 09:58:20] Max retries reached for Torm_build_module_term.py_in_modules, skipping - honorable tone
+[2025-03-02 09:59:25] Task Torm_build_module_network.py_in_modules failed (attempt 3/3): Failed: name 'option' is not defined - honorable tone
+[2025-03-02 09:59:56] Task Torm_build_module_syntax.py_in_modules failed (attempt 2/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 10:02:36] Max retries reached for Torm_build_module_network.py_in_modules, skipping - honorable tone
+[2025-03-02 10:03:07] Task Torm_build_module_syntax.py_in_modules failed (attempt 3/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 10:05:20] Max retries reached for Torm_build_module_syntax.py_in_modules, skipping - honorable tone
+[2025-03-02 10:13:33] Task Torm_build_module_syntax.py_in_modules failed (attempt 1/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 10:16:17] Task Torm_build_module_syntax.py_in_modules failed (attempt 2/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 10:18:40] Task Torm_build_module_syntax.py_in_modules failed (attempt 3/3): Failed: name 'command' is not defined - honorable tone
+[2025-03-02 10:20:16] Max retries reached for Torm_build_module_syntax.py_in_modules, skipping - honorable tone
