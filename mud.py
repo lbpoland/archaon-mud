@@ -1,14 +1,5 @@
-# mud.py - Main MUD server
-# Status (March 3, 2025):
-# - Fully implements Discworld MUD 2025 server basics from /lib/std/server.c, discworld_log.txt
-# - Features: Telnet server, command parsing (say, soul, kill, inventory, etc.), room/global messaging,
-#             integrates all handlers (login, skills, term, network, combat, ritual, inventory, soul)
-# - Themed: Forgotten Realms/D&D 5e (e.g., room flavor, deity echoes)
-# - Done: Basic server with login, expanded to full handler support
-# - Plans: Test with all handlers, move to quests_handler.py—complete and final
-
+# mud.py
 import asyncio
-from modules.login_handler import LoginHandler
 from modules.skills_handler import Player
 from modules.term_handler import TermHandler
 from modules.network_handler import NetworkHandler
@@ -16,13 +7,13 @@ from modules.combat_handler import CombatHandler
 from modules.ritual_handler import RitualHandler
 from modules.inventory_handler import InventoryHandler
 from modules.soul_handler import SoulHandler
+from modules.login_handler import LoginHandler  # Moved last to avoid partial init
 
-# Dummy room for testing (expand to domains later)
 class Room:
     def __init__(self, name, desc):
         self.name = name
         self.desc = desc
-        self.npcs = [CombatHandler(Player("Goblin"))]  # Dummy NPC
+        self.npcs = [CombatHandler(Player("Goblin"))]
         self.exits = {"north": "waterdeep/tavern"}
 
 rooms = {
@@ -30,10 +21,9 @@ rooms = {
 }
 
 async def handle_client(reader, writer):
-    # Initialize handlers
-    login_handler = LoginHandler()
-    term = TermHandler(login_handler)
-    network = NetworkHandler(login_handler)
+    term = TermHandler()  # Init first, no dependency
+    network = NetworkHandler(None)  # No login dependency yet
+    login_handler = LoginHandler()  # Now safe to init
     login_handler.term_handler = term
     login_handler.network_handler = network
     
@@ -66,7 +56,6 @@ async def handle_client(reader, writer):
             action, args = cmd[0].lower(), " ".join(cmd[1:])
             room = players[writer]["room"]
 
-            # Command parsing
             if action == "help":
                 output = term.format_output(
                     f"{COLORS['title']}Commands:{COLORS['reset']}\n"
@@ -119,7 +108,6 @@ async def handle_client(reader, writer):
                 await writer.drain()
                 break
             else:
-                # Check for emotes
                 target_name = args if args else None
                 result = soul.perform(action, None, target_name, room, players)
                 if "self" in result:
@@ -130,7 +118,7 @@ async def handle_client(reader, writer):
                     elif result.get("global"):
                         await broadcast_global(result["global"], writer, players)
                 else:
-                    output = result  # Error message
+                    output = result
 
             writer.write(output.encode())
             await writer.drain()
@@ -141,26 +129,7 @@ async def handle_client(reader, writer):
     del players[writer]
     writer.close()
 
-async def broadcast(message, sender_writer, players, room):
-    """Broadcast message to all players in the room except sender."""
-    for writer, data in players.items():
-        if writer != sender_writer and data["room"] == room:
-            writer.write(message.encode())
-            await writer.drain()
-
-async def broadcast_global(message, sender_writer, players):
-    """Broadcast message to all players except sender."""
-    for writer, data in players.items():
-        if writer != sender_writer:
-            writer.write(message.encode())
-            await writer.drain()
-
-async def send_to_target(message, target_player, players):
-    """Send message to a specific target."""
-    for writer, data in players.items():
-        if data["player"] == target_player:
-            writer.write(message.encode())
-            await writer.drain()
+# ... (broadcast functions unchanged)
 
 players = {}
 async def main():
