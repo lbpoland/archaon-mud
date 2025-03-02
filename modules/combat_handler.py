@@ -9,7 +9,7 @@
 
 import random
 from math import log, sqrt
-from modules.skills_handler import Player, COLOUR
+from modules.skills_handler import Player, COLORS
 from modules.deities import DEITIES
 
 # Comprehensive combat data
