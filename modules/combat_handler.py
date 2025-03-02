@@ -53,9 +53,10 @@ SPECIAL_ABILITIES = {
     "heal": {"ap": 4, "effect": "heal", "value": 10, "duration": 1}
 }
 
-class Combatant(Player):  # Extend Player for combat-specific attributes
-    def __init__(self, name):
-        super().__init__(name)
+
+class Combatant(Player):
+    def __init__(self, name, race="human", alignment="True Neutral"):  # Add race, alignment
+        super().__init__(name, race, alignment)  # Pass all required args
         self.ac = 10
         self.armor = ARMOR_TYPES["none"]
         self.attitude = "neutral"
@@ -73,7 +74,7 @@ class Combatant(Player):  # Extend Player for combat-specific attributes
 
 class CombatHandler:
     def __init__(self, player):
-        self.player = Combatant(player.name)
+        self.player = Combatant(player.name, player.race, player.alignment)  # Pass race, alignment
         self.player.stats = player.stats
         self.player.skills = player.skills
         self.player.xp = player.xp
@@ -85,6 +86,7 @@ class CombatHandler:
         self.player.race = player.race
         self.player.deity = player.deity
         self.player.deity_favor = player.deity_favor
+
 
     def equip(self, item, slot):
         """Equip armor or weapon."""
