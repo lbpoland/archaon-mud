@@ -521,15 +521,14 @@ def synergy_bonus(player, skill):
     return sum(floor(player.skills[s] / 50) for s in related)
 
 class Player:
-    def __init__(self, name, race, alignment, domain="waterdeep/", guild=None):
+    def __init__(self, name, race="human", alignment="True Neutral", deity=None):
         self.name = name
         self.race = race
         self.alignment = alignment
-        self.domain = domain
-        self.guild = guild
+        self.deity = deity  # Added to align with combat_handler
+        self.deity_favor = 0  # Default favor
+        self.guild = None
         self.skills = self._flatten_skills(SKILL_TREE)
-        self.apply_racial_bonuses()
-        self.apply_guild_bonuses()
         self.xp = 0
         self.stats = {"str": 8, "dex": 8, "int": 8, "con": 8, "wis": 8, "cha": 8}
         self.hp = self.calculate_hp()
@@ -539,7 +538,7 @@ class Player:
         self.burden = 0
         self.learning_tasks = {}
         self.teaching_tasks = {}
-        self.skill_decay = {}  # Track decay timers
+        self.components = {}  # For rituals/inventory
 
     def _flatten_skills(self, tree, prefix=""):
         flat = {}
