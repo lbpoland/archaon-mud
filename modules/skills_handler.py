@@ -521,12 +521,12 @@ def synergy_bonus(player, skill):
     return sum(floor(player.skills[s] / 50) for s in related)
 
 class Player:
-    def __init__(self, name, race="human", alignment="True Neutral", deity=None):
+    def __init__(self, name, race="human", alignment="True Neutral", deity=None, domain="waterdeep"):
         self.name = name
         self.race = race
         self.alignment = alignment
-        self.deity = deity  # Added to align with combat_handler
-        self.deity_favor = 0  # Default favor
+        self.deity = deity
+        self.deity_favor = 0
         self.guild = None
         self.skills = self._flatten_skills(SKILL_TREE)
         self.xp = 0
@@ -538,7 +538,8 @@ class Player:
         self.burden = 0
         self.learning_tasks = {}
         self.teaching_tasks = {}
-        self.components = {}  # For rituals/inventory
+        self.components = {}
+        self.domain = domain  # Added to fix error
 
     def _flatten_skills(self, tree, prefix=""):
         flat = {}
@@ -564,18 +565,19 @@ class Player:
     def get_env_bonus(self, skill):
         return ENVIRONMENTAL_MODIFIERS.get(self.domain, {}).get(skill, 0)
 
-    def bonus(self, skill):
+   def bonus(self, skill):
         level = self.skills.get(skill, 0)
         stat_map = {
             "fighting": "str", "magic": "int", "covert": "dex", "faith": "wis",
-            "adventuring": "con", "crafts": "dex", "people": "cha"
+            "adventuring": "con", "crafts": "dex", "people": "int"
         }
         stat_key = stat_map.get(skill.split(".")[0], "int")
         stat = self.stats[stat_key]
+        bonus = calculate_bonus(level, stat, self.burden)
         env_bonus = self.get_env_bonus(skill)
-        guild_bonus = GUILD_BONUSES.get(self.guild, {}).get(skill, 0)
-        synergy = synergy_bonus(self, skill)
-        return calculate_bonus(level, stat, self.burden, env_bonus, guild_bonus) + synergy
+        if self.deity and skill.startswith("faith") and self.check_deity_alignment():
+            bonus += DEITIES[self.deity]["faith_bonus"]
+        return bonus + env_bonus
 
     def calculate_hp(self):
         con = self.stats["con"]

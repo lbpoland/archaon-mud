@@ -20,6 +20,11 @@ rooms = {
     "waterdeep/market": Room("Market Square", "A bustling plaza in Waterdeep thrums with life.")
 }
 
+python
+
+# mud.py
+# ... (keep existing imports and Room class)
+
 async def handle_client(reader, writer):
     term = TermHandler()
     network = NetworkHandler(None)
@@ -27,8 +32,13 @@ async def handle_client(reader, writer):
     login_handler.term_handler = term
     login_handler.network_handler = network
     
-    player = await login_handler.handle_login(reader, writer)
-    if not player:
+    try:
+        player = await login_handler.handle_login(reader, writer)
+        if not player:
+            writer.close()
+            return
+    except Exception as e:
+        writer.write(term.format_output(f"{COLORS['error']}Login failed: {str(e)}{COLORS['reset']}").encode())
         writer.close()
         return
     
@@ -36,7 +46,7 @@ async def handle_client(reader, writer):
     ritual = RitualHandler(player)
     inventory = InventoryHandler(player)
     soul = SoulHandler(player)
-    
+
     players[writer] = {
         "player": player, "room": rooms["waterdeep/market"], "term": term, "network": network,
         "combat": combat, "ritual": ritual, "inventory": inventory, "soul": soul
@@ -123,7 +133,7 @@ async def handle_client(reader, writer):
             writer.write(output.encode())
             await writer.drain()
         except Exception as e:
-            writer.write(term.format_output(f"{COLORS['error']}Error: {str(e)}{COLORS['reset']}").encode())
+            writer.write(term.format_output(f"{COLORS['error']}Command error: {str(e)}{COLORS['reset']}").encode())
             await writer.drain()
     
     del players[writer]

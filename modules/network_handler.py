@@ -18,19 +18,23 @@ class NetworkHandler:
         }
 
     def set_mxp(self, enabled, writer=None):
-        """Toggle MXP support."""
         self.mxp_enabled = enabled
-        if enabled and writer:
-            # Send MXP negotiation
-            writer.write(self.telnet_options["IAC"] + self.telnet_options["WILL"] + self.telnet_options["MXP"])
+        try:
+            if enabled and writer:
+                writer.write(self.telnet_options["IAC"] + self.telnet_options["WILL"] + self.telnet_options["MXP"])
+                await writer.drain()  # Ensure async context
+        except Exception as e:
+            return f"{COLORS['error']}MXP negotiation failed: {str(e)}{COLORS['reset']}"
         return f"{COLORS['success']}MXP {'enabled' if enabled else 'disabled'}.{COLORS['reset']}"
 
     def set_mccp(self, enabled, writer=None):
-        """Toggle MCCP support (compression)."""
         self.mccp_enabled = enabled
-        if enabled and writer:
-            # Send MCCP negotiation
-            writer.write(self.telnet_options["IAC"] + self.telnet_options["WILL"] + self.telnet_options["MCCP"])
+        try:
+            if enabled and writer:
+                writer.write(self.telnet_options["IAC"] + self.telnet_options["WILL"] + self.telnet_options["MCCP"])
+                await writer.drain()
+        except Exception as e:
+            return f"{COLORS['error']}MCCP negotiation failed: {str(e)}{COLORS['reset']}"
         return f"{COLORS['success']}MCCP {'enabled' if enabled else 'disabled'}.{COLORS['reset']}"
 
     def negotiate_telnet(self, reader, writer):

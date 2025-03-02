@@ -53,10 +53,9 @@ SPECIAL_ABILITIES = {
     "heal": {"ap": 4, "effect": "heal", "value": 10, "duration": 1}
 }
 
-
 class Combatant(Player):
-    def __init__(self, name, race="human", alignment="True Neutral"):  # Add race, alignment
-        super().__init__(name, race, alignment)  # Pass all required args
+    def __init__(self, name, race="human", alignment="True Neutral", deity=None, domain="waterdeep"):
+        super().__init__(name, race, alignment, deity, domain)
         self.ac = 10
         self.armor = ARMOR_TYPES["none"]
         self.attitude = "neutral"
@@ -74,7 +73,7 @@ class Combatant(Player):
 
 class CombatHandler:
     def __init__(self, player):
-        self.player = Combatant(player.name, player.race, player.alignment)  # Pass race, alignment
+        self.player = Combatant(player.name, player.race, player.alignment, getattr(player, 'deity', None), player.domain)
         self.player.stats = player.stats
         self.player.skills = player.skills
         self.player.xp = player.xp
@@ -84,9 +83,8 @@ class CombatHandler:
         self.player.max_gp = player.max_gp
         self.player.alignment = player.alignment
         self.player.race = player.race
-        self.player.deity = player.deity
-        self.player.deity_favor = player.deity_favor
-
+        self.player.deity = getattr(player, 'deity', None)
+        self.player.deity_favor = getattr(player, 'deity_favor', 0)
 
     def equip(self, item, slot):
         """Equip armor or weapon."""
