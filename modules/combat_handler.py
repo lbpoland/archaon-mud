@@ -9,8 +9,9 @@
 
 import random
 from math import log, sqrt
-from modules.skills_handler import Player, COLORS
+from modules.skills_handler import Player
 from modules.deities import DEITIES
+from modules.term_handler import COLORS
 
 # Comprehensive combat data
 WEAPON_DAMAGES = {
