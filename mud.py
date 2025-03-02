@@ -5,16 +5,15 @@ from modules.term_handler import TermHandler
 from modules.network_handler import NetworkHandler
 from modules.combat_handler import CombatHandler
 from modules.ritual_handler import RitualHandler
-from modules.deities import DEITIES
 from modules.inventory_handler import InventoryHandler
 from modules.soul_handler import SoulHandler
-from modules.login_handler import LoginHandler  # Moved last to avoid partial init
+from modules.login_handler import LoginHandler
 
 class Room:
     def __init__(self, name, desc):
         self.name = name
         self.desc = desc
-        self.npcs = [CombatHandler(Player("Goblin"))]
+        self.npcs = [CombatHandler(Player("Goblin", race="goblin", alignment="Chaotic Evil"))]  # Fixed
         self.exits = {"north": "waterdeep/tavern"}
 
 rooms = {
@@ -22,9 +21,9 @@ rooms = {
 }
 
 async def handle_client(reader, writer):
-    term = TermHandler()  # Init first, no dependency
-    network = NetworkHandler(None)  # No login dependency yet
-    login_handler = LoginHandler()  # Now safe to init
+    term = TermHandler()
+    network = NetworkHandler(None)
+    login_handler = LoginHandler()
     login_handler.term_handler = term
     login_handler.network_handler = network
     
@@ -130,7 +129,23 @@ async def handle_client(reader, writer):
     del players[writer]
     writer.close()
 
-# ... (broadcast functions unchanged)
+async def broadcast(message, sender_writer, players, room):
+    for writer, data in players.items():
+        if writer != sender_writer and data["room"] == room:
+            writer.write(message.encode())
+            await writer.drain()
+
+async def broadcast_global(message, sender_writer, players):
+    for writer, data in players.items():
+        if writer != sender_writer:
+            writer.write(message.encode())
+            await writer.drain()
+
+async def send_to_target(message, target_player, players):
+    for writer, data in players.items():
+        if data["player"] == target_player:
+            writer.write(message.encode())
+            await writer.drain()
 
 players = {}
 async def main():
