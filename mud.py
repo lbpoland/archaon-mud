@@ -5,6 +5,7 @@ from modules.term_handler import TermHandler
 from modules.network_handler import NetworkHandler
 from modules.combat_handler import CombatHandler
 from modules.ritual_handler import RitualHandler
+from modules.deities import DEITIES
 from modules.inventory_handler import InventoryHandler
 from modules.soul_handler import SoulHandler
 from modules.login_handler import LoginHandler  # Moved last to avoid partial init
