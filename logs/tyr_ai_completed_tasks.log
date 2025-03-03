@@ -1,8 +1,0 @@
-2025-03-03 09:36:02,019 - Created: /mnt/home2/mud/domains/waterdeep/battleground.py
-2025-03-03 09:36:02,019 - Built battleground at waterdeep (forest)
-2025-03-03 09:36:02,020 - Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
-2025-03-03 09:36:02,021 - Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
-2025-03-03 09:36:02,044 - Created: /mnt/home2/mud/domains/waterdeep/battleground.py
-2025-03-03 09:36:02,044 - Built battleground at waterdeep (plains)
-2025-03-03 09:36:02,044 - Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
-2025-03-03 09:36:02,045 - Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}

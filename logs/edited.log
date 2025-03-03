@@ -1,0 +1,512 @@
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded ao (Rank 10)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded mystra (Rank 9)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded tyr (Rank 9)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded lolth (Rank 9)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded oghma (Rank 8)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded deneir (Rank 8)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded selune (Rank 7)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded torm (Rank 7)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded vhaeraun (Rank 7)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Loaded azuth (Rank 7)
+
+2025-03-03 10:15:10 | [35mINFO[0m | Started aiohttp session
+
+2025-03-03 10:15:10 | [35mINFO[0m | Master AI started
+
+2025-03-03 10:15:10 | [35mINFO[0m | Bootstrapped AI
+
+2025-03-03 10:15:10 | [35mINFO[0m | vhaeraun: Stole knowledge from mystra
+
+2025-03-03 10:15:10 | [35mINFO[0m | vhaeraun: Executed steal_knowledge
+
+2025-03-03 10:15:10 | [35mINFO[0m | ao: Planned initialize MUD structure with 3 sub-tasks
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:15:10 | [35mINFO[0m | mystra: Created fireball at /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:15:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/waterdeep/battleground.py
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:15:10 | [35mINFO[0m | mystra: Created initialize MUD structure_spell at /mnt/home2/mud/modules/spells/generic/initialize MUD structure_spell.py
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:15:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/waterdeep/battleground.py
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:15:10 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:11 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn (3379083 chars)
+
+2025-03-03 10:15:11 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (34681 chars)
+
+2025-03-03 10:15:11 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:14 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Locations_in_Faer%C3%BBn (347269 chars)
+
+2025-03-03 10:15:14 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7973 chars)
+
+2025-03-03 10:15:14 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:17 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Races_of_Faer%C3%BBn (225462 chars)
+
+2025-03-03 10:15:17 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (9420 chars)
+
+2025-03-03 10:15:17 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:20 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Classes (337938 chars)
+
+2025-03-03 10:15:20 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8433 chars)
+
+2025-03-03 10:15:20 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:23 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Organizations_in_Faer%C3%BBn (290569 chars)
+
+2025-03-03 10:15:23 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8286 chars)
+
+2025-03-03 10:15:23 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:25 | [35mINFO[0m | ao: Planned expand_icewind_dale with 3 sub-tasks
+
+2025-03-03 10:15:25 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:15:25 | [35mINFO[0m | mystra: Created expand_icewind_dale_spell at /mnt/home2/mud/modules/spells/generic/expand_icewind_dale_spell.py
+
+2025-03-03 10:15:25 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:15:25 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/icewind/battleground.py
+
+2025-03-03 10:15:25 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:15:25 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:26 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Guilds (241231 chars)
+
+2025-03-03 10:15:26 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7035 chars)
+
+2025-03-03 10:15:26 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:29 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Drow_houses (246837 chars)
+
+2025-03-03 10:15:29 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6491 chars)
+
+2025-03-03 10:15:29 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:32 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Inhabitants_of_Faer%C3%BBn (300586 chars)
+
+2025-03-03 10:15:32 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7424 chars)
+
+2025-03-03 10:15:32 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:35 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_from_Faer%C3%BBn (337599 chars)
+
+2025-03-03 10:15:35 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (9048 chars)
+
+2025-03-03 10:15:35 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:40 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Food_and_drink_from_Faer%C3%BBn (296861 chars)
+
+2025-03-03 10:15:40 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7427 chars)
+
+2025-03-03 10:15:40 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:40 | [35mINFO[0m | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:15:40 | [35mERROR[0m | Task failed for azuth: 'history'
+
+2025-03-03 10:15:43 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Events_in_Faer%C3%BBn (289279 chars)
+
+2025-03-03 10:15:43 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8676 chars)
+
+2025-03-03 10:15:43 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:47 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn?file=1479-faerun_low-res.jpg (3379220 chars)
+
+2025-03-03 10:15:47 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (34681 chars)
+
+2025-03-03 10:15:47 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:50 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Maps_of_Faer%C3%BBn (244444 chars)
+
+2025-03-03 10:15:50 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6101 chars)
+
+2025-03-03 10:15:50 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:53 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/List_of_armor (205079 chars)
+
+2025-03-03 10:15:53 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6424 chars)
+
+2025-03-03 10:15:53 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:15:55 | [35mINFO[0m | deneir: Designed /mnt/home2/mud/website/page_2316.html
+
+2025-03-03 10:15:55 | [35mERROR[0m | Task failed for deneir: 'history'
+
+2025-03-03 10:15:57 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Armor (356139 chars)
+
+2025-03-03 10:15:57 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8414 chars)
+
+2025-03-03 10:15:57 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:00 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Weapons (330726 chars)
+
+2025-03-03 10:16:00 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (9156 chars)
+
+2025-03-03 10:16:00 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:03 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Clothing (329151 chars)
+
+2025-03-03 10:16:03 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8516 chars)
+
+2025-03-03 10:16:03 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:06 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Alchemical_items (225494 chars)
+
+2025-03-03 10:16:06 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5435 chars)
+
+2025-03-03 10:16:06 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:10 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Aphrodisiacs (204848 chars)
+
+2025-03-03 10:16:10 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (4944 chars)
+
+2025-03-03 10:16:10 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/calimshan/battleground.py
+
+2025-03-03 10:16:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:16:13 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Artifacts (331850 chars)
+
+2025-03-03 10:16:13 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8531 chars)
+
+2025-03-03 10:16:13 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:16 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Currency (230234 chars)
+
+2025-03-03 10:16:17 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5356 chars)
+
+2025-03-03 10:16:17 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:20 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Fabrics (208357 chars)
+
+2025-03-03 10:16:20 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (4949 chars)
+
+2025-03-03 10:16:20 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:23 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Instruments (336173 chars)
+
+2025-03-03 10:16:23 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7508 chars)
+
+2025-03-03 10:16:23 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:25 | [35mINFO[0m | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py
+
+2025-03-03 10:16:25 | [35mERROR[0m | Task failed for lolth: 'history'
+
+2025-03-03 10:16:27 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Poisons (246773 chars)
+
+2025-03-03 10:16:27 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6281 chars)
+
+2025-03-03 10:16:27 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:30 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Potions (328908 chars)
+
+2025-03-03 10:16:30 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8535 chars)
+
+2025-03-03 10:16:30 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:33 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Relics (211771 chars)
+
+2025-03-03 10:16:33 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5036 chars)
+
+2025-03-03 10:16:33 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:37 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Religious_items (247448 chars)
+
+2025-03-03 10:16:37 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6017 chars)
+
+2025-03-03 10:16:37 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:40 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Shields (285050 chars)
+
+2025-03-03 10:16:40 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6989 chars)
+
+2025-03-03 10:16:40 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:40 | [35mINFO[0m | deneir: Designed /mnt/home2/mud/website/page_6801.html
+
+2025-03-03 10:16:40 | [35mERROR[0m | Task failed for deneir: 'history'
+
+2025-03-03 10:16:44 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Ships_and_vehicles (329231 chars)
+
+2025-03-03 10:16:44 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (7603 chars)
+
+2025-03-03 10:16:44 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:47 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Climate_and_weather_events (203507 chars)
+
+2025-03-03 10:16:47 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (4932 chars)
+
+2025-03-03 10:16:47 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:50 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Professions (215334 chars)
+
+2025-03-03 10:16:50 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5068 chars)
+
+2025-03-03 10:16:50 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:53 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_type (234424 chars)
+
+2025-03-03 10:16:53 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6087 chars)
+
+2025-03-03 10:16:53 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:16:55 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/icewind_dale/battleground.py
+
+2025-03-03 10:16:55 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:16:57 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_race (221443 chars)
+
+2025-03-03 10:16:57 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5686 chars)
+
+2025-03-03 10:16:57 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:00 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Crystals (219104 chars)
+
+2025-03-03 10:17:00 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5078 chars)
+
+2025-03-03 10:17:00 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:04 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Containers (244154 chars)
+
+2025-03-03 10:17:04 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (5504 chars)
+
+2025-03-03 10:17:04 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:07 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Books_(in-universe) (314138 chars)
+
+2025-03-03 10:17:07 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (10443 chars)
+
+2025-03-03 10:17:07 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:10 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Category:Belts (245286 chars)
+
+2025-03-03 10:17:10 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (6341 chars)
+
+2025-03-03 10:17:10 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/underdark/battleground.py
+
+2025-03-03 10:17:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:17:14 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Deity (353468 chars)
+
+2025-03-03 10:17:14 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (44993 chars)
+
+2025-03-03 10:17:14 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:17 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBnian_pantheon (364709 chars)
+
+2025-03-03 10:17:17 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (56793 chars)
+
+2025-03-03 10:17:17 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:21 | [35mINFO[0m | Scraped https://forgottenrealms.fandom.com/wiki/Circle_of_Greater_Powers (215379 chars)
+
+2025-03-03 10:17:21 | [35mINFO[0m | oghma: Analyzed lore from forgotten_realms (8606 chars)
+
+2025-03-03 10:17:21 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:17:25 | [35mINFO[0m | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:17:25 | [35mERROR[0m | Task failed for selune: 'history'
+
+2025-03-03 10:17:40 | [35mINFO[0m | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py
+
+2025-03-03 10:17:40 | [35mERROR[0m | Task failed for lolth: 'history'
+
+2025-03-03 10:17:55 | [35mINFO[0m | ao: Planned expand_icewind_dale with 3 sub-tasks
+
+2025-03-03 10:17:55 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:17:55 | [35mINFO[0m | mystra: Created expand_icewind_dale_spell at /mnt/home2/mud/modules/spells/generic/expand_icewind_dale_spell.py
+
+2025-03-03 10:17:55 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:17:55 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/icewind/battleground.py
+
+2025-03-03 10:17:55 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:17:55 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:18:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/sword_coast/battleground.py
+
+2025-03-03 10:18:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:18:25 | [35mINFO[0m | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:18:25 | [35mERROR[0m | Task failed for selune: 'history'
+
+2025-03-03 10:18:40 | [35mINFO[0m | vhaeraun: Stole knowledge from mystra
+
+2025-03-03 10:18:40 | [35mERROR[0m | Task failed for vhaeraun: 'history'
+
+2025-03-03 10:18:55 | [35mINFO[0m | torm: Guarded /mnt/home2/mud/domains/cormanthor/guards.py
+
+2025-03-03 10:18:55 | [35mERROR[0m | Task failed for torm: 'history'
+
+2025-03-03 10:19:10 | [35mINFO[0m | torm: Guarded /mnt/home2/mud/domains/underdark/guards.py
+
+2025-03-03 10:19:10 | [35mERROR[0m | Task failed for torm: 'history'
+
+2025-03-03 10:19:25 | [35mINFO[0m | ao: Planned expand_calimshan with 3 sub-tasks
+
+2025-03-03 10:19:25 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:19:25 | [35mINFO[0m | mystra: Created expand_calimshan_spell at /mnt/home2/mud/modules/spells/generic/expand_calimshan_spell.py
+
+2025-03-03 10:19:25 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:19:25 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/calimshan/battleground.py
+
+2025-03-03 10:19:25 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:19:25 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:19:40 | [35mINFO[0m | mystra: Created arcane_35890 at /mnt/home2/mud/modules/spells/generic/arcane_35890.py
+
+2025-03-03 10:19:40 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:19:55 | [35mINFO[0m | vhaeraun: Stole knowledge from mystra
+
+2025-03-03 10:19:55 | [35mERROR[0m | Task failed for vhaeraun: 'history'
+
+2025-03-03 10:20:10 | [35mINFO[0m | ao: Planned expand_cormanthor with 3 sub-tasks
+
+2025-03-03 10:20:10 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:20:10 | [35mINFO[0m | mystra: Created expand_cormanthor_spell at /mnt/home2/mud/modules/spells/generic/expand_cormanthor_spell.py
+
+2025-03-03 10:20:10 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:20:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/cormanthor/battleground.py
+
+2025-03-03 10:20:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:20:10 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:20:25 | [35mINFO[0m | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:20:25 | [35mERROR[0m | Task failed for azuth: 'history'
+
+2025-03-03 10:20:40 | [35mINFO[0m | mystra: Created arcane_73513 at /mnt/home2/mud/modules/spells/generic/arcane_73513.py
+
+2025-03-03 10:20:40 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:20:55 | [35mINFO[0m | torm: Guarded /mnt/home2/mud/domains/cormanthor/guards.py
+
+2025-03-03 10:20:55 | [35mERROR[0m | Task failed for torm: 'history'
+
+2025-03-03 10:21:10 | [35mINFO[0m | ao: Planned expand_cormanthor with 3 sub-tasks
+
+2025-03-03 10:21:10 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:21:10 | [35mINFO[0m | mystra: Created expand_cormanthor_spell at /mnt/home2/mud/modules/spells/generic/expand_cormanthor_spell.py
+
+2025-03-03 10:21:10 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:21:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/cormanthor/battleground.py
+
+2025-03-03 10:21:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:21:10 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:21:25 | [35mINFO[0m | oghma: Organized /mnt/home2/mud/modules/combat_handler.py
+
+2025-03-03 10:21:25 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:21:40 | [35mINFO[0m | ao: Planned expand_cormanthor with 3 sub-tasks
+
+2025-03-03 10:21:40 | [35mERROR[0m | Task failed for ao: 'history'
+
+2025-03-03 10:21:40 | [35mINFO[0m | mystra: Created expand_cormanthor_spell at /mnt/home2/mud/modules/spells/generic/expand_cormanthor_spell.py
+
+2025-03-03 10:21:40 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:21:40 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/cormanthor/battleground.py
+
+2025-03-03 10:21:40 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:21:40 | [35mERROR[0m | Task failed for oghma: 'history'
+
+2025-03-03 10:21:55 | [35mINFO[0m | mystra: Created arcane_55379 at /mnt/home2/mud/modules/spells/generic/arcane_55379.py
+
+2025-03-03 10:21:55 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:22:10 | [35mINFO[0m | deneir: Designed /mnt/home2/mud/website/page_2763.html
+
+2025-03-03 10:22:10 | [35mERROR[0m | Task failed for deneir: 'history'
+
+2025-03-03 10:22:25 | [35mINFO[0m | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:22:25 | [35mERROR[0m | Task failed for selune: 'history'
+
+2025-03-03 10:22:40 | [35mINFO[0m | torm: Guarded /mnt/home2/mud/domains/icewind_dale/guards.py
+
+2025-03-03 10:22:40 | [35mERROR[0m | Task failed for torm: 'history'
+
+2025-03-03 10:22:55 | [35mINFO[0m | deneir: Designed /mnt/home2/mud/website/page_6177.html
+
+2025-03-03 10:22:55 | [35mERROR[0m | Task failed for deneir: 'history'
+
+2025-03-03 10:23:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/underdark/battleground.py
+
+2025-03-03 10:23:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:23:25 | [35mINFO[0m | mystra: Created arcane_75903 at /mnt/home2/mud/modules/spells/generic/arcane_75903.py
+
+2025-03-03 10:23:25 | [35mERROR[0m | Task failed for mystra: 'history'
+
+2025-03-03 10:23:40 | [35mINFO[0m | deneir: Designed /mnt/home2/mud/website/page_6311.html
+
+2025-03-03 10:23:40 | [35mERROR[0m | Task failed for deneir: 'history'
+
+2025-03-03 10:23:55 | [35mINFO[0m | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py
+
+2025-03-03 10:23:55 | [35mERROR[0m | Task failed for torm: 'history'
+
+2025-03-03 10:24:10 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/calimshan/battleground.py
+
+2025-03-03 10:24:10 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:24:25 | [35mINFO[0m | tyr: Built battleground at /mnt/home2/mud/domains/cormanthor/battleground.py
+
+2025-03-03 10:24:25 | [35mERROR[0m | Task failed for tyr: 'history'
+
+2025-03-03 10:24:40 | [35mINFO[0m | vhaeraun: Stole knowledge from mystra
+
+2025-03-03 10:24:40 | [35mERROR[0m | Task failed for vhaeraun: 'history'
+
+2025-03-03 10:24:55 | [35mINFO[0m | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 10:24:55 | [35mERROR[0m | Task failed for azuth: 'history'
+
+2025-03-03 10:25:10 | [35mINFO[0m | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py
+
+2025-03-03 10:25:10 | [35mERROR[0m | Task failed for lolth: 'history'
+

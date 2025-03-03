@@ -1,8 +1,0 @@
-2025-03-03 09:36:02,022 - Created: /mnt/home2/mud/domains/menzoberranzan/trap.py
-2025-03-03 09:36:02,022 - Wove illusion trap at menzoberranzan
-2025-03-03 09:36:02,022 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 09:36:02,023 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 09:36:02,046 - Created: /mnt/home2/mud/domains/underdark/trap.py
-2025-03-03 09:36:02,046 - Wove illusion trap at underdark
-2025-03-03 09:36:02,047 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
-2025-03-03 09:36:02,048 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
