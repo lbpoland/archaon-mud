@@ -2,5 +2,8 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [],
+    "embeddings": {},
+    "health": 96
 }
