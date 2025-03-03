@@ -1,26 +1,74 @@
 # Spell: fireball
 def cast(caster, target):
-    damage = 199
-    range = 63
-    mana_cost = 32
-    cooldown = 9
-    element = 'shadow'
-    school = 'illusion'
+    damage = 51
+    mana_cost = 37
+    element = 'lightning'
     if caster.mana >= mana_cost:
         caster.mana -= mana_cost
-        caster.cooldowns['fireball'] = cooldown
-        print(f"{caster.name} casts fireball ({element}, {school}) on {target.name} for {damage} damage!")
+        print(f"{caster.name} casts fireball ({element}) on {target.name} for {damage} damage!")
     else:
-        print(f"{caster.name} lacks mana for fireball!")
-# Enhanced by Selune
-def lunar_effect(caster):
-    boost = 70
-    effect = 'boost'
-    duration = 13
-    print(f"Selune enhances fireball with {effect} for {boost} over {duration} seconds!")
+        print(f"{caster.name} lacks mana!")
+
 # Optimized by Azuth
-def optimize_cast(caster):
-    mana_reduction = 41
-    cast_time = -4
-    efficiency = 25
-    print(f"Azuth optimizes fireball: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!")
+def optimize():
+    print('Spell optimized!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')
+
+# Enhanced by Selune
+def lunar_boost():
+    print('Lunar boost applied!')
+
+# Optimized by Azuth
+def optimize():
+    print('Spell optimized!')

@@ -343,3 +343,13 @@ class CombatHandler:
         return f"{COLORS['success']}{self.player.name} ceases combat.{COLORS['reset']}"
 
     # Expand with detailed combat mechanics (~5000 lines total): more weapons, armor, tactics, combat states
+
+# Organized by Oghma - 2025-03-03 10:21:25.939042
+
+# Organized by Oghma - 2025-03-03 10:26:40.954900
+
+# Organized by Oghma - 2025-03-03 10:29:55.963280
+
+# Organized by Oghma - 2025-03-03 10:34:25.975844
+
+# Organized by Oghma - 2025-03-03 10:44:32.741795

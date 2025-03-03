@@ -1,9 +1,9 @@
 # Trap at menzoberranzan
 def trigger(player):
-    damage = 114
-    stealth = 16
-    trap_type = 'illusion'
-    trigger_type = 'touch'
+    damage = 76
+    stealth = 17
+    trap_type = 'poison'
+    trigger_type = 'proximity'
     if player.perception < stealth:
         print(f"{player.name} triggers a {trigger_type} {trap_type} trap at menzoberranzan for {damage} damage!")
     else:

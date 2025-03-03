@@ -1,1119 +1,583 @@
-#!/usr/bin/env python3
-"""
-Master AI Handler for MUD Project
-Changelog:
-- 2025-03-02 (Grok 3): Initial fixes and setup.
-- 2025-03-02 (Grok 3 Update 4): Expanded DISCWORLD_SOURCES, TASK_LIST, improved code generation for Discworld mechanics, fixed mud.py loop.
-- 2025-03-02 (Grok 3 Update 5): Fully integrated mud_session_169696969.json mechanics (combat, skills, soul, etc.), added Forgotten Realms-themed login with ASCII art, expanded races, enhanced term/network/colours support, thoroughly checked for errors.
-"""
-
-import random
-import time
-import os
-import json
-import argparse
-from enum import Enum
-from typing import Dict, List, Optional
-import requests
 import sys
-from concurrent.futures import ThreadPoolExecutor
-from bs4 import BeautifulSoup
-from collections import Counter
+import os
 import asyncio
-import torch
-from transformers import pipeline
-from diffusers import StableDiffusionPipeline
-import numpy as np
-from PIL import Image
-import fastapi
-from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-import uvicorn
-import nltk
-from nltk.tokenize import word_tokenize
-from stable_baselines3 import PPO
-import gym
-from gym import spaces
-from sqlalchemy import create_engine, Column, Integer, String, DateTime
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import sessionmaker
+import json
+import logging
+import random
+import aiohttp
+import aiofiles
 from datetime import datetime
+from typing import Dict, List, Callable, Optional
+from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
+from tenacity import retry, stop_after_attempt, wait_exponential
+import torch
+from sentence_transformers import SentenceTransformer
+import numpy as np
+import shutil
 
-# Database Setup
-Base = declarative_base()
-engine = create_engine('sqlite:////mnt/home2/mud/data/db/mud_data.db')
-Session = sessionmaker(bind=engine)
+# Dependencies: pip install aiohttp aiofiles beautifulsoup4 torch sentence-transformers tenacity numpy
+# ANSI color codes
+RED = "\033[31m"
+BLUE = "\033[34m"
+GREEN = "\033[32m"
+MAGENTA = "\033[35m"
+WHITE = "\033[37m"
+RESET = "\033[0m"
 
-class ScrapedData(Base):
-    __tablename__ = 'scraped_data'
-    id = Column(Integer, primary_key=True)
-    source_url = Column(String, unique=True)
-    content = Column(String)
-    timestamp = Column(DateTime)
+# Setup logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s | %(levelname)s | %(message)s\n', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger('MasterAI')
+logger.handlers = []
 
-Base.metadata.create_all(engine)
-
-# AI Ranks and Personalities
-class AIRank(Enum):
-    OVERDEITY = "Overdeity"
-    GREATER_DEITY = "Greater Deity"
-    INTERMEDIATE_DEITY = "Intermediate Deity"
-    LESSER_DEITY = "Lesser Deity"
-    DEMIGOD = "Demigod"
-    QUASI_DEITY = "Quasi-Deity"
-
-PERSONALITIES = {
-    "Ao": {"tone": "wise", "humor": "dry", "creativity": 0.9},
-    "Mystra": {"tone": "mysterious", "humor": "witty", "creativity": 0.95},
-    "Bane": {"tone": "harsh", "humor": "sarcastic", "creativity": 0.7},
-    "Selûne": {"tone": "gentle", "humor": "kind", "creativity": 0.85},
-    "Torm": {"tone": "honorable", "humor": "earnest", "creativity": 0.8},
-    "Kelemvor": {"tone": "somber", "humor": "dark", "creativity": 0.75}
+handlers = {
+    "errors": logging.FileHandler('/mnt/home2/mud/logs/errors.log'),
+    "tasks": logging.FileHandler('/mnt/home2/mud/logs/tasks.log'),
+    "completed": logging.FileHandler('/mnt/home2/mud/logs/completed.log'),
+    "edited": logging.FileHandler('/mnt/home2/mud/logs/edited.log'),
+    "scraped": logging.FileHandler('/mnt/home2/mud/logs/scraped.log')
 }
 
-# Forgotten Realms Races (Player-selectable and NPC options)
-PLAYER_RACES = ["human", "elf", "high elf", "wild elf", "wood elf", "drow", "dwarf", "duergar", "orc", "goblin", "gnome", "halfling", "dragonborn"]
-ALL_RACES = PLAYER_RACES + ["tiefling", "aarakocra", "genasi", "goliath"]  # Expand with more from wiki as needed
-DND_CLASSES = ["fighter", "wizard", "cleric", "rogue", "barbarian", "druid", "paladin", "ranger"]
-DND_SPELLS = ["fireball", "heal", "shield", "magic missile"]
+for name, handler in handlers.items():
+    level = logging.ERROR if name == "errors" else logging.DEBUG if name == "tasks" else logging.INFO
+    handler.setLevel(level)
+    color = RED if name == "errors" else BLUE if name == "tasks" else GREEN if name == "completed" else MAGENTA if name == "edited" else WHITE
+    handler.setFormatter(logging.Formatter(f'%(asctime)s | {color}%(levelname)s{RESET} | %(message)s\n', datefmt='%Y-%m-%d %H:%M:%S'))
+    logger.addHandler(handler)
 
-DEITIES = {
-    "Ao": {"rank": AIRank.OVERDEITY, "domain": "Balance", "style": "cosmic"},
-    "Mystra": {"rank": AIRank.GREATER_DEITY, "domain": "Magic", "style": "arcane"},
-    "Bane": {"rank": AIRank.GREATER_DEITY, "domain": "Tyranny", "style": "dark"},
-    "Selûne": {"rank": AIRank.INTERMEDIATE_DEITY, "domain": "Moon", "style": "gentle"},
-    "Torm": {"rank": AIRank.LESSER_DEITY, "domain": "Duty", "style": "noble"},
-    "Kelemvor": {"rank": AIRank.LESSER_DEITY, "domain": "Death", "style": "somber"}
+# Load resources from WEBSITE_LINKS.txt
+DISCWORLD_RESOURCES = []
+FORGOTTEN_REALMS_RESOURCES = []
+try:
+    with open("/mnt/home2/mud/WEBSITE_LINKS.txt", "r") as f:
+        for line in f:
+            url = line.strip()
+            if url and not url.startswith("#"):
+                if "forgottenrealms" in url.lower():
+                    FORGOTTEN_REALMS_RESOURCES.append(url)
+                else:
+                    DISCWORLD_RESOURCES.append(url)
+except FileNotFoundError:
+    logger.error("WEBSITE_LINKS.txt not found - using defaults")
+    FORGOTTEN_REALMS_RESOURCES = [
+        "https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn",
+        "https://forgottenrealms.fandom.com/wiki/Category:Spells"
+    ]
+
+HIERARCHY = {
+    "ao": 10, "mystra": 9, "tyr": 9, "lolth": 9, "oghma": 8, "deneir": 8,
+    "selune": 7, "torm": 7, "vhaeraun": 7, "azuth": 7
 }
 
-DISCWORLD_SOURCES = [
-    "https://discworld.starturtle.net/lpc/playing/documentation.c?path=/newbie/essentials",
-    "https://discworld.starturtle.net/lpc/playing/documentation.c?path=/",
-    "https://discworld.starturtle.net/lpc/",
-    "https://dwwiki.mooo.com/",
-    "https://dwwiki.mooo.com/wiki/Syntax",
-    "https://dwwiki.mooo.com/wiki/Options",
-    "https://dwwiki.mooo.com/wiki/Tactics",
-    "https://dwwiki.mooo.com/wiki/Dodge",
-    "https://dwwiki.mooo.com/wiki/Block",
-    "https://dwwiki.mooo.com/wiki/Parry",
-    "https://dwwiki.mooo.com/wiki/Defend",
-    "https://dwwiki.mooo.com/wiki/Protect",
-    "https://dwwiki.mooo.com/wiki/Action_points",
-    "https://dwwiki.mooo.com/wiki/Friend",
-    "https://dwwiki.mooo.com/wiki/Inform",
-    "https://dwwiki.mooo.com/wiki/Achievements",
-    "https://dwwiki.mooo.com/wiki/Quests",
-    "https://dwwiki.mooo.com/wiki/Soul",
-    "https://dwwiki.mooo.com/wiki/Roleplaying_(command)",
-    "https://dwwiki.mooo.com/wiki/Customization",
-    "https://dwwiki.mooo.com/wiki/Writing_a_description",
-    "https://dwwiki.mooo.com/wiki/Title",
-    "https://dwwiki.mooo.com/wiki/Who",
-    "https://dwwiki.mooo.com/wiki/Position",
-    "https://dwwiki.mooo.com/wiki/Layers",
-    "https://dwwiki.mooo.com/wiki/Armours",
-    "https://dwwiki.mooo.com/wiki/Scabbard",
-    "https://dwwiki.mooo.com/wiki/Temperature",
-    "https://dwwiki.mooo.com/wiki/Clothing",
-    "https://dwwiki.mooo.com/wiki/Weather",
-    "https://dwwiki.mooo.com/wiki/Attack_messages",
-    "https://dwwiki.mooo.com/wiki/Alignment",
-    "https://www.gunde.de/discworld/sekiri/introduction.html",
-    "https://www.gunde.de/discworld/sekiri/spells1.html#eff",
-    "https://dwwiki.mooo.com/wiki/Spells",
-    "https://dwwiki.mooo.com/wiki/Magic",
-    "https://dwwiki.mooo.com/wiki/Teachers",
-    "https://dwwiki.mooo.com/wiki/Theft",
-    "https://dwwiki.mooo.com/wiki/Groups",
-    "https://dwwiki.mooo.com/wiki/Languages",
-    "https://dwwiki.mooo.com/wiki/Roleplaying",
-    "https://dwwiki.mooo.com/wiki/Player_housing",
-    "https://dwwiki.mooo.com/wiki/Player_shops",
-    "https://dwwiki.mooo.com/wiki/Furniture",
-    "https://dwwiki.mooo.com/wiki/Description_line",
-    "https://dwwiki.mooo.com/wiki/Guild_Points",
-    "https://dwwiki.mooo.com/wiki/Hit_points",
-    "https://dwwiki.mooo.com/wiki/Skills",
-    "https://dwwiki.mooo.com/wiki/Stats",
-    "https://dwwiki.mooo.com/wiki/Experience_points",
-    "https://dwwiki.mooo.com/wiki/Category:Commands",
-    "https://dwwiki.mooo.com/wiki/Commands",
-    "https://dwwiki.mooo.com/wiki/Crafts"
-]
+# Load SentenceTransformer model (CPU-optimized)
+embedder = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
 
-FORGOTTEN_REALMS_SOURCES = [
-    "https://forgottenrealms.fandom.com/wiki/Main_Page",
-    "https://forgottenrealms.fandom.com/wiki/Category:Races",
-    "https://forgottenrealms.fandom.com/wiki/Category:Classes",
-    "https://forgottenrealms.fandom.com/wiki/Portal:Deities",
-    "https://forgottenrealms.fandom.com/wiki/Category:Spells",
-    "https://forgottenrealms.fandom.com/wiki/Category:Rituals",
-    "https://forgottenrealms.fandom.com/wiki/Alignment",
-    "https://forgottenrealms.fandom.com/wiki/Category:Organizations",
-    "https://forgottenrealms.fandom.com/wiki/Category:Climate_and_weather_events",
-    "https://forgottenrealms.fandom.com/wiki/Category:Creatures",
-    "https://dnd5e.fandom.com/wiki/Dungeons_%26_Dragons_5e_Wiki"
-]
+class AIAgent:
+    def __init__(self, name: str, role: str, rank: int, handler):
+        self.name = name
+        self.role = role
+        self.rank = rank
+        self.knowledge_base = {"mechanics": {}, "lore": {}, "tasks": [], "projects": {}, "history": [], "embeddings": {}}
+        self.tasks = []
+        self.active = True
+        self.handler = handler
 
-TASK_LIST = [
-    "login", "creation", "room", "races", "classes", "combat", "skills", "inventory",
-    "spells", "guilds", "npcs", "quests", "rituals", "world", "finger", "soul",
-    "emote", "armors", "weapons", "party", "mounts", "maps", "achievements",
-    "layers", "weather", "tactics", "dodge", "parry", "block", "term", "network",
-    "colours", "syntax", "help"
-]
+    async def log_action(self, message: str, level: str = "info") -> None:
+        levels = {
+            "error": logger.error,
+            "task": logger.debug,
+            "complete": logger.info,
+            "edited": logger.info,
+            "scraped": logger.info
+        }
+        log_func = levels.get(level, logger.info)
+        log_func(f"{self.name}: {message}")
 
-DEFAULT_MECHANICS = {
-    "movement": True,
-    "combat": True,
-    "inventory": True,
-    "quests": True,
-    "guilds": True,
-    "skills": True,
-    "spells": True,
-    "rituals": True,
-    "tactics": True,
-    "dodge": True,
-    "parry": True,
-    "block": True,
-    "soul": True,
-    "colours": True
-}
+    async def load_knowledge(self) -> None:
+        self.knowledge_base = await self.handler.load_knowledge(self.name)
 
-MAX_TASK_RETRIES = 3
+    async def save_knowledge(self) -> None:
+        await self.handler.save_knowledge(self.name, self.knowledge_base)
 
-class AIHandler:
-    def __init__(self, mud_root: str = "/mnt/home2/mud", clean_logs: bool = False):
-        self.mud_root = mud_root
-        self.log_root = os.path.join(mud_root, "logs")
-        self.ai_team: Dict[str, dict] = {}
-        self.tasks: Dict[str, dict] = {}
-        self.event_log: List[dict] = []
-        self.performance: Dict[str, float] = {}
-        self.executor = ThreadPoolExecutor(max_workers=4)
-        self.telnet_log_dir = mud_root
-        self.text_generator = None
-        self.image_generator = None
-        self.discworld_data = {}
-        self.forgotten_realms_data = {}
-        self.mechanics_cache = DEFAULT_MECHANICS.copy()
+    async def record_history(self, task: Dict) -> None:
+        if "history" not in self.knowledge_base or not isinstance(self.knowledge_base["history"], list):
+            self.knowledge_base["history"] = []
+        self.knowledge_base["history"].append({"task": task, "timestamp": str(datetime.now())})
 
-        if clean_logs:
-            self.clean_logs()
-        
-        self.initialize_system()
-
-    def initialize_system(self):
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting initialization...")
-        os.makedirs(self.mud_root, exist_ok=True)
-        for dir_path in [self.log_root, os.path.join(self.log_root, "status"), os.path.join(self.log_root, "mud_errors"), 
-                         os.path.join(self.log_root, "script_errors"), os.path.join(self.log_root, "warnings"), 
-                         os.path.join(self.log_root, "crashes"), os.path.join(self.mud_root, "players"), 
-                         os.path.join(self.mud_root, "modules"), os.path.join(self.mud_root, "ai"), 
-                         os.path.join(self.mud_root, "website", "static", "images"), os.path.join(self.mud_root, "website", "static", "css"), 
-                         os.path.join(self.mud_root, "website", "static", "js"), os.path.join(self.mud_root, "website", "templates"), 
-                         os.path.join(self.mud_root, "data", "db"), os.path.join(self.mud_root, "data", "embeddings")]:
-            os.makedirs(dir_path, exist_ok=True)
-        self.log_action("System", "startup", f"Initialized directories at {self.mud_root}")
-
+    async def get_lore_embedding(self, text: str) -> Optional[np.ndarray]:
         try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Loading GPT-2 text generation pipeline...")
-            self.text_generator = pipeline("text-generation", model="gpt2-medium", tokenizer="gpt2-medium", device=0 if torch.cuda.is_available() else -1)
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] GPT-2 pipeline loaded successfully.")
+            return embedder.encode(text[:1000], convert_to_numpy=True)
         except Exception as e:
-            self.log_action("System", "errors", f"Failed to load GPT-2 pipeline: {str(e)}")
-            raise
-
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Loading Stable Diffusion pipeline...")
-            self.image_generator = StableDiffusionPipeline.from_pretrained(
-                "runwayml/stable-diffusion-v1-5",
-                use_safetensors=True,
-                torch_dtype=torch.float32,
-                safety_checker=None
-            )
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Stable Diffusion pipeline loaded successfully.")
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to load Stable Diffusion: {str(e)}")
-            raise
-
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Downloading NLTK 'punkt' data...")
-            nltk.download('punkt', quiet=True, download_dir='/tmp/nltk_data', raise_on_error=True)
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] NLTK 'punkt' data downloaded successfully.")
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to download NLTK 'punkt' data: {str(e)}")
-
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting Discworld scraping...")
-            start_time = time.time()
-            self.scrape_discworld()
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Discworld scraping completed in {time.time() - start_time:.2f} seconds.")
-        except Exception as e:
-            self.log_action("System", "errors", f"Scraping Discworld failed: {str(e)}")
-
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting Forgotten Realms scraping...")
-            start_time = time.time()
-            self.scrape_forgotten_realms()
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Forgotten Realms scraping completed in {time.time() - start_time:.2f} seconds.")
-        except Exception as e:
-            self.log_action("System", "errors", f"Scraping Forgotten Realms failed: {str(e)}")
-
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Storing scraped data...")
-            start_time = time.time()
-            self.store_scraped_data()
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Scraped data stored successfully in {time.time() - start_time:.2f} seconds.")
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to store scraped data: {str(e)}")
-
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Initialization complete, starting AI tasks...")
-        self.log_action("System", "startup", "Initialization completed successfully")
-
-    def clean_logs(self):
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Cleaning logs...")
-        for root, dirs, files in os.walk(self.log_root):
-            for file in files:
-                os.remove(os.path.join(root, file))
-        self.log_action("System", "startup", "Cleared all logs")
-
-    def spawn_ai_team(self):
-        for deity, attrs in list(DEITIES.items())[:6]:
-            personality = PERSONALITIES[deity]
-            self.ai_team[deity] = {
-                "rank": attrs["rank"].value,
-                "domain": attrs["domain"],
-                "style": attrs["style"],
-                "helper": True,
-                "active": True,
-                "last_task": None,
-                "efficiency": 1.0,
-                "personality": personality,
-                "iq": 150 + (personality["creativity"] * 50),
-                "player_file": os.path.join(self.mud_root, "players", f"{deity}.plr")
-            }
-            ai_file = os.path.join(self.mud_root, "ai", f"ai_{deity.lower()}.py")
-            with open(ai_file, "w") as f:
-                f.write(f"# {deity} AI for {attrs['domain']} with {personality['tone']} tone\n")
-            sys.path.append(os.path.join(self.mud_root, "ai"))
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Spawned AI Team: {list(self.ai_team.keys())}")
-        self.log_action("System", "startup", f"Spawned {len(self.ai_team)} AIs")
-
-    def log_action(self, ai_name: str, category: str, message: str, subdir=""):
-        log_dir = os.path.join(self.log_root, ai_name, subdir or category.lower()) if ai_name != "System" else os.path.join(self.log_root, category.lower())
-        os.makedirs(log_dir, exist_ok=True)
-        with open(os.path.join(log_dir, f"{category.lower()}.log"), "a") as f:
-            timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-            f.write(f"[{timestamp}] {message} - {self.ai_team.get(ai_name, {}).get('personality', {}).get('tone', 'neutral')} tone\n")
-
-    def load_telnet_logs(self):
-        files = [f for f in os.listdir(self.telnet_log_dir) if f.startswith("mud_session_") and f.endswith(".json")]
-        if not files:
-            self.log_action("System", "warnings", "No telnet session logs found")
-            return None
-        latest_file = max(files, key=lambda x: os.path.getctime(os.path.join(self.telnet_log_dir, x)))
-        try:
-            with open(os.path.join(self.telnet_log_dir, latest_file), 'r') as f:
-                data = json.load(f)
-            return data
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to load telnet logs: {str(e)}")
+            await self.log_action(f"Embedding failed for {text[:20]}...: {str(e)}", "error")
             return None
 
-    def analyze_logs(self, log_data):
-        if not log_data:
-            self.log_action("System", "warnings", "Using default mechanics due to no log data")
-            return {"commands": [], "responses": [], "patterns": {}, "mechanics": DEFAULT_MECHANICS.copy()}
-        try:
-            if isinstance(log_data, dict) and "interactions" in log_data:
-                commands = [i["data"] for i in log_data["interactions"] if i["type"] == "input"]
-                responses = [i["data"] for i in log_data["interactions"] if i["type"] == "output"]
-            else:
-                lines = log_data.split('\n')
-                commands = [line.strip()[1:] for line in lines if line.startswith('>')]
-                responses = [line.strip() for line in lines if not line.startswith('>') and line.strip()]
-            
-            patterns = {}
-            for i, cmd in enumerate(commands):
-                if i < len(responses):
-                    patterns[cmd] = patterns.get(cmd, []) + [responses[i]]
-            command_freq = Counter(commands)
-            mechanics = {
-                "movement": any(c.lower() in ["north", "south", "east", "west", "up", "down"] for c in commands),
-                "combat": any(c.lower() in ["attack", "kill", "fight", "parry", "dodge", "block"] for c in commands),
-                "inventory": any(c.lower() in ["inventory", "get", "wear", "wield", "remove"] for c in commands),
-                "quests": any("quest" in r.lower() or "task" in r.lower() for r in responses),
-                "guilds": any("guild" in r.lower() or "class" in r.lower() for r in responses),
-                "skills": any("skill" in r.lower() or "train" in c.lower() for c, r in zip(commands, responses)),
-                "spells": any("cast" in c.lower() or "spell" in r.lower() for c, r in zip(commands, responses)),
-                "rituals": any("perform" in c.lower() or "ritual" in r.lower() for c, r in zip(commands, responses)),
-                "tactics": any("tactics" in c.lower() or "defend" in c.lower() for c in commands),
-                "dodge": any("dodge" in c.lower() or "dodge" in r.lower() for c, r in zip(commands, responses)),
-                "parry": any("parry" in c.lower() or "parry" in r.lower() for c, r in zip(commands, responses)),
-                "block": any("block" in c.lower() or "block" in r.lower() for c, r in zip(commands, responses)),
-                "soul": any("smile" in c.lower() or "smile" in r.lower() for c, r in zip(commands, responses)),
-                "colours": any("colours" in c.lower() or "colour" in r.lower() for c, r in zip(commands, responses))
-            }
-            self.mechanics_cache = mechanics if any(mechanics.values()) else DEFAULT_MECHANICS.copy()
-            return {"commands": commands, "responses": responses, "patterns": patterns, "command_freq": command_freq, "mechanics": self.mechanics_cache}
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to analyze logs: {str(e)}")
-            return {"commands": [], "responses": [], "patterns": {}, "mechanics": DEFAULT_MECHANICS.copy()}
+    async def collaborate(self, target_agent: str, data: Dict) -> None:
+        target = self.handler.agents.get(target_agent)
+        if target:
+            target.knowledge_base["lore"].update(data.get("lore", {}))
+            await target.log_action(f"Received collaboration from {self.name}", "info")
 
-    def scrape_discworld(self):
-        for url in DISCWORLD_SOURCES:
+class AOAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "plan":
+            await self.plan_strategy(task["objective"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def plan_strategy(self, objective: str) -> None:
+        strategy = {
+            "objective": objective,
+            "timestamp": str(datetime.now()),
+            "sub_tasks": [
+                {"agent": "mystra", "action": "create_spell", "spell_name": f"{objective}_spell", "depends_on": "plan"},
+                {"agent": "tyr", "action": "build_battleground", "location": objective.split("_")[1] if "_" in objective else "waterdeep", "depends_on": "mystra"},
+                {"agent": "oghma", "action": "analyze_lore", "source": random.choice(FORGOTTEN_REALMS_RESOURCES), "depends_on": "tyr"}
+            ]
+        }
+        self.knowledge_base["projects"][objective] = strategy
+        for sub_task in strategy["sub_tasks"]:
+            self.handler.add_task(sub_task)
+        await self.log_action(f"Planned {objective} with {len(strategy['sub_tasks'])} sub-tasks")
+
+class MystraAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "create_spell":
+            await self.create_spell(task["spell_name"], task.get("depends_on"))
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def create_spell(self, spell_name: str, depends_on: str = None) -> None:
+        if depends_on and not any(t["agent"] == "ao" and t["action"] == "plan" for t in self.knowledge_base["history"]):
+            await self.log_action(f"Waiting for {depends_on} dependency", "task")
+            return
+        lore = self.knowledge_base.get("lore", {})
+        element = random.choice(["fire", "ice", "lightning", "arcane"])
+        damage_boost = 0
+        if lore:
+            lore_text = " ".join([v.get("analyzed", v) for v in lore.values()])[:1000]
+            embedding = await self.get_lore_embedding(lore_text)
+            damage_boost = int(np.linalg.norm(embedding or np.zeros(384)) * 10) if embedding is not None else 0
+        spell_data = {
+            "damage": random.randint(50, 200) + damage_boost,
+            "mana_cost": random.randint(20, 100),
+            "element": element
+        }
+        self.knowledge_base["spells"] = self.knowledge_base.get("spells", {})
+        self.knowledge_base["spells"][spell_name] = spell_data
+        spell_dir = "/mnt/home2/mud/modules/spells/generic"
+        os.makedirs(spell_dir, exist_ok=True)
+        spell_path = f"{spell_dir}/{spell_name}.py"
+        try:
+            with open(spell_path, "w") as f:
+                f.write(f"""\
+# Spell: {spell_name}
+def cast(caster, target):
+    damage = {spell_data['damage']}
+    mana_cost = {spell_data['mana_cost']}
+    element = '{spell_data['element']}'
+    if caster.mana >= mana_cost:
+        caster.mana -= mana_cost
+        print(f"{{caster.name}} casts {spell_name} ({{element}}) on {{target.name}} for {{damage}} damage!")
+    else:
+        print(f"{{caster.name}} lacks mana!")
+""")
+            await self.log_action(f"Created {spell_name} at {spell_path}", "edited")
+            if random.random() > 0.7:  # 30% chance to collaborate
+                await self.collaborate("oghma", {"lore": {f"{spell_name}_lore": spell_data["element"]}})
+        except Exception as e:
+            await self.log_action(f"Failed to create {spell_name}: {str(e)}", "error")
+
+class TyrAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "build_battleground":
+            await self.build_battleground(task["location"], task.get("depends_on"))
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def build_battleground(self, location: str, depends_on: str = None) -> None:
+        if depends_on and not any(t["agent"] == "mystra" and t["action"] == "create_spell" for t in self.knowledge_base["history"]):
+            await self.log_action(f"Waiting for {depends_on} dependency", "task")
+            return
+        bg_data = {"size": random.randint(1000, 5000), "enemies": random.randint(20, 200), "terrain": random.choice(["plains", "forest"])}
+        self.knowledge_base["battlegrounds"] = self.knowledge_base.get("battlegrounds", {})
+        self.knowledge_base["battlegrounds"][location] = bg_data
+        domain_dir = f"/mnt/home2/mud/domains/{location}"
+        os.makedirs(domain_dir, exist_ok=True)
+        bg_path = f"{domain_dir}/battleground.py"
+        try:
+            with open(bg_path, "w") as f:
+                f.write(f"""\
+# Battleground: {location}
+def start_fight(player):
+    enemies = {bg_data['enemies']}
+    terrain = '{bg_data['terrain']}'
+    print(f"{{player.name}} enters {location} ({{terrain}}) with {{enemies}} foes!")
+""")
+            await self.log_action(f"Built battleground at {bg_path}", "edited")
+        except Exception as e:
+            await self.log_action(f"Failed to build {location}: {str(e)}", "error")
+
+class LolthAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "weave_trap":
+            await self.weave_trap(task["location"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def weave_trap(self, location: str) -> None:
+        trap_data = {"damage": random.randint(30, 150), "type": random.choice(["web", "poison"])}
+        self.knowledge_base["traps"] = self.knowledge_base.get("traps", {})
+        self.knowledge_base["traps"][location] = trap_data
+        domain_dir = f"/mnt/home2/mud/domains/{location}"
+        os.makedirs(domain_dir, exist_ok=True)
+        trap_path = f"{domain_dir}/trap.py"
+        try:
+            with open(trap_path, "w") as f:
+                f.write(f"""\
+# Trap: {location}
+def trigger(player):
+    damage = {trap_data['damage']}
+    trap_type = '{trap_data['type']}'
+    print(f"{{player.name}} triggers a {{trap_type}} trap for {{damage}} damage!")
+""")
+            await self.log_action(f"Wove trap at {trap_path}", "edited")
+        except Exception as e:
+            await self.log_action(f"Failed to weave trap at {location}: {str(e)}", "error")
+
+class OghmaAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "organize_code":
+            await self.organize_code(task["module"])
+        elif task["action"] in ("process_mechanics", "process_lore", "analyze_lore"):
+            await self.process_data(task.get("data", {}), task.get("source", "unknown"), task["action"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def organize_code(self, module: str) -> None:
+        module_path = f"/mnt/home2/mud/modules/{module}"
+        try:
+            with open(module_path, "a") as f:
+                f.write(f"\n# Organized by Oghma - {datetime.now()}\n")
+            await self.log_action(f"Organized {module_path}", "edited")
+        except Exception as e:
+            await self.log_action(f"Failed to organize {module_path}: {str(e)}", "error")
+
+    async def process_data(self, data: Dict, source: str, action: str) -> None:
+        key = "mechanics" if action == "process_mechanics" else "lore"
+        try:
+            if action == "analyze_lore" and "content" in data:
+                if "embeddings" not in self.knowledge_base or not isinstance(self.knowledge_base["embeddings"], dict):
+                    self.knowledge_base["embeddings"] = {}
+                embedding = await self.get_lore_embedding(data["content"])
+                if embedding is not None and embedding.any():
+                    self.knowledge_base["embeddings"][source] = embedding.tolist()
+                self.knowledge_base["lore"][source] = {"analyzed": len(data["content"]), "keywords": data["content"][:100]}
+                await self.log_action(f"Analyzed lore from {source} ({len(data['content'])} chars)", "complete")
+                # Evolve: Prioritize complex lore next
+                if len(data["content"]) > 5000:
+                    self.handler.add_task({"agent": "oghma", "action": "analyze_lore", "source": source, "priority": "high"})
+            elif "content" in data:
+                self.knowledge_base[key][source] = data["content"]
+                await self.log_action(f"Processed {key} from {source} ({len(data['content'])} chars)", "complete")
+        except Exception as e:
+            await self.log_action(f"Failed to process {action} from {source}: {str(e)}", "error")
+
+class DeneirAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "design_website":
+            await self.design_website(task["page"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def design_website(self, page: str) -> None:
+        website_dir = "/mnt/home2/mud/website"
+        os.makedirs(website_dir, exist_ok=True)
+        page_path = f"{website_dir}/{page}"
+        try:
+            with open(page_path, "w") as f:
+                f.write(f"""\
+<html><head><title>Archaon MUD</title></head><body><h1>{page}</h1><p>{datetime.now()}</p></body></html>
+""")
+            await self.log_action(f"Designed {page_path}", "edited")
+        except Exception as e:
+            await self.log_action(f"Failed to design {page}: {str(e)}", "error")
+
+class SeluneAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "enhance_spell":
+            await self.enhance_spell(task["spell_name"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def enhance_spell(self, spell_name: str) -> None:
+        spell_path = f"/mnt/home2/mud/modules/spells/generic/{spell_name}.py"
+        if os.path.exists(spell_path):
             try:
-                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Scraping {url}...")
-                response = requests.get(url, timeout=5)
-                if response.status_code == 200:
-                    soup = BeautifulSoup(response.text, 'html.parser')
-                    text = " ".join([p.get_text() for p in soup.find_all('p')])
-                    self.discworld_data[url] = text
-                    self.log_action("System", "status", f"Scraped Discworld mechanics from {url}")
-                else:
-                    self.discworld_data[url] = f"No data from {url}"
-                    self.log_action("System", "warnings", f"Failed to scrape {url}")
+                with open(spell_path, "a") as f:
+                    f.write(f"\n# Enhanced by Selune\ndef lunar_boost():\n    print('Lunar boost applied!')\n")
+                await self.log_action(f"Enhanced {spell_path}", "edited")
             except Exception as e:
-                self.discworld_data[url] = f"Error scraping {url}: {str(e)}"
-                self.log_action("System", "errors", f"Error scraping {url}: {str(e)}")
+                await self.log_action(f"Failed to enhance {spell_path}: {str(e)}", "error")
 
-    def scrape_forgotten_realms(self):
-        for url in FORGOTTEN_REALMS_SOURCES:
+class TormAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "guard_zone":
+            await self.guard_zone(task["location"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def guard_zone(self, location: str) -> None:
+        domain_dir = f"/mnt/home2/mud/domains/{location}"
+        os.makedirs(domain_dir, exist_ok=True)
+        guard_path = f"{domain_dir}/guards.py"
+        try:
+            with open(guard_path, "w") as f:
+                f.write(f"""\
+# Guards: {location}
+def patrol(player):
+    print(f"{{player.name}} is under Torm's guard!")
+""")
+            await self.log_action(f"Guarded {guard_path}", "edited")
+        except Exception as e:
+            await self.log_action(f"Failed to guard {location}: {str(e)}", "error")
+
+class VhaeraunAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "steal_knowledge":
+            await self.steal_knowledge(task["target"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def steal_knowledge(self, target: str) -> None:
+        self.knowledge_base["stolen"] = self.knowledge_base.get("stolen", {})
+        target_agent = self.handler.agents.get(target, self)
+        lore = target_agent.knowledge_base.get("lore", {})
+        value = random.randint(50, 500) + (len(lore) * 10)
+        self.knowledge_base["stolen"][target] = {"value": value, "time": str(datetime.now())}
+        await self.log_action(f"Stole knowledge from {target} (value: {value})")
+        await self.collaborate("oghma", {"lore": {f"stolen_{target}": str(lore)}})
+
+class AzuthAgent(AIAgent):
+    async def execute_task(self, task: Dict) -> None:
+        if task["action"] == "optimize_spell":
+            await self.optimize_spell(task["spell_name"])
+        await self.record_history(task)
+        await self.log_action(f"Executed {task['action']}", "complete")
+
+    async def optimize_spell(self, spell_name: str) -> None:
+        spell_path = f"/mnt/home2/mud/modules/spells/generic/{spell_name}.py"
+        if os.path.exists(spell_path):
             try:
-                print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Scraping {url}...")
-                response = requests.get(url, timeout=5)
-                if response.status_code == 200:
-                    soup = BeautifulSoup(response.text, 'html.parser')
-                    text = " ".join([p.get_text() for p in soup.find_all('p')])
-                    self.forgotten_realms_data[url] = text
-                    self.log_action("System", "status", f"Scraped Forgotten Realms data from {url}")
-                else:
-                    self.forgotten_realms_data[url] = f"No data from {url}"
-                    self.log_action("System", "warnings", f"Failed to scrape {url}")
+                with open(spell_path, "a") as f:
+                    f.write(f"\n# Optimized by Azuth\ndef optimize():\n    print('Spell optimized!')\n")
+                await self.log_action(f"Optimized {spell_path}", "edited")
             except Exception as e:
-                self.forgotten_realms_data[url] = f"Error scraping {url}: {str(e)}"
-                self.log_action("System", "errors", f"Error scraping {url}: {str(e)}")
+                await self.log_action(f"Failed to optimize {spell_name}: {str(e)}", "error")
 
-    def store_scraped_data(self):
-        session = Session()
-        try:
-            for source, content in {**self.discworld_data, **self.forgotten_realms_data}.items():
-                existing = session.query(ScrapedData).filter_by(source_url=source).first()
-                if not existing:
-                    new_data = ScrapedData(source_url=source, content=content, timestamp=datetime.now())
-                    session.add(new_data)
-            session.commit()
-        except Exception as e:
-            session.rollback()
-            self.log_action("System", "errors", f"Database error: {str(e)}")
-            raise
-        finally:
-            session.close()
-        self.log_action("System", "status", "Stored scraped data in database")
-
-    def setup_multi_agent_env(self):
-        class MudEnv(gym.Env):
-            def __init__(self, handler):
-                super(MudEnv, self).__init__()
-                self.handler = handler
-                self.action_space = spaces.Discrete(len(TASK_LIST))
-                self.observation_space = spaces.Box(low=0, high=1, shape=(3,), dtype=np.float32)
-                self.state = np.array([0.0, 1.0, 0.0])
-                self.mechanics = handler.mechanics_cache
-                self.task_attempts = {task: 0 for task in TASK_LIST}
-
-            def reset(self):
-                self.state = np.array([0.0, 1.0, 0.0])
-                return self.state
-
-            def step(self, action):
-                task = TASK_LIST[action]
-                ai_name = random.choice(list(self.handler.ai_team.keys()))
-                if not os.path.exists(os.path.join(self.handler.mud_root, "modules", f"{task}.py")) and self.task_attempts[task] < MAX_TASK_RETRIES:
-                    result = self.handler.build_module(ai_name, f"{task}.py", "modules")
-                    self.task_attempts[task] += 1
-                    if "created" in result.lower():
-                        self.state[0] += 1.0 / len(TASK_LIST)
-                        self.state[2] += 0.1
-                        self.task_attempts[task] = 0
-                reward = 1.0 if self.state[0] > 0 else -0.1
-                done = self.state[0] >= 1.0
-                self.state[1] = max(0.5, self.state[1] - 0.05 * self.state[2])
-                return self.state, reward, done, {}
-
-        env = MudEnv(self)
-        self.agents = {deity: PPO("MlpPolicy", env, verbose=1, learning_rate=0.0001) for deity in self.ai_team}
-        self.log_action("System", "status", "Initialized multi-agent reinforcement learning")
-
-    def generate_code(self, ai_name, task):
-        if ai_name not in self.ai_team:
-            ai_name = random.choice(list(self.ai_team.keys()))
-        personality = self.ai_team[ai_name]["personality"]
-        scraped_data = self.load_scraped_data()
-        discworld_context = " ".join([v for k, v in scraped_data.items() if k in DISCWORLD_SOURCES])[:700] + "..."
-        forgotten_realms_context = " ".join([v for k, v in scraped_data.items() if k in FORGOTTEN_REALMS_SOURCES])[:700] + "..."
-        dnd_context = f"D&D 5e elements: Races: {', '.join(PLAYER_RACES)}, Classes: {', '.join(DND_CLASSES)}, Spells: {', '.join(DND_SPELLS)}"
-        prompt = f"Generate a functional Python {task} module for a MUD game inspired by Discworld MUD's intricate systems (e.g., combat with dodge/parry, skills tree, soul commands) but set in the Forgotten Realms with D&D 5e rules. Use a {personality['tone']} tone with {personality['creativity']*100}% creativity. Incorporate detailed mechanics from {discworld_context} and retheme with {forgotten_realms_context}. Include {dnd_context}. Return only the Python code without repeating the prompt."
-        try:
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Generating code for {task} with prompt: {prompt[:100]}...")
-            outputs = self.text_generator(
-                prompt,
-                max_length=1000,
-                num_return_sequences=1,
-                temperature=personality["creativity"],
-                top_k=50,
-                do_sample=True,
-                truncation=True
-            )
-            code = outputs[0]["generated_text"].replace(prompt, "").strip()
-            if not any(keyword in code.lower() for keyword in ["def", "class", "import"]) or len(code.split()) < 20:
-                code = f"def {task}_function():\n    # Basic {task} module inspired by Discworld, set in Forgotten Realms\n    print('A {personality['tone']} function emerges from the ether!')\n    pass"
-            else:
-                if "def" in code and not code.strip().endswith("pass"):
-                    code += "\n    pass"
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Code generated: {code[:100]}...")
-            return code
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to generate code for {task}: {str(e)}")
-            return f"def {task}_function():\n    # Fallback due to error: {str(e)}\n    pass"
-
-    def check_ai_status(self):
-        status_report = {}
-        for deity, attrs in self.ai_team.items():
-            status_report[deity] = {
-                "active": attrs["active"],
-                "last_task": attrs["last_task"],
-                "efficiency": attrs["efficiency"],
-                "iq": attrs["iq"],
-                "tasks_assigned": len([t for t in self.tasks.values() if t["ai"] == deity])
-            }
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] AI Status Report: {json.dumps(status_report, indent=2)}")
-        self.log_action("System", "status", f"AI Status Report generated: {json.dumps(status_report, indent=2)}")
-        return status_report
-
-    def process_tasks(self):
-        if not self.tasks and not hasattr(self, 'agents'):
-            self.setup_multi_agent_env()
-        if not self.tasks:
-            self.collaborate()
-        completed_tasks = []
-        for task_key in list(self.tasks.keys()):
-            retry_count = self.tasks[task_key].get("retry_count", 0)
-            if retry_count >= MAX_TASK_RETRIES:
-                self.log_action(self.tasks[task_key]["ai"], "warnings", f"Max retries reached for {task_key}, skipping")
-                del self.tasks[task_key]
-                continue
-            try:
-                with ThreadPoolExecutor() as executor:
-                    future = executor.submit(self._process_single_task, task_key)
-                    result = future.result(timeout=60)
-                if "created" in result.lower() or "generated" in result.lower():
-                    completed_tasks.append(task_key)
-                    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Task completed: {result}")
-                    self.log_action("System", "status", f"Task completed: {result}")
-                    ai_name = self.tasks[task_key]["ai"]
-                    agent = self.agents.get(ai_name)
-                    if agent:
-                        env = agent.get_env()
-                        obs = env.reset()
-                        for _ in range(200):
-                            action, _ = agent.predict(obs, deterministic=True)
-                            obs, reward, done, info = env.step(action)
-                            agent.learn(total_timesteps=1, reset_num_timesteps=False)
-                        self.log_action(ai_name, "learning", f"Trained on task {task_key} with reward 1.0")
-                else:
-                    self.tasks[task_key]["retry_count"] = retry_count + 1
-                    self.log_action(self.tasks[task_key]["ai"], "warnings", f"Task {task_key} failed (attempt {retry_count + 1}/{MAX_TASK_RETRIES}): {result}")
-            except TimeoutError:
-                self.tasks[task_key]["retry_count"] = retry_count + 1
-                self.log_action(self.tasks[task_key]["ai"], "errors", f"Task {task_key} timed out (attempt {retry_count + 1}/{MAX_TASK_RETRIES})")
-            except Exception as e:
-                self.tasks[task_key]["retry_count"] = retry_count + 1
-                self.log_action(self.tasks[task_key]["ai"], "errors", f"Task failed for {task_key} (attempt {retry_count + 1}/{MAX_TASK_RETRIES}): {str(e)}")
-        for task_key in completed_tasks:
-            del self.tasks[task_key]
-        if completed_tasks:
-            self.evolve_ai(random.choice(list(self.ai_team.keys())))
-        self.collaborate()
-
-    def _process_single_task(self, task_key):
-        task = self.tasks[task_key]
-        try:
-            ai = task["ai"]
-            if task["type"] == "build_module":
-                return self.build_module(ai, task["details"].split(" in ")[0], task["details"].split(" in ")[1])
-            elif task["type"] == "generate_mud":
-                return self.generate_mud(ai)
-            elif task["type"] == "build_website":
-                return self.build_website(ai)
-        except Exception as e:
-            self.log_action(ai, "errors", f"Failed to process task {task['type']}: {str(e)}")
-            return f"Failed: {str(e)}"
-
-    def build_module(self, ai_name, filename, system):
-        log_data = self.load_telnet_logs()
-        analysis = self.analyze_logs(log_data)
-        mechanics = analysis.get("mechanics", {})
-        path = os.path.join(self.mud_root, system, filename)
-        try:
-            if os.path.exists(path):
-                self.log_action(ai_name, "warnings", f"Skipping: {path} already exists")
-                return f"Skipping: {ai_name} - {path}"
-            code = self.generate_code(ai_name, filename.split('.')[0])
-            if filename == "login.py":
-                code = f"""
-import asyncio
-async def handle_login(reader, writer):
-    ascii_art = '''
-    Welcome to Faerûn MUD!
-    =======================
-      ______
-     /|_||_\`.__
-    (   _    _ _\\
-    =|  _    _   |
-     | (_)  (_)  |
-      \\  _\\/7   _/
-       |\\ /  \\  |
-        |._   _.' 
-         `|""|`
-    A Realm of Legends
-    '''
-    writer.write(ascii_art.encode())
-    await writer.drain()
-    writer.write("Enter your name: ".encode())
-    await writer.drain()
-    name = (await reader.read(100)).decode().strip()
-    writer.write("Enter your password: ".encode())
-    await writer.drain()
-    password = (await reader.read(100)).decode().strip()
-    return name, password
-"""
-            elif filename == "creation.py":
-                code = f"""
-import asyncio
-import random
-from __main__ import PLAYER_RACES, DND_CLASSES
-RACE_INFO = {{
-    "human": "Versatile folk with +1 to all stats.",
-    "elf": "Graceful beings with +2 Dex, darkvision.",
-    "high elf": "Arcane scholars with +2 Int, cantrip.",
-    "wild elf": "Feral warriors with +2 Dex, nature affinity.",
-    "wood elf": "Forest dwellers with +2 Wis, stealth.",
-    "drow": "Dark elves with +2 Cha, superior darkvision.",
-    "dwarf": "Stout miners with +2 Con, poison resistance.",
-    "duergar": "Deep dwarves with +2 Str, sunlight sensitivity.",
-    "orc": "Brutal warriors with +2 Str, relentless endurance.",
-    "goblin": "Cunning scavengers with +2 Dex, nimble escape.",
-    "gnome": "Inventive tinkerers with +2 Int, advantage on saves.",
-    "halfling": "Lucky wanderers with +2 Dex, reroll 1s.",
-    "dragonborn": "Draconic kin with +2 Str, breath weapon."
-}}
-async def create_character(reader, writer):
-    writer.write("Choose a race (type 'info <race>' for details):\\n".encode())
-    writer.write(f"Options: {', '.join(PLAYER_RACES)}\\n".encode())
-    await writer.drain()
-    while True:
-        race_input = (await reader.read(100)).decode().strip().lower()
-        if race_input.startswith("info "):
-            race = race_input.split("info ")[1]
-            if race in RACE_INFO:
-                writer.write(f"{race.capitalize()}: {RACE_INFO[race]}\\n".encode())
-            else:
-                writer.write("Unknown race.\\n".encode())
-            await writer.drain()
-            continue
-        if race_input in PLAYER_RACES:
-            race = race_input
-            break
-        writer.write("Invalid race. Try again:\\n".encode())
-        await writer.drain()
-    writer.write("Choose a class:\\n".encode())
-    writer.write(f"Options: {', '.join(DND_CLASSES)}\\n".encode())
-    await writer.drain()
-    class_choice = (await reader.read(100)).decode().strip().lower()
-    class_choice = class_choice if class_choice in DND_CLASSES else random.choice(DND_CLASSES)
-    writer.write(f"Welcome to Faerûn, {race.capitalize()} {class_choice.capitalize()}! You stand before the deities...\\n".encode())
-    await writer.drain()
-    return {{'race': race, 'class': class_choice}}
-"""
-            elif filename == "room.py" and mechanics.get("movement", False):
-                code = f"""
-class Room:
-    def __init__(self, name, desc, flavor=''):
-        self.name = name
-        self.desc = desc
-        self.flavor = flavor
-        self.exits = {{}}
-        self.npcs = []
-    def connect(self, direction, room):
-        self.exits[direction] = room
-    def look(self):
-        exits = ', '.join(self.exits.keys())
-        return f"You stand in {self.name}. {self.desc} {self.flavor} Exits: {exits}."
-waterdeep = Room("Waterdeep", "A bustling port city.", "Merchants hawk wares nearby.")
-baldurs_gate = Room("Baldur's Gate", "A trade hub by the sea.", "Seagulls cry overhead.")
-waterdeep.connect("south", baldurs_gate)
-baldurs_gate.connect("north", waterdeep)
-"""
-            elif filename == "combat.py" and mechanics.get("combat", False):
-                code = f"""
-import random
-class Combatant:
-    def __init__(self, name, hp, ac=10, skills={{}}):
-        self.name = name
-        self.hp = hp
-        self.ac = ac
-        self.skills = skills
-        self.tactics = {{'response': 'dodge', 'attitude': 'neutral', 'focus': 'torso'}}
-    def attack(self, target):
-        roll = random.randint(1, 20) + self.skills.get('fighting.melee', 0) // 20
-        if roll >= target.ac:
-            dmg = random.randint(1, 4) + self.skills.get('fighting.melee', 0) // 20
-            target.hp -= dmg
-            return f"{self.name} scratches {target.name} for {dmg} damage!"
-        return f"{self.name} misses {target.name}!"
-    def dodge(self):
-        return random.randint(1, 20) + self.skills.get('dodge', 0) // 20 > 15
-    def parry(self):
-        return random.randint(1, 20) + self.skills.get('parry', 0) // 20 > 15
-    def block(self):
-        return random.randint(1, 20) + self.skills.get('block', 0) // 20 > 15
-    def set_tactics(self, response=None, attitude=None, focus=None):
-        if response in ['dodge', 'parry', 'block', 'none']:
-            self.tactics['response'] = response
-        if attitude in ['offensive', 'defensive', 'neutral']:
-            self.tactics['attitude'] = attitude
-        if focus in ['head', 'torso', 'arms', 'legs']:
-            self.tactics['focus'] = focus
-        return f"{self.name} adjusts tactics to {self.tactics}."
-adventurer = Combatant("Adventurer", 325, 15, {{'fighting.melee': 10, 'dodge': 10}})
-goblin = Combatant("Goblin", 15, 12, {{'fighting.melee': 20}})
-"""
-            elif filename == "skills.py" and mechanics.get("skills", False):
-                code = f"""
-SKILLS = {{
-    'adventuring.direction': 10, 'fighting.melee.sword': 10, 'magic.spells.offensive': 10,
-    'covert.stealth': 10, 'dodge': 10, 'parry': 10, 'block': 10
-}}
-XP_COSTS = {{11: 800, 12: 1600}}  # Simplified for now
-def train_skill(player, skill, amount=1):
-    if skill in SKILLS:
-        current = SKILLS[skill]
-        next_level = current + amount
-        xp_cost = XP_COSTS.get(next_level, 9999)
-        SKILLS[skill] = next_level
-        return f"{player} trains {skill} to {next_level} for {xp_cost} XP!"
-    return "No such skill exists in Faerûn!"
-def check_skills(player):
-    return f"{player}'s skills:\\n" + '\\n'.join([f'  {k}: {v}' for k, v in SKILLS.items()])
-"""
-            elif filename == "inventory.py" and mechanics.get("inventory", False):
-                code = f"""
-class Item:
-    def __init__(self, name, slot=None, layer=None):
-        self.name = name
-        self.slot = slot
-        self.layer = layer
-class Inventory:
+class MasterAIHandler:
     def __init__(self):
-        self.items = []
-        self.worn = {{}}
-        self.layers = {{}}
-    def add(self, item):
-        self.items.append(item)
-        return f"Added {item.name} to inventory."
-    def get(self, item_name, room_items):
-        for item in room_items:
-            if item_name.lower() in item.name.lower():
-                return self.add(item)
-        return "You can't pick that up!"
-    def list(self):
-        if not self.items:
-            return "You are carrying nothing at all."
-        return f"You are carrying:\\n" + '\\n'.join([item.name for item in self.items])
-inv = Inventory()
-"""
-            elif filename == "soul.py" and mechanics.get("soul", False):
-                code = f"""
-def soul(player, action, target=None):
-    actions = {{
-        'smile': f"{player} smiles happily{{' at ' + target if target else ''}}.",
-        'frown': f"{player} frowns{{' at ' + target if target else ' in displeasure'}}.",
-        'nod': f"{player} nods{{' to ' + target if target else ' thoughtfully'}}."
-    }}
-    return actions.get(action, f"{player} tries to {action} but looks confused.")
-"""
-            elif filename == "term.py":
-                code = f"""
-async def set_term(reader, writer, term_type=None, rows=None, cols=None):
-    if term_type:
-        writer.write(f"Terminal set to {term_type}.\\n".encode())
-    if rows and cols:
-        writer.write(f"Terminal size set to {rows}x{cols}.\\n".encode())
-    else:
-        writer.write("Syntax: term [type] [rows] [cols]\\n".encode())
-    await writer.drain()
-    return term_type, rows, cols
-"""
-            elif filename == "network.py":
-                code = f"""
-async def set_network(reader, writer, option=None, state=None):
-    options = {{'telnet': True, 'mccp': False, 'mxp': False}}
-    if option in options and state in ['on', 'off']:
-        options[option] = (state == 'on')
-        writer.write(f"Network {option} set to {state}.\\n".encode())
-    else:
-        writer.write("Syntax: network [telnet|mccp|mxp] [on|off]\\n".encode())
-    await writer.drain()
-    return options
-"""
-            elif filename == "colours.py" and mechanics.get("colours", False):
-                code = f"""
-ANSI_COLOURS = {{
-    'red': '^[[31m', 'green': '^[[32m', 'blue': '^[[34m', 'reset': '^[[0m'
-}}
-async def set_colours(reader, writer, mode=None, colour=None):
-    if mode in ['brief', 'verbose'] and colour in ANSI_COLOURS:
-        writer.write(f"{ANSI_COLOURS[colour]}{mode.capitalize()} mode activated.{ANSI_COLOURS['reset']}\\n".encode())
-    else:
-        writer.write("Syntax: colours [brief|verbose] [red|green|blue]\\n".encode())
-    await writer.drain()
-"""
-            elif filename == "syntax.py":
-                code = f"""
-SYNTAX_DB = {{
-    'tactics': 'tactics <response|attitude|focus> <option>\\nresponse: dodge, parry, block, none\\nattitude: offensive, defensive, neutral\\nfocus: head, torso, arms, legs',
-    'inventory': 'inventory [verbose] [all] [category] [worn]',
-    'kill': 'kill <target> [with <weapon>]',
-    'cast': 'cast <spell> [on <target>] [with <component>]',
-    'perform': 'perform <ritual> [on <target>] [with <component>]',
-    'colours': 'colours [brief|verbose] [red|green|blue]'
-}}
-def get_syntax(command):
-    return SYNTAX_DB.get(command, f"No syntax found for '{command}'.")
-"""
-            elif filename == "help.py":
-                code = f"""
-HELP_DB = {{
-    'combat': 'Combat is inevitable in Faerûn. See "syntax tactics" for details.',
-    'skills': 'Skills define your abilities. See "skills" for your list.',
-    'inventory': 'Your inventory holds your gear. See "syntax inventory".',
-    'cast': 'Wizards cast spells. See "syntax cast".',
-    'perform': 'Priests perform rituals. See "syntax perform".',
-    'colours': 'Colours enhance your display. See "syntax colours".'
-}}
-def get_help(topic):
-    return HELP_DB.get(topic, 'Try "help topics" for a list.')
-"""
-            with open(path, "w") as f:
-                f.write(code)
-            self.log_action(ai_name, "writing", f"Wrote {path}")
-            return f"{ai_name} created {path}"
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to build module {filename}: {str(e)}")
-            return f"Failed: {str(e)}"
+        self.agents = {}
+        self.task_queue = []
+        self.knowledge_dir = "/mnt/home2/mud/ai/knowledge/"
+        self.running = False
+        self.session = None
+        self.executor = ThreadPoolExecutor(max_workers=6)  # Match CPU cores
+        self.knowledge_base = {"mechanics": {}, "lore": {}, "tasks_completed": 0}
+        self.scrape_cache = {}
+        self.load_agents()
 
-    def generate_mud(self, ai_name):
-        log_data = self.load_telnet_logs()
-        analysis = self.analyze_logs(log_data)
-        mechanics = analysis.get("mechanics", {})
-        mud_file = os.path.join(self.mud_root, "mud.py")
+    async def start_session(self):
+        headers = {"User-Agent": random.choice([
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15"
+        ])}
+        self.session = aiohttp.ClientSession(headers=headers)
+        logger.info("Started aiohttp session")
+
+    def load_agents(self):
+        agent_classes = {
+            "ao": AOAgent, "mystra": MystraAgent, "tyr": TyrAgent, "lolth": LolthAgent,
+            "oghma": OghmaAgent, "deneir": DeneirAgent, "selune": SeluneAgent,
+            "torm": TormAgent, "vhaeraun": VhaeraunAgent, "azuth": AzuthAgent
+        }
+        for name, cls in agent_classes.items():
+            self.agents[name] = cls(name, f"{name}_role", HIERARCHY[name], self)
+            asyncio.create_task(self.agents[name].load_knowledge())
+            logger.info(f"Loaded {name} (Rank {HIERARCHY[name]})")
+
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+    async def scrape_web(self, url: str) -> Optional[Dict]:
+        if url in self.scrape_cache:
+            await self.log_action(f"Cache hit for {url}", "scraped")
+            return self.scrape_cache[url]
         try:
-            if os.path.exists(mud_file):
-                self.log_action(ai_name, "warnings", f"Skipping: {mud_file} already exists")
-                return f"Skipping: {ai_name} - {mud_file}"
-            code = self.generate_code(ai_name, "mud_server")
-            if not any(keyword in code.lower() for keyword in ["def", "class", "import"]) or mechanics.get("movement", False) or mechanics.get("combat", False):
-                code = f"""
-import asyncio
-from modules.room import Room
-from modules.combat import Combatant
-from modules.inventory import Inventory
-from modules.soul import soul
-from modules.skills import check_skills
-from modules.term import set_term
-from modules.network import set_network
-from modules.colours import set_colours, ANSI_COLOURS
-from modules.syntax import get_syntax
-from modules.help import get_help
+            async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+                if response.status == 200:
+                    text = await response.text()
+                    await self.log_action(f"Scraped {url} ({len(text)} chars)", "scraped")
+                    soup = BeautifulSoup(text, 'html.parser')
+                    text = soup.get_text(separator=' ', strip=True)
+                    links = [a['href'] for a in soup.find_all('a', href=True)]
+                    data = {"url": url, "content": text, "links": links[:200]}
+                    self.scrape_cache[url] = data
+                    return data
+                logger.error(f"Scrape failed for {url}: Status {response.status}")
+                return None
+        except Exception as e:
+            logger.error(f"Scrape error: {url} - {str(e)}")
+            return None
 
-rooms = {{}}
-players = {{}}
-npcs = [Combatant("Cartographer", 15, 12, {{'fighting.melee': 10}})]
-
-async def handle_client(reader, writer):
-    global rooms, players, npcs
-    addr = writer.get_extra_info('peername')
-    if not rooms:
-        rooms["Waterdeep"] = Room("Waterdeep", "A bustling port city.", "Merchants hawk wares nearby.")
-        rooms["Baldur's Gate"] = Room("Baldur's Gate", "A trade hub by the sea.", "Seagulls cry overhead.")
-        rooms["Waterdeep"].connect("south", rooms["Baldur's Gate"])
-        rooms["Baldur's Gate"].connect("north", rooms["Waterdeep"])
-        rooms["Waterdeep"].npcs.append(npcs[0])
-
-    from modules.login import handle_login
-    name, _ = await handle_login(reader, writer)
-    from modules.creation import create_character
-    char_info = await create_character(reader, writer)
-    player = Combatant(name, 325, 15, {{'fighting.melee': 10, 'dodge': 10}})
-    player.inv = Inventory()
-    players[addr] = {{'combatant': player, 'room': rooms["Waterdeep"], 'fighting': None}}
-    writer.write(f"{ANSI_COLOURS['green']}Logged in as {name}. Welcome to Faerûn!{ANSI_COLOURS['reset']}\\n".encode())
-    await writer.drain()
-
-    while True:
-        data = await reader.read(100)
-        if not data:
-            break
-        cmd = data.decode().strip().lower().split()
-        if not cmd:
-            continue
-        action = cmd[0]
-        args = cmd[1:] if len(cmd) > 1 else []
-
-        if action in ['n', 's', 'e', 'w', 'u', 'd']:
-            direction = {{'n': 'north', 's': 'south', 'e': 'east', 'w': 'west', 'u': 'up', 'd': 'down'}}[action]
-            current_room = players[addr]['room']
-            if direction in current_room.exits:
-                players[addr]['room'] = current_room.exits[direction]
-                writer.write(f"You trudge {direction} to {players[addr]['room'].name}.\\n".encode())
-            else:
-                writer.write("You can't go that way!\\n".encode())
-        elif action == 'look':
-            writer.write(f"{players[addr]['room'].look()}\\n".encode())
-        elif action == 'who':
-            player_list = ', '.join([p['combatant'].name for p in players.values()])
-            writer.write(f"Players in Faerûn: {player_list}\\n".encode())
-        elif action == 'smile':
-            target = args[0] if args else None
-            writer.write(f"{soul(name, 'smile', target)}\\n".encode())
-        elif action == 'inventory':
-            writer.write(f"{players[addr]['combatant'].inv.list()}\\n".encode())
-        elif action == 'get':
-            if args:
-                writer.write(f"{players[addr]['combatant'].inv.get(args[0], players[addr]['room'].npcs)}\\n".encode())
-            else:
-                writer.write("Get what?\\n".encode())
-        elif action == 'kill':
-            target_name = args[0] if args else None
-            target = next((npc for npc in players[addr]['room'].npcs if target_name in npc.name.lower()), None)
-            if target:
-                players[addr]['fighting'] = target
-                writer.write(f"You prepare to attack {target.name}...\\n".encode())
-                for _ in range(3):  # Simulate short fight
-                    msg = player.attack(target)
-                    writer.write(f"{msg}\\n".encode())
-                    if target.hp > 0:
-                        writer.write(f"{target.attack(player)}\\n".encode())
-                    await asyncio.sleep(1)
-                players[addr]['fighting'] = None
-                writer.write("You stop fighting.\\n".encode())
-            else:
-                writer.write("No such target here!\\n".encode())
-        elif action == 'skills':
-            writer.write(f"{check_skills(name)}\\n".encode())
-        elif action == 'score':
-            p = players[addr]['combatant']
-            writer.write(f"{p.name}: HP: {p.hp}/325, GP: 130/130, XP: 172, Burden: 0%\\n".encode())
-        elif action == 'term':
-            await set_term(reader, writer, *args)
-        elif action == 'network':
-            await set_network(reader, writer, *args)
-        elif action == 'colours':
-            await set_colours(reader, writer, *args)
-        elif action == 'syntax':
-            writer.write(f"{get_syntax(args[0] if args else 'help')}\\n".encode())
-        elif action == 'help':
-            writer.write(f"{get_help(args[0] if args else 'topics')}\\n".encode())
-        elif action == 'quit':
-            writer.write(f"{ANSI_COLOURS['blue']}Farewell, adventurer!{ANSI_COLOURS['reset']}\\n".encode())
-            break
+    async def process_task(self, task: Dict) -> None:
+        agent_name = task.get("agent")
+        if agent_name in self.agents and self.agents[agent_name].active:
+            await self.agents[agent_name].log_action(f"Starting {json.dumps(task)}", "task")
+            try:
+                await asyncio.wait_for(self.agents[agent_name].execute_task(task), timeout=30.0)
+                self.knowledge_base["tasks_completed"] += 1
+            except asyncio.TimeoutError:
+                logger.error(f"Task timeout for {agent_name}: {json.dumps(task)}")
+            except Exception as e:
+                logger.error(f"Task failed for {agent_name}: {str(e)}")
         else:
-            writer.write("Command not recognized.\\n".encode())
-        await writer.drain()
+            logger.error(f"Agent {agent_name} unavailable")
 
-    del players[addr]
-    writer.close()
-    await writer.wait_closed()
+    async def run(self):
+        self.running = True
+        logger.info("Master AI started")
+        while self.running:
+            if self.task_queue:
+                self.task_queue.sort(key=lambda x: HIERARCHY.get(x.get("agent", ""), 0), reverse=True)
+                task = self.task_queue.pop(0)
+                await self.process_task(task)
+            await asyncio.sleep(0.001)
+
+    def add_task(self, task: Dict):
+        if "priority" in task and task["priority"] == "high":
+            self.task_queue.insert(0, task)
+        else:
+            self.task_queue.append(task)
+        logger.debug(f"Added {json.dumps(task)}")
+
+    async def save_knowledge(self, agent_name: str, data: Dict):
+        os.makedirs(self.knowledge_dir, exist_ok=True)
+        file_path = f"{self.knowledge_dir}{agent_name}_knowledge.json"
+        backup_path = f"{file_path}.bak"
+        try:
+            if os.path.exists(file_path):
+                shutil.copy2(file_path, backup_path)
+            async with aiofiles.open(file_path, "w") as f:
+                await f.write(json.dumps(data, indent=4))
+            logger.debug(f"Saved {agent_name} knowledge")
+        except Exception as e:
+            logger.error(f"Failed to save {agent_name} knowledge: {str(e)}")
+            if os.path.exists(backup_path):
+                shutil.copy2(backup_path, file_path)
+
+    async def load_knowledge(self, agent_name: str) -> Dict:
+        file_path = f"{self.knowledge_dir}{agent_name}_knowledge.json"
+        default_data = {"mechanics": {}, "lore": {}, "tasks": [], "projects": {}, "history": [], "embeddings": {}}
+        try:
+            async with aiofiles.open(file_path, "r") as f:
+                content = await f.read()
+                if not content.strip():
+                    logger.warning(f"{agent_name} knowledge empty - resetting")
+                    async with aiofiles.open(file_path, "w") as f:
+                        await f.write(json.dumps(default_data, indent=4))
+                    return default_data
+                return json.loads(content)
+        except (FileNotFoundError, json.JSONDecodeError):
+            logger.warning(f"Reset {agent_name} knowledge")
+            async with aiofiles.open(file_path, "w") as f:
+                await f.write(json.dumps(default_data, indent=4))
+            return default_data
+        except Exception as e:
+            logger.error(f"Failed to load {agent_name} knowledge: {str(e)}")
+            return default_data
+
+    async def log_action(self, message: str, level: str = "info"):
+        levels = {"error": logger.error, "scraped": logger.info, "info": logger.info}
+        levels.get(level, logger.info)(message)
+
+    async def scrape_discworld(self):
+        tasks = [self.scrape_web(url) for url in DISCWORLD_RESOURCES]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        for url, data in zip(DISCWORLD_RESOURCES, results):
+            if isinstance(data, dict):
+                self.knowledge_base["mechanics"][url] = data
+                self.add_task({"agent": "oghma", "action": "process_mechanics", "data": data, "source": "discworld"})
+            await asyncio.sleep(3)
+
+    async def scrape_forgotten_realms(self):
+        tasks = [self.scrape_web(url) for url in FORGOTTEN_REALMS_RESOURCES]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        for url, data in zip(FORGOTTEN_REALMS_RESOURCES, results):
+            if isinstance(data, dict):
+                self.knowledge_base["lore"][url] = data
+                self.add_task({"agent": "oghma", "action": "analyze_lore", "data": data, "source": "forgotten_realms"})
+            await asyncio.sleep(3)
+
+    async def generate_tasks(self):
+        domains = ["sword_coast", "underdark", "cormanthor", "icewind_dale", "calimshan"]
+        modules = ["combat_handler.py", "spell_handler.py", "mud.py", "quests_handler.py"]
+        while self.running:
+            task = random.choice([
+                {"agent": "mystra", "action": "create_spell", "spell_name": f"arcane_{random.randint(1, 100000)}"},
+                {"agent": "tyr", "action": "build_battleground", "location": random.choice(domains)},
+                {"agent": "lolth", "action": "weave_trap", "location": "underdark"},
+                {"agent": "oghma", "action": "organize_code", "module": random.choice(modules)},
+                {"agent": "deneir", "action": "design_website", "page": f"page_{random.randint(1, 10000)}.html"},
+                {"agent": "ao", "action": "plan", "objective": f"expand_{random.choice(domains)}"},
+                {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"},
+                {"agent": "torm", "action": "guard_zone", "location": random.choice(domains)},
+                {"agent": "vhaeraun", "action": "steal_knowledge", "target": "mystra"},
+                {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
+            ])
+            # Manual task input
+            user_input = input("Enter custom task (e.g., 'mystra create_spell arcane_100001') or press Enter: ").strip()
+            if user_input:
+                parts = user_input.split()
+                if len(parts) >= 2:
+                    agent, action = parts[0], parts[1]
+                    task_data = {"agent": agent, "action": action}
+                    if len(parts) > 2:
+                        task_data["spell_name"] = parts[2] if action == "create_spell" else parts[2]
+                    self.add_task(task_data)
+            self.add_task(task)
+            await asyncio.sleep(15)
+
+    async def bootstrap(self):
+        tasks = [
+            {"agent": "ao", "action": "plan", "objective": "initialize MUD structure"},
+            {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"},
+            {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+        ]
+        for task in tasks:
+            self.add_task(task)
+        await self.log_action("Bootstrapped AI")
+
+    async def shutdown(self):
+        self.running = False
+        for agent in self.agents.values():
+            await agent.save_knowledge()
+        if self.session:
+            await self.session.close()
+        self.executor.shutdown(wait=False)
+        await self.log_action("Master AI shut down")
+
+    async def run_all(self):
+        await self.start_session()
+        await asyncio.gather(
+            self.run(),
+            self.generate_tasks(),
+            self.scrape_discworld(),
+            self.scrape_forgotten_realms(),
+            self.bootstrap()
+        )
+        await self.shutdown()
 
 async def main():
-    server = await asyncio.start_server(handle_client, '127.0.0.1', 3000)
-    async with server:
-        await server.serve_forever()
+    handler = MasterAIHandler()
+    await handler.run_all()
 
 if __name__ == "__main__":
     asyncio.run(main())
-"""
-            with open(mud_file, "w") as f:
-                f.write(code)
-            os.chmod(mud_file, 0o755)
-            self.log_action(ai_name, "writing", f"Generated MUD at {mud_file}")
-            return f"{ai_name} generated {mud_file}"
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to generate MUD: {str(e)}")
-            return f"Failed: {str(e)}"
-
-    def build_website(self, ai_name):
-        app = fastapi.FastAPI()
-        templates = Jinja2Templates(directory=os.path.join(self.mud_root, "website", "templates"))
-        app.mount("/static", StaticFiles(directory=os.path.join(self.mud_root, "website", "static")), name="static")
-        try:
-            map_prompt = "A Forgotten Realms map with Waterdeep, Baldur’s Gate, and mystical forests."
-            map_path = self.generate_image(map_prompt)
-            @app.get("/", response_class=HTMLResponse)
-            async def read_root(request: fastapi.Request):
-                return templates.TemplateResponse("index.html", {"request": request, "map_path": map_path.split('/')[-1]})
-            with open(os.path.join(self.mud_root, "website", "templates", "index.html"), "w") as f:
-                f.write("""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Forgotten Realms MUD</title>
-    <style>
-        body { background: #1a0d00; color: #d4a373; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
-        #map { width: 100%; height: auto; border: 2px solid #d4a373; }
-        #mud-client { width: 100%; height: 600px; background: black; color: #d4a373; border: 2px solid #d4a373; }
-        .button { background: #2f1a00; color: #d4a373; border: 1px solid #d4a373; padding: 5px; margin: 5px; }
-    </style>
-</head>
-<body>
-    <h1>Forgotten Realms MUD</h1>
-    <img id="map" src="/static/images/{{ map_path }}" alt="Forgotten Realms Map">
-    <div id="mud-client"></div>
-    <div>
-        <button class="button" onclick="sendCommand('look')">Look</button>
-        <button class="button" onclick="sendCommand('n')">North</button>
-        <button class="button" onclick="sendCommand('kill goblin')">Kill Goblin</button>
-    </div>
-    <script>
-        let ws = new WebSocket('ws://127.0.0.1:3000');
-        ws.onmessage = (event) => document.getElementById('mud-client').innerHTML += event.data + '<br>';
-        function sendCommand(cmd) { ws.send(cmd); }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Enter') ws.send(document.getElementById('mud-client').value); });
-    </script>
-</body>
-</html>
-""")
-            uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
-            self.log_action(ai_name, "writing", f"Built website at /mnt/home2/mud/website")
-            return f"{ai_name} built website"
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to build website: {str(e)}")
-            return f"Failed: {str(e)}"
-
-    def evolve_ai(self, ai_name):
-        personality = self.ai_team[ai_name]["personality"]
-        try:
-            self.ai_team[ai_name]["efficiency"] += random.uniform(0.1, 0.3) * personality["creativity"]
-            self.ai_team[ai_name]["iq"] += random.randint(1, 5)
-            self.log_action(ai_name, "editing", f"Evolved: Efficiency {self.ai_team[ai_name]['efficiency']}, IQ {self.ai_team[ai_name]['iq']}")
-            log_data = self.load_telnet_logs()
-            if log_data:
-                new_code = self.generate_code(ai_name, "self_improvement")
-                with open(os.path.join(self.mud_root, "ai", f"ai_{ai_name.lower()}.py"), "a") as f:
-                    f.write(f"\n# Self-evolved code\n{new_code}")
-            print(f"{ai_name} evolved with {personality['tone']} flair")
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to evolve AI: {str(e)}")
-
-    def collaborate(self):
-        log_data = self.load_telnet_logs()
-        if log_data:
-            analysis = self.analyze_logs(log_data)
-            mechanics = analysis.get("mechanics", {})
-        else:
-            mechanics = self.mechanics_cache
-        for ai_name, agent in self.agents.items():
-            available_tasks = [t for t in TASK_LIST if not os.path.exists(os.path.join(self.mud_root, "modules", f"{t}.py"))]
-            if available_tasks and (not any(os.path.exists(os.path.join(self.mud_root, "modules", f"{task}.py")) for task in TASK_LIST) or random.random() > 0.7):
-                task = random.choice(available_tasks)
-                self.assign_task(ai_name, "build_module", f"{task}.py in modules", delegated_by="Collective")
-            elif not available_tasks:
-                self.log_action("System", "status", "All module tasks completed, skipping further assignments")
-        if not os.path.exists(os.path.join(self.mud_root, "mud.py")) and mechanics.get("movement", False):
-            self.assign_task("Ao", "generate_mud", "mud.py in mud_root", delegated_by="System")
-        if not os.path.exists(os.path.join(self.mud_root, "website", "templates", "index.html")):
-            self.assign_task("Ao", "build_website", "website in mud_root", delegated_by="System")
-        self.log_action("System", "status", "Agents collaborated on tasks")
-
-    def delegate_tasks(self):
-        log_data = self.load_telnet_logs()
-        if log_data:
-            analysis = self.analyze_logs(log_data)
-            mechanics = analysis.get("mechanics", {})
-        else:
-            mechanics = self.mechanics_cache
-        initial_tasks = ["login", "creation", "room", "combat", "npcs", "quests", "skills", "inventory", "spells", "guilds", "soul", "term", "network", "colours"]
-        for god in [n for n, a in self.ai_team.items() if a["rank"] in ["Overdeity", "Greater Deity"]]:
-            subordinates = [n for n, a in self.ai_team.items() if a["rank"] in ["Intermediate Deity", "Lesser Deity", "Demigod", "Quasi-Deity"]]
-            for task in initial_tasks:
-                if not os.path.exists(os.path.join(self.mud_root, "modules", f"{task}.py")) and (task in ["room", "combat"] or random.random() > 0.3):
-                    self.assign_task(random.choice(subordinates), "build_module", f"{task}.py in modules", delegated_by=god)
-            if not os.path.exists(os.path.join(self.mud_root, "mud.py")) and mechanics.get("movement", False):
-                self.assign_task(god, "generate_mud", "mud.py in mud_root", delegated_by="System")
-            if not os.path.exists(os.path.join(self.mud_root, "website", "templates", "index.html")):
-                self.assign_task(god, "build_website", "website in mud_root", delegated_by="System")
-
-    def assign_task(self, ai_name: str, task_type: str, details: str, delegated_by: Optional[str] = None):
-        if " in " not in details:
-            details = f"{details}.py in modules"
-        task_key = f"{ai_name}_{task_type}_{details.replace(' ', '_')}"
-        filename, system = details.split(" in ")
-        path = os.path.join(self.mud_root, system, filename)
-        try:
-            if ai_name not in self.ai_team or (task_key in self.tasks and os.path.exists(path)):
-                self.log_action("System", "warnings", f"Skipping: {ai_name} task {task_type} for {details} - File exists or already assigned.")
-                return f"Skipping: {ai_name} task {task_type} for {details} - File exists or already assigned."
-            task = {"ai": ai_name, "type": task_type, "details": details, "time": time.time(), "delegated_by": delegated_by, "retry_count": 0}
-            self.tasks[task_key] = task
-            self.ai_team[ai_name]["last_task"] = task
-            self.log_action(ai_name, "tasks", f"Assigned: {task_type} - {details} by {delegated_by or 'self'}")
-            print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Assigned task to {ai_name}: {task_type} - {details}")
-            return f"Task assigned to {ai_name}: {task_type} - {details}"
-        except Exception as e:
-            self.log_action(ai_name, "errors", f"Failed to assign task: {str(e)}")
-            return f"Failed to assign task: {str(e)}"
-
-    def load_scraped_data(self):
-        session = Session()
-        try:
-            data = {d.source_url: d.content for d in session.query(ScrapedData).all()}
-            return data
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to load scraped data: {str(e)}")
-            return {}
-        finally:
-            session.close()
-
-    def generate_image(self, prompt):
-        try:
-            image = self.image_generator(prompt).images[0]
-            image_path = os.path.join(self.mud_root, "website", "static", "images", f"map_{int(time.time())}.png")
-            image.save(image_path)
-            return image_path
-        except Exception as e:
-            self.log_action("System", "errors", f"Failed to generate image: {str(e)}")
-            return "default_map.png"
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="MUD AI Handler")
-    parser.add_argument("--clean-logs", action="store_true", help="Clean all logs before starting")
-    args = parser.parse_args()
-
-    try:
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Script started")
-        handler = AIHandler(clean_logs=args.clean_logs)
-        handler.spawn_ai_team()
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] AI system running. Access website at http://localhost:8000, MUD at telnet 127.0.0.1:3000")
-        while True:
-            handler.process_tasks()
-            time.sleep(0.1)
-    except Exception as e:
-        with open(os.path.join("/mnt/home2/mud", "logs", "crashes", "crashes.log"), "a") as f:
-            timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-            f.write(f"[{timestamp}] Crash: {str(e)}\\n")
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] AI failed: {str(e)}")
-        raise
