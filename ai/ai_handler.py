@@ -43,6 +43,10 @@ ai_created_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
 logger.addHandler(ai_created_handler)
 
 ai_edited_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_edited_files.log')
+ai_scraped_handler = logging.FileHandler("/mnt/home2/mud/logs/website_scraped.log")
+ai_scraped_handler.setLevel(logging.INFO)
+ai_scraped_handler.setFormatter(logging.Formatter("%(asctime)s - %(message)s\n"))
+logger.addHandler(ai_scraped_handler)
 ai_edited_handler.setLevel(logging.INFO)
 ai_edited_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
 logger.addHandler(ai_edited_handler)
@@ -232,10 +236,13 @@ class AIHandler:
             logger.info(f"Loaded agent: {name} (Rank {HIERARCHY[name]})")
 
     async def scrape_web(self, url: str) -> Optional[Dict]:
+    async def log_scrape(self, url: str, data: Dict) -> None:
+        logger.info(f"Scraped website: {url}", extra={"level": "scraped"})
         try:
          async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
             if response.status == 200:
                 html = await response.text()
+                    await self.log_scrape(url, {"content_length": len(text)})
                 soup = BeautifulSoup(html, 'html.parser')
                 text = soup.get_text(separator=' ', strip=True)
                 links = [a['href'] for a in soup.find_all('a', href=True)]
