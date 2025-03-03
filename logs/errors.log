@@ -62,3 +62,83 @@
 2025-03-03 13:15:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
 2025-03-03 13:15:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
 2025-03-03 13:16:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:17:59 | ERROR | deneir: Agent health depleted, going inactive
+2025-03-03 13:17:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:19 | ERROR | vhaeraun: Agent health depleted, going inactive
+2025-03-03 13:18:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:29 | ERROR | deneir: Agent health depleted, going inactive
+2025-03-03 13:18:29 | ERROR | vhaeraun: Agent health depleted, going inactive
+2025-03-03 13:18:29 | ERROR | selune: Agent health depleted, going inactive
+2025-03-03 13:18:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:18:59 | ERROR | selune: Agent health depleted, going inactive
+2025-03-03 13:18:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:19:59 | ERROR | tyr: Agent health depleted, going inactive
+2025-03-03 13:19:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:29 | ERROR | tyr: Agent health depleted, going inactive
+2025-03-03 13:20:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:20:59 | ERROR | lolth: Agent health depleted, going inactive
+2025-03-03 13:20:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:26:55 | ERROR | selune: Agent health depleted, going inactive
+2025-03-03 13:26:55 | ERROR | vhaeraun: Agent health depleted, going inactive
+2025-03-03 13:26:56 | ERROR | Agent selune unavailable
+2025-03-03 13:26:56 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:56 | ERROR | Agent selune unavailable
+2025-03-03 13:26:56 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:56 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 13:26:57 | ERROR | Agent selune unavailable
+2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable

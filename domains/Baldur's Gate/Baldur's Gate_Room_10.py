@@ -1,0 +1,5 @@
+# Room: Baldur's Gate_Room_10
+description = "An arcane workshop in Baldur's Gate, humming with magical precision."
+exits = {'north': None}
+npcs = ["Wizard of Azuth"]
+items = ["Staff of Power"]

@@ -45,10 +45,1219 @@
                 "location": "underdark"
             },
             "timestamp": "2025-03-03 12:31:48.530721"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:08:29.142640"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_174"
+            },
+            "timestamp": "2025-03-03 13:08:29.149410"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_690"
+            },
+            "timestamp": "2025-03-03 13:08:29.160139"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_622"
+            },
+            "timestamp": "2025-03-03 13:09:09.148645"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_987"
+            },
+            "timestamp": "2025-03-03 13:09:29.131647"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_136"
+            },
+            "timestamp": "2025-03-03 13:09:39.153220"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_528"
+            },
+            "timestamp": "2025-03-03 13:10:09.155765"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_978"
+            },
+            "timestamp": "2025-03-03 13:10:29.136036"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_16"
+            },
+            "timestamp": "2025-03-03 13:11:29.137075"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_790"
+            },
+            "timestamp": "2025-03-03 13:11:29.206935"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:12:19.209458"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_437"
+            },
+            "timestamp": "2025-03-03 13:12:59.221290"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_277"
+            },
+            "timestamp": "2025-03-03 13:13:29.151715"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:14:49.229209"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:15:19.233378"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:15:39.236398"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:16:19.240959"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:16:39.242798"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:17:29.250585"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:26:55.285179"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:26:55.288159"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:26:55.293576"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:26:55.298360"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:26:55.306675"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:26:55.311136"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:26:55.315531"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:26:55.335598"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:26:55.341761"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:26:55.347217"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:26:55.352113"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:26:55.357223"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:26:55.363502"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:26:55.370149"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:26:55.375762"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:26:55.381605"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:26:55.387106"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:26:56.897999"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:26:56.907484"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:26:56.911982"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:26:56.916430"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:27:55.277617"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:27:55.282310"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:27:55.287616"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:27:55.292353"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:27:55.296823"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:27:55.301340"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:27:55.306178"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:27:55.310723"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:27:55.315345"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:27:55.319805"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:28:55.278691"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:28:55.283507"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:28:55.288067"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:28:55.292971"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:28:55.298234"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:28:55.302849"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:28:55.307298"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:28:55.311821"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:28:55.316344"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:28:55.320845"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:29:55.279529"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:29:55.284608"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:29:55.289393"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:29:55.303495"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:29:55.309327"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:29:55.314531"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:29:55.319165"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:29:55.323975"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:29:55.328533"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:29:55.333217"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:30:15.307791"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:30:45.314314"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:30:55.273265"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:30:55.279488"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:30:55.286600"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:30:55.293702"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:30:55.300381"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:30:55.307411"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:30:55.314291"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:30:55.319411"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:30:55.323827"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:30:55.328434"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:31:55.280058"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:31:55.286830"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:31:55.293052"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:31:55.299749"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:31:55.305756"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:31:55.312516"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:31:55.318897"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:31:55.325749"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:31:55.332489"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:31:55.338598"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:32:35.329102"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:32:55.280209"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:32:55.285858"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:32:55.291808"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:32:55.298311"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:32:55.304192"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:32:55.310246"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:32:55.316251"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:32:55.322267"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:32:55.328118"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:32:55.334661"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:33:35.339078"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:33:55.281204"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:33:55.287142"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:33:55.293252"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:33:55.299741"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:33:55.305670"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:33:55.311656"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:33:55.317541"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:33:55.323531"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:33:55.329353"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:33:55.335060"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:34:55.281775"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:34:55.288529"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:34:55.295511"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:34:55.302598"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:34:55.309066"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:34:55.315929"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:34:55.323031"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:34:55.330202"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:34:55.336570"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 11,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:34:55.343247"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:34:55.349673"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:35:55.278584"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Baldur's Gate"
+            },
+            "timestamp": "2025-03-03 13:35:55.284258"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Neverwinter"
+            },
+            "timestamp": "2025-03-03 13:35:55.288941"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Silverymoon"
+            },
+            "timestamp": "2025-03-03 13:35:55.293251"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Underdark"
+            },
+            "timestamp": "2025-03-03 13:35:55.297684"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Icewind Dale"
+            },
+            "timestamp": "2025-03-03 13:35:55.302169"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Cormanthor"
+            },
+            "timestamp": "2025-03-03 13:35:55.306662"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Calimshan"
+            },
+            "timestamp": "2025-03-03 13:35:55.311106"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Sword Coast"
+            },
+            "timestamp": "2025-03-03 13:35:55.315492"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 6,
+                "region": "Menzoberranzan"
+            },
+            "timestamp": "2025-03-03 13:35:55.319722"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:36:25.360135"
         }
     ],
     "embeddings": {},
-    "health": 30,
+    "health": 7,
     "battlegrounds": {
         "waterdeep": {
             "size": 1050,
@@ -66,5 +1275,5 @@
             "terrain": "plains"
         }
     },
-    "expertise": 1.0
+    "expertise": 5.0
 }

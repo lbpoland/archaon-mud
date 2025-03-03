@@ -148,9 +148,123 @@
                 "scale": 1000
             },
             "timestamp": "2025-03-03 13:12:29.135848"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000
+            },
+            "timestamp": "2025-03-03 13:12:59.214799"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000
+            },
+            "timestamp": "2025-03-03 13:13:29.142004"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:26:55.276427"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000
+            },
+            "timestamp": "2025-03-03 13:26:55.278906"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:27:55.266978"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:28:55.267904"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:29:55.268893"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:30:55.267913"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:31:55.269094"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:32:55.269656"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:33:55.269871"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 1000,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:34:55.270850"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan_world",
+                "scale": 540,
+                "priority": "high"
+            },
+            "timestamp": "2025-03-03 13:35:55.272621"
         }
     ],
     "embeddings": {},
-    "health": 0,
-    "expertise": 2.000000000000001
+    "health": 58,
+    "expertise": 3.300000000000002
 }
