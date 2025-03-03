@@ -1,3 +1,5 @@
+This is directory layout of all folders, file locations etc, needs to be finished
+
 /mnt/home2/mud/
 ├── mud.py               # Main server (~1000 lines)
 ├── PLAN.md              # Project plan and directory overview
