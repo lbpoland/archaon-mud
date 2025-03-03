@@ -1,0 +1,28 @@
+[2025-03-02 09:39:19] Task Selûne_build_module_term.py_in_modules failed (attempt 1/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 09:40:32] Task Selûne_build_module_term.py_in_modules failed (attempt 2/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 09:41:36] Task Selûne_build_module_network.py_in_modules failed (attempt 1/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 09:43:10] Task Selûne_build_module_term.py_in_modules failed (attempt 3/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 09:44:42] Task Selûne_build_module_network.py_in_modules failed (attempt 2/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 09:45:08] Max retries reached for Selûne_build_module_term.py_in_modules, skipping - gentle tone
+[2025-03-02 09:46:40] Task Selûne_build_module_network.py_in_modules failed (attempt 3/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 09:49:12] Task Selûne_build_module_syntax.py_in_modules failed (attempt 1/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 09:50:21] Max retries reached for Selûne_build_module_network.py_in_modules, skipping - gentle tone
+[2025-03-02 09:52:02] Task Selûne_build_module_syntax.py_in_modules failed (attempt 2/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 09:55:32] Task Selûne_build_module_syntax.py_in_modules failed (attempt 3/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 09:58:20] Max retries reached for Selûne_build_module_syntax.py_in_modules, skipping - gentle tone
+[2025-03-02 10:01:33] Task Selûne_build_module_term.py_in_modules failed (attempt 1/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 10:04:39] Task Selûne_build_module_term.py_in_modules failed (attempt 2/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 10:06:27] Task Selûne_build_module_term.py_in_modules failed (attempt 3/3): Failed: name 'term_type' is not defined - gentle tone
+[2025-03-02 10:08:01] Max retries reached for Selûne_build_module_term.py_in_modules, skipping - gentle tone
+[2025-03-02 10:13:25] Task Selûne_build_module_network.py_in_modules failed (attempt 1/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:15:52] Task Selûne_build_module_network.py_in_modules failed (attempt 2/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:18:23] Task Selûne_build_module_network.py_in_modules failed (attempt 3/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:20:16] Max retries reached for Selûne_build_module_network.py_in_modules, skipping - gentle tone
+[2025-03-02 10:22:39] Task Selûne_build_module_syntax.py_in_modules failed (attempt 1/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 10:23:28] Task Selûne_build_module_syntax.py_in_modules failed (attempt 2/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 10:24:15] Task Selûne_build_module_syntax.py_in_modules failed (attempt 3/3): Failed: name 'command' is not defined - gentle tone
+[2025-03-02 10:24:47] Task Selûne_build_module_network.py_in_modules failed (attempt 1/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:25:19] Max retries reached for Selûne_build_module_syntax.py_in_modules, skipping - gentle tone
+[2025-03-02 10:25:27] Task Selûne_build_module_network.py_in_modules failed (attempt 2/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:26:31] Task Selûne_build_module_network.py_in_modules failed (attempt 3/3): Failed: name 'option' is not defined - gentle tone
+[2025-03-02 10:27:35] Max retries reached for Selûne_build_module_network.py_in_modules, skipping - gentle tone

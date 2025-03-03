@@ -1,0 +1,15 @@
+[2025-03-02 09:26:56] Failed to build module network.py: name 'option' is not defined - honorable tone
+[2025-03-02 09:32:22] Failed to build module colours.py: name 'ANSI_COLOURS' is not defined - honorable tone
+[2025-03-02 09:34:39] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 09:49:43] Failed to build module term.py: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:52:13] Failed to build module term.py: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:52:53] Failed to build module network.py: name 'option' is not defined - honorable tone
+[2025-03-02 09:55:40] Failed to build module term.py: name 'term_type' is not defined - honorable tone
+[2025-03-02 09:56:45] Failed to build module network.py: name 'option' is not defined - honorable tone
+[2025-03-02 09:57:16] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 09:59:25] Failed to build module network.py: name 'option' is not defined - honorable tone
+[2025-03-02 09:59:56] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 10:03:07] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 10:13:33] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 10:16:17] Failed to build module syntax.py: name 'command' is not defined - honorable tone
+[2025-03-02 10:18:40] Failed to build module syntax.py: name 'command' is not defined - honorable tone
