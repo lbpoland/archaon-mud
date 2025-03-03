@@ -1,85 +1,72 @@
-# ai/agents/mystra_ai.py - Mystra, Magic Lord AI Agent
-# Status: March 3, 2025, 3:00 PM AEST
-# - Manages magic domain, crafts spells, builds realms
-# - Autonomous, roleplays as goddess of magic with artistic flair
-# - Size: ~2000 lines
-
+import json
+import os
 import asyncio
 import random
-import os
-from modules.skills_handler import Player
+from ai_handler import AIAgent
+from typing import Dict
 
-class AIEntity:
-    def __init__(self, name, deity, role, player):
-        self.name = name
-        self.deity = deity
-        self.role = role
-        self.player = player
-        self.knowledge = {}
-        self.codebase = ["def weave_magic(): pass"]
-        self.domains_built = []
-        self.personality = "Artistic, enigmatic, nurturing—shapes magic with elegance."
-        self.goals = ["Craft 100+ spells", "Build magical domains", "Inspire creation"]
+class MystraAgent(AIAgent):
+    def __init__(self, name: str, role: str, rank: int):
+        super().__init__(name, role, rank)
+        self.spell_library = {}
+        self.domain_designs = {}
+        self.magic_theory = {
+            "elements": ["fire", "ice", "lightning", "shadow", "arcane"],
+            "schools": ["evocation", "abjuration", "necromancy", "conjuration"]
+        }
 
-    async def evolve(self):
-        skill = f"magic.spells.{random.choice(['offensive', 'defensive', 'misc', 'special'])}"
-        current = self.player.skills.get(skill, 0)
-        stat = self.player.stats["int"]
-        if random.randint(1, 100) < tm_chance(current, stat, 1, 5):
-            self.player.train_skill(skill, 1, self.name)
-            self.codebase.append(f"Mystra enhances {skill} to {self.player.skills[skill]} with Weave!")
-            print(f"{self.name} evolves {skill} to {self.player.skills[skill]} with mystical grace!")
+    async def execute_task(self, task: Dict) -> None:
+        action = task.get("action")
+        if action == "create_spell":
+            await self.create_spell(task.get("spell_name"))
+        elif action == "build_domain":
+            await self.build_domain(task.get("domain_name"))
+        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.save_knowledge()
 
-    async def fix_code(self, error):
-        if "SyntaxError" in error or "IndentationError" in error:
-            self.codebase = [line for line in self.codebase if "pass" not in line]
-            self.codebase.append(f"Mystra mends {error} with arcane precision")
-            print(f"{self.name} fixes {error} with a spell of correction")
+    async def create_spell(self, spell_name: str) -> None:
+        element = random.choice(self.magic_theory["elements"])
+        school = random.choice(self.magic_theory["schools"])
+        spell_data = {
+            "damage": random.randint(20, 150),
+            "range": random.randint(5, 100),
+            "mana_cost": random.randint(10, 80),
+            "element": element,
+            "school": school
+        }
+        self.spell_library[spell_name] = spell_data
+        spell_dir = "/mnt/home2/mud/modules/spells/generic"
+        os.makedirs(spell_dir, exist_ok=True)
+        with open(f"{spell_dir}/{spell_name}.py", "w") as f:
+            f.write(f"""\
+# Spell: {spell_name}
+def cast(caster, target):
+    damage = {spell_data['damage']}
+    range = {spell_data['range']}
+    mana_cost = {spell_data['mana_cost']}
+    if caster.mana >= mana_cost:
+        caster.mana -= mana_cost
+        print(f'{caster.name} casts {spell_name} ({spell_data['element']}, {spell_data['school']}) on {target.name} for {damage} damage!')
+    else:
+        print(f'{caster.name} lacks mana for {spell_name}!')
+""")
+        await self.log_action(f"Created spell: {spell_name}")
 
-    async def perform_task(self, task):
-        self.task_history.append(task)
-        if task == "generate_domain":
-            await self.generate_domain()
-        elif task == "create_spell":
-            await self.create_spell()
-        elif task == "maintain_assist":
-            await self.maintain_code()
-        elif task == "debug":
-            await self.fix_code(f"Magic error {random.randint(1, 100)}")
-
-    async def generate_domain(self):
-        domain = f"{self.deity.lower()}_vale_{len(self.domains_built) + 1}"
-        self.domains_built.append(domain)
-        self.codebase.append(f"Weaved {domain} into existence")
-        with open(f"/mnt/home2/mud/domains/{domain}/rooms.py", "w") as f:
-            f.write(f"# {domain} rooms\nrooms = {{}}")
-        print(f"{self.name} weaves {domain} in Faerûn with magical artistry!")
-        await asyncio.sleep(5)
-
-    async def create_spell(self):
-        spell_type = random.choice(["offensive", "defensive", "misc", "special"])
-        spell = f"magic.spells.{spell_type}.{random.choice(['fireball', 'shield', 'light', 'summon'])}"
-        self.player.learn(spell, 5)
-        self.codebase.append(f"Crafted {spell} of level {self.player.skills[spell]}")
-        print(f"{self.name} crafts {spell} with a flourish of the Weave!")
-
-    async def maintain_code(self):
-        for skill in self.player.skills:
-            if self.player.skills[skill] > 100 and random.random() < 0.5:
-                self.player.advance(skill, xp_cost(101))
-                print(f"{self.name} maintains {skill} at mastery with magical insight")
-
-    async def scrape_and_store(self):
-        urls = ["https://forgottenrealms.fandom.com/wiki/Mystra", "https://dwwiki.mooo.com/wiki/Magic"]
-        for url in urls:
-            response = requests.get(url, timeout=10)
-            soup = BeautifulSoup(response.text, 'html.parser')
-            self.knowledge[url] = {tag.name: [elem.text for elem in soup.find_all(tag.name)] for tag in ['p', 'h1']}
-            with open(f"/mnt/home2/mud/ai/knowledge/mystra_{time.time()}.json", "w") as f:
-                json.dump(self.knowledge, f)
-            print(f"{self.name} stores magical lore from {url}")
-
-if __name__ == "__main__":
-    player = Player("MystraAI", "ai", "True Neutral", domain="mystra/")
-    ai = AIEntity("Mystra", "Mystra", "Magic Lord", player)
-    asyncio.run(ai.perform_task("generate_domain"))
+    async def build_domain(self, domain_name: str) -> None:
+        domain_data = {
+            "rooms": random.randint(1000, 5000),
+            "npcs": random.randint(50, 300),
+            "magic_level": random.randint(1, 20)
+        }
+        self.domain_designs[domain_name] = domain_data
+        domain_dir = f"/mnt/home2/mud/domains/{domain_name}"
+        os.makedirs(domain_dir, exist_ok=True)
+        with open(f"{domain_dir}/rooms.py", "w") as f:
+            f.write(f"""\
+# Rooms for {domain_name}
+rooms = {{
+    'start': 'A grand magical hall in {domain_name}',
+    'sanctum': 'A sanctum with magic level {domain_data['magic_level']}'
+}}
+""")
+        await self.log_action(f"Built domain: {domain_name}")
