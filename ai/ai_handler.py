@@ -19,14 +19,12 @@ import ssl
 import threading
 
 # Dependencies: pip install aiohttp aiofiles beautifulsoup4
-# The ultimate AI handler - exhaustive and autonomous
+# Fully autonomous, exhaustive AI handler
 
-# Logging setup
 logging.basicConfig(filename='/mnt/home2/mud/logs/ai.log', level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Resource lists
 DISCWORLD_RESOURCES = [
     "https://discworld.starturtle.net/lpc/secure/finger.c",
     "https://dwwiki.mooo.com/wiki/Main_Page",
@@ -59,7 +57,6 @@ FORGOTTEN_REALMS_RESOURCES = [
     "https://forgottenrealms.fandom.com/wiki/Category:Deities"
 ]
 
-# Hierarchy
 HIERARCHY = {
     "ao": 10, "mystra": 9, "tyr": 9, "lolth": 9, "oghma": 8, "deneir": 8,
     "selune": 7, "torm": 7, "vhaeraun": 7, "azuth": 7
@@ -98,7 +95,6 @@ class AIHandler:
         self.session = aiohttp.ClientSession()
         self.executor = ThreadPoolExecutor(max_workers=100)
         self.knowledge_base = {"mechanics": {}, "lore": {}, "tasks_completed": 0, "projects": {}}
-        self.load_agents()
 
     def load_agents(self) -> None:
         sys.path.append("/mnt/home2/mud/ai/agents")
@@ -265,6 +261,7 @@ class AIHandler:
 
 async def main():
     handler = AIHandler()
+    handler.load_agents()  # Load agents synchronously here
     tasks = [
         handler.monitor_agents(),
         handler.generate_tasks(),
