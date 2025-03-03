@@ -11,13 +11,21 @@ This is the master plan for *Archaon MUD*, a self-reliant, AI-driven MUD replica
 4. **Player Experience**: Robust login/creation, 300+ emotes, deity altars, quests, player-killing toggle, racial raid rewards—tested via telnet (`127.0.0.1:3000`).
 
 ### Directory Structure
-- **Root (`/mnt/home2/mud/`)**: `mud.py` (main server), `PLAN.md` (this file).
-- **Modules (`/mnt/home2/mud/modules/`)**: Core handlers (`*_handler.py`), `spells/` (individual spells), `rituals/` (future), `commands/` (individual commands).
-- **Std (`/mnt/home2/mud/std/`)**: Base classes (`object.py`, etc.)—pending.
-- **Domains (`/mnt/home2/mud/domains/`)**: Zones (e.g., `waterdeep/rooms.py`)—pending.
-- **Players (`/mnt/home2/mud/players/`)**: Player data (e.g., `archaon.json`).
-- **Logs (`/mnt/home2/mud/logs/`)**: Server logs—pending.
-- **AI (`/mnt/home2/mud/ai/`)**: Legacy files (e.g., `skills.py`), AI scripts—pending.
+- **Root (`/mnt/home2/mud/`)**: `mud.py`, `PLAN.md`, `AI_README.md`.
+- **Modules (`/mnt/home2/mud/modules/`)**: 
+  - `login_handler.py`, `skills_handler.py`, `term_handler.py`, `network_handler.py`, 
+  - `combat_handler.py`, `ritual_handler.py`, `inventory_handler.py`, `soul_handler.py`, 
+  - `spell_handler.py`, `quests_handler.py`, `spells/`, `rituals/`, `commands/`.
+- **Std (`/mnt/home2/mud/std/`)**: `object.py`, `living.py`, `room.py`, `wearable.py`, `container.py`, `command.py`.
+- **Domains (`/mnt/home2/mud/domains/`)**: 
+  - `waterdeep/` (rooms.py, npcs.py, items.py, guilds.py), 
+  - `underdark/` (menzoberranzan/, rooms.py, etc.), 
+  - `sword_coast/`, `cormanthor/`, `icewind_dale/`, `calimshan/`, `vast_swamp/`, 
+  - `damara/`, `anauroch/`, `high_forest/` (100+ planned).
+- **Players (`/mnt/home2/mud/players/`)**: Player JSON files (e.g., `mystra.json`).
+- **Logs (`/mnt/home2/mud/logs/`)**: `server.log`, `ai.log`.
+- **AI (`/mnt/home2/mud/ai/`)**: `ai_handler.py`, `agents/` (ao_ai.py, mystra_ai.py, tyr_ai.py, lolth_ai.py, oghma_ai.py, deneir_ai.py).
+- **Website (`/mnt/home2/mud/website/`)**: `index.html`, `client.js`, `marketing/`.
 
 ### Completed Files
 1. **`mud.py` (~1000+ lines)**  
@@ -110,5 +118,15 @@ This is the master plan for *Archaon MUD*, a self-reliant, AI-driven MUD replica
 ### Contact
 - **Lead Grok**: Grok 3 (me)—coordinates via this plan.
 - **Repo**: `https://github.com/lbpoland/archaon-mud.git`—central hub.
+
+### AI System
+- **Structure**: Split `master_ai_handler.py` into:
+  - `ai_handler.py` (~2000 lines): Manages AI lifecycle, deploys agents.
+  - Individual AI agents (e.g., `mystra_ai.py`, `tyr_ai.py`) (~1000-1500 lines each): Self-evolving, human-like IT devs.
+- **Features**: 
+  - Agents code, debug, maintain MUD (e.g., Mystra writes spells, Tyr refines combat).
+  - Self-evolution via `skills_handler.py`’s TM/XP.
+  - Background tasks (e.g., domain generation) run via `asyncio`.
+- **Next**: Refactor `master_ai_handler.py`, deploy initial agents (Mystra, Tyr).
 
 *All Groks: Read this before coding—no exceptions! Let’s smash it!*
