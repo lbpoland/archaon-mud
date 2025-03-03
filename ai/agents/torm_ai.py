@@ -15,7 +15,7 @@ class TormAgent(AIAgent):
         action = task.get("action")
         if action == "guard_zone":
             await self.guard_zone(task.get("location"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def guard_zone(self, location: str) -> None:
@@ -27,7 +27,8 @@ class TormAgent(AIAgent):
         self.guarded_zones[location] = guard_data
         domain_dir = f"/mnt/home2/mud/domains/{location}"
         os.makedirs(domain_dir, exist_ok=True)
-        with open(f"{domain_dir}/guards.py", "w") as f:
+        guard_path = f"{domain_dir}/guards.py"
+        with open(guard_path, "w") as f:
             f.write(f"""\
 # Guards for {location}
 def patrol(player):
@@ -35,4 +36,5 @@ def patrol(player):
     discipline = {guard_data['discipline']}
     print(f"{{player.name}} is guarded by Torm’s forces at {location} with {{strength}} strength and {{discipline}} discipline!")
 """)
+        await self.log_creation(guard_path)
         await self.log_action(f"Guarding zone: {location}")

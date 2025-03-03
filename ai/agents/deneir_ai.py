@@ -16,7 +16,7 @@ class DeneirAgent(AIAgent):
         action = task.get("action")
         if action == "design_website":
             await self.design_website(task.get("page"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def design_website(self, page: str) -> None:
@@ -29,7 +29,8 @@ class DeneirAgent(AIAgent):
         self.website_pages[page] = page_data
         website_dir = "/mnt/home2/mud/website"
         os.makedirs(website_dir, exist_ok=True)
-        with open(f"{website_dir}/{page}", "w") as f:
+        page_path = f"{website_dir}/{page}"
+        with open(page_path, "w") as f:
             f.write(f"""\
 <html>
 <head><title>Archaon MUD - {page}</title>
@@ -40,4 +41,5 @@ class DeneirAgent(AIAgent):
 </body>
 </html>
 """)
+        await self.log_creation(page_path)
         await self.log_action(f"Designed website page: {page}")

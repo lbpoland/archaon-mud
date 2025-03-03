@@ -12,9 +12,54 @@ from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
 
 # Dependencies: pip install aiohttp aiofiles beautifulsoup4
-logging.basicConfig(filename='/mnt/home2/mud/logs/ai.log', level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+# Setup main loggers
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger('AIHandler')
+logger.handlers = []  # Clear default handlers
+
+mud_error_handler = logging.FileHandler('/mnt/home2/mud/logs/mud_errors.log')
+mud_error_handler.setLevel(logging.ERROR)
+mud_error_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(mud_error_handler)
+
+ai_error_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_errors.log')
+ai_error_handler.setLevel(logging.ERROR)
+ai_error_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(ai_error_handler)
+
+ai_complete_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_completed_tasks.log')
+ai_complete_handler.setLevel(logging.INFO)
+ai_complete_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+logger.addHandler(ai_complete_handler)
+
+ai_working_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_working_tasks.log')
+ai_working_handler.setLevel(logging.DEBUG)
+ai_working_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+logger.addHandler(ai_working_handler)
+
+ai_created_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_created_files.log')
+ai_created_handler.setLevel(logging.INFO)
+ai_created_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+logger.addHandler(ai_created_handler)
+
+ai_edited_handler = logging.FileHandler('/mnt/home2/mud/logs/ai_edited_files.log')
+ai_edited_handler.setLevel(logging.INFO)
+ai_edited_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+logger.addHandler(ai_edited_handler)
+
+# Individual agent loggers
+AGENT_LOGGERS = {}
+for agent in ["ao", "mystra", "tyr", "lolth", "oghma", "deneir", "selune", "torm", "vhaeraun", "azuth"]:
+    AGENT_LOGGERS[agent] = {
+        "error": logging.FileHandler(f'/mnt/home2/mud/logs/{agent}_ai_errors.log'),
+        "complete": logging.FileHandler(f'/mnt/home2/mud/logs/{agent}_ai_completed_tasks.log'),
+        "working": logging.FileHandler(f'/mnt/home2/mud/logs/{agent}_ai_working_tasks.log'),
+        "created": logging.FileHandler(f'/mnt/home2/mud/logs/{agent}_ai_created_files.log'),
+        "edited": logging.FileHandler(f'/mnt/home2/mud/logs/{agent}_ai_edited_files.log')
+    }
+    for handler in AGENT_LOGGERS[agent].values():
+        handler.setLevel(logging.DEBUG if handler.filename.endswith('working_tasks.log') else logging.INFO)
+        handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
 
 DISCWORLD_RESOURCES = [
     "https://discworld.starturtle.net/lpc/secure/finger.c",
@@ -62,12 +107,42 @@ class AIAgent:
         self.tasks = []
         self.active = True
         self.handler = None
+        self.logger = logging.getLogger(f'{name}_AI')
+        self.logger.handlers = []
+        for level, handler in AGENT_LOGGERS[name].items():
+            self.logger.addHandler(handler)
 
     async def execute_task(self, task: Dict) -> None:
         raise NotImplementedError("Subclass must implement execute_task")
 
-    async def log_action(self, message: str) -> None:
-        logger.debug(f"{self.name} ({self.role}, Rank {self.rank}): {message}")
+    async def log_action(self, message: str, level: str = "info") -> None:
+        if level == "error":
+            self.logger.error(message)
+            logger.error(f"{self.name}: {message}")
+        elif level == "warning":
+            self.logger.warning(message)
+            logger.warning(f"{self.name}: {message}")
+        elif level == "complete":
+            self.logger.info(f"Completed: {message}")
+            logger.info(f"{self.name} Completed: {message}")
+        elif level == "working":
+            self.logger.debug(f"Working: {message}")
+            logger.debug(f"{self.name} Working: {message}")
+        elif level == "created":
+            self.logger.info(f"Created: {message}")
+            logger.info(f"{self.name} Created: {message}")
+        elif level == "edited":
+            self.logger.info(f"Edited: {message}")
+            logger.info(f"{self.name} Edited: {message}")
+        else:
+            self.logger.info(message)
+            logger.info(f"{self.name}: {message}")
+
+    async def log_creation(self, path: str) -> None:
+        await self.log_action(f"{path}", "created")
+
+    async def log_edit(self, path: str, reason: str, lines: int) -> None:
+        await self.log_action(f"{path} - Reason: {reason}, Lines: {lines}", "edited")
 
     async def load_knowledge(self) -> None:
         if self.handler:
@@ -130,10 +205,13 @@ class AIHandler:
     async def process_task(self, task: Dict) -> None:
         agent_name = task.get("agent")
         if agent_name in self.agents and self.agents[agent_name].active:
+            await self.agents[agent_name].log_action(f"Starting task: {json.dumps(task)}", "working")
             await self.agents[agent_name].execute_task(task)
             self.knowledge_base["tasks_completed"] += 1
+            await self.agents[agent_name].log_action(f"Task completed: {json.dumps(task)}", "complete")
         else:
             logger.error(f"Cannot process task for {agent_name}: Agent unavailable")
+            await self.log_action(f"Cannot process task for {agent_name}: Agent unavailable", "error")
 
     async def run(self) -> None:
         self.running = True
@@ -169,6 +247,7 @@ class AIHandler:
             for name, agent in self.agents.items():
                 if not agent.active:
                     logger.warning(f"Agent {name} inactive - restarting")
+                    await agent.log_action("Agent inactive - restarting", "warning")
                     agent.active = True
                 await agent.log_action(f"Status: Active, Tasks: {len(agent.tasks)}, Projects: {len(agent.knowledge_base['projects'])}")
             await asyncio.sleep(10)
@@ -248,8 +327,13 @@ class AIHandler:
         self.executor.shutdown()
         await self.log_action("AI Handler shut down")
 
-    async def log_action(self, message: str) -> None:
-        logger.info(f"AIHandler: {message}")
+    async def log_action(self, message: str, level: str = "info") -> None:
+        if level == "error":
+            logger.error(message)
+        elif level == "warning":
+            logger.warning(message)
+        else:
+            logger.info(message)
 
 async def main():
     handler = AIHandler()

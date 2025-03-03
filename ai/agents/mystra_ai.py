@@ -22,7 +22,7 @@ class MystraAgent(AIAgent):
             await self.create_spell(task.get("spell_name"))
         elif action == "build_domain":
             await self.build_domain(task.get("domain_name"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def create_spell(self, spell_name: str) -> None:
@@ -39,7 +39,8 @@ class MystraAgent(AIAgent):
         self.spell_library[spell_name] = spell_data
         spell_dir = "/mnt/home2/mud/modules/spells/generic"
         os.makedirs(spell_dir, exist_ok=True)
-        with open(f"{spell_dir}/{spell_name}.py", "w") as f:
+        spell_path = f"{spell_dir}/{spell_name}.py"
+        with open(spell_path, "w") as f:
             f.write(f"""\
 # Spell: {spell_name}
 def cast(caster, target):
@@ -56,6 +57,7 @@ def cast(caster, target):
     else:
         print(f"{{caster.name}} lacks mana for {spell_name}!")
 """)
+        await self.log_creation(spell_path)
         await self.log_action(f"Created spell: {spell_name} ({element}, {school})")
 
     async def build_domain(self, domain_name: str) -> None:
@@ -68,7 +70,8 @@ def cast(caster, target):
         self.domain_designs[domain_name] = domain_data
         domain_dir = f"/mnt/home2/mud/domains/{domain_name}"
         os.makedirs(domain_dir, exist_ok=True)
-        with open(f"{domain_dir}/rooms.py", "w") as f:
+        room_path = f"{domain_dir}/rooms.py"
+        with open(room_path, "w") as f:
             f.write(f"""\
 # Rooms for {domain_name}
 rooms = {{
@@ -78,4 +81,5 @@ rooms = {{
 }}
 magic_level = {domain_data['magic_level']}
 """)
+        await self.log_creation(room_path)
         await self.log_action(f"Built domain: {domain_name} with {domain_data['rooms']} rooms")

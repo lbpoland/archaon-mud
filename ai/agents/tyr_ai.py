@@ -20,7 +20,7 @@ class TyrAgent(AIAgent):
         action = task.get("action")
         if action == "build_battleground":
             await self.build_battleground(task.get("location"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def build_battleground(self, location: str) -> None:
@@ -34,7 +34,8 @@ class TyrAgent(AIAgent):
         self.battlegrounds[location] = bg_data
         domain_dir = f"/mnt/home2/mud/domains/{location}"
         os.makedirs(domain_dir, exist_ok=True)
-        with open(f"{domain_dir}/battleground.py", "w") as f:
+        bg_path = f"{domain_dir}/battleground.py"
+        with open(bg_path, "w") as f:
             f.write(f"""\
 # Battleground for {location}
 def start_fight(player):
@@ -43,4 +44,5 @@ def start_fight(player):
     initiative = '{bg_data['rules']['initiative']}'
     print(f"{{player.name}} enters {location} battleground ({{terrain}}) with {{enemies}} foes using {{initiative}} initiative!")
 """)
+        await self.log_creation(bg_path)
         await self.log_action(f"Built battleground at {location} ({bg_data['terrain']})")

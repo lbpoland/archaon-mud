@@ -16,7 +16,7 @@ class LolthAgent(AIAgent):
         action = task.get("action")
         if action == "weave_trap":
             await self.weave_trap(task.get("location"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def weave_trap(self, location: str) -> None:
@@ -30,7 +30,8 @@ class LolthAgent(AIAgent):
         self.traps[location] = trap_data
         domain_dir = f"/mnt/home2/mud/domains/{location}"
         os.makedirs(domain_dir, exist_ok=True)
-        with open(f"{domain_dir}/trap.py", "w") as f:
+        trap_path = f"{domain_dir}/trap.py"
+        with open(trap_path, "w") as f:
             f.write(f"""\
 # Trap at {location}
 def trigger(player):
@@ -43,4 +44,5 @@ def trigger(player):
     else:
         print(f"{{player.name}} detects and avoids a {{trap_type}} trap at {location}!")
 """)
+        await self.log_creation(trap_path)
         await self.log_action(f"Wove {trap_data['type']} trap at {location}")

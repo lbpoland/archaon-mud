@@ -17,7 +17,7 @@ class AOAgent(AIAgent):
         action = task.get("action")
         if action == "plan":
             await self.plan_strategy(task.get("objective"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def plan_strategy(self, objective: str) -> None:

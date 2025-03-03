@@ -21,19 +21,21 @@ class OghmaAgent(AIAgent):
             await self.process_mechanics(task.get("data"), task.get("source"))
         elif action == "process_lore":
             await self.process_lore(task.get("data"), task.get("source"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def organize_code(self, module: str) -> None:
         self.codebase[module] = {"status": "optimized", "lines": random.randint(5000, 20000), "version": "1.0"}
         module_path = f"/mnt/home2/mud/modules/{module}"
         with open(module_path, "a") as f:
+            lines_added = 2
             f.write(f"""\
 # Optimized by Oghma - Version {self.codebase[module]['version']}
 def optimize():
     lines = {self.codebase[module]['lines']}
     print(f"Module {module} optimized by Oghma with {{lines}} lines")
 """)
+        await self.log_edit(module_path, "Added optimization function", lines_added)
         await self.log_action(f"Organized and optimized module: {module}")
 
     async def process_mechanics(self, data: Dict, source: str) -> None:

@@ -15,7 +15,7 @@ class SeluneAgent(AIAgent):
         action = task.get("action")
         if action == "enhance_spell":
             await self.enhance_spell(task.get("spell_name"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def enhance_spell(self, spell_name: str) -> None:
@@ -28,6 +28,7 @@ class SeluneAgent(AIAgent):
         spell_path = f"/mnt/home2/mud/modules/spells/generic/{spell_name}.py"
         if os.path.exists(spell_path):
             with open(spell_path, "a") as f:
+                lines_added = 6
                 f.write(f"""\
 # Enhanced by Selune
 def lunar_effect(caster):
@@ -36,4 +37,7 @@ def lunar_effect(caster):
     duration = {enhancement['duration']}
     print(f"Selune enhances {spell_name} with {{effect}} for {{boost}} over {{duration}} seconds!")
 """)
-        await self.log_action(f"Enhanced spell: {spell_name} with {enhancement['lunar_effect']}")
+            await self.log_edit(spell_path, "Added lunar enhancement", lines_added)
+            await self.log_action(f"Enhanced spell: {spell_name} with {enhancement['lunar_effect']}")
+        else:
+            await self.log_action(f"Spell {spell_name} not found for enhancement", "warning")

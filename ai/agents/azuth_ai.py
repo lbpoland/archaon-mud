@@ -15,7 +15,7 @@ class AzuthAgent(AIAgent):
         action = task.get("action")
         if action == "optimize_spell":
             await self.optimize_spell(task.get("spell_name"))
-        await self.log_action(f"Executed task: {json.dumps(task)}")
+        await self.log_action(f"Executed task: {json.dumps(task)}", "complete")
         await self.save_knowledge()
 
     async def optimize_spell(self, spell_name: str) -> None:
@@ -28,6 +28,7 @@ class AzuthAgent(AIAgent):
         spell_path = f"/mnt/home2/mud/modules/spells/generic/{spell_name}.py"
         if os.path.exists(spell_path):
             with open(spell_path, "a") as f:
+                lines_added = 6
                 f.write(f"""\
 # Optimized by Azuth
 def optimize_cast(caster):
@@ -36,4 +37,7 @@ def optimize_cast(caster):
     efficiency = {optimization['efficiency']}
     print(f"Azuth optimizes {spell_name}: -{{mana_reduction}} mana, {{cast_time}}s cast time, +{{efficiency}}% efficiency!")
 """)
-        await self.log_action(f"Optimized spell: {spell_name}")
+            await self.log_edit(spell_path, "Added optimization function", lines_added)
+            await self.log_action(f"Optimized spell: {spell_name}")
+        else:
+            await self.log_action(f"Spell {spell_name} not found for optimization", "warning")
