@@ -12,7 +12,8 @@ class AzuthAgent(AIAgent):
         self.spell_optimizations = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "optimize_spell":
+        action = task.get("action")
+        if action == "optimize_spell":
             await self.optimize_spell(task.get("spell_name"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()
@@ -33,6 +34,6 @@ def optimize_cast(caster):
     mana_reduction = {optimization['mana_reduction']}
     cast_time = {optimization['cast_time']}
     efficiency = {optimization['efficiency']}
-    print(f'Azuth optimizes {spell_name}: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!')
+    print(f"Azuth optimizes {spell_name}: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!")
 """)
         await self.log_action(f"Optimized spell: {spell_name}")

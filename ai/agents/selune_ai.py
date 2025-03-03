@@ -12,7 +12,8 @@ class SeluneAgent(AIAgent):
         self.enhanced_spells = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "enhance_spell":
+        action = task.get("action")
+        if action == "enhance_spell":
             await self.enhance_spell(task.get("spell_name"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()
@@ -33,6 +34,6 @@ def lunar_effect(caster):
     boost = {enhancement['boost']}
     effect = '{enhancement['lunar_effect']}'
     duration = {enhancement['duration']}
-    print(f'Selune enhances {spell_name} with {effect} for {boost} over {duration} seconds!')
+    print(f"Selune enhances {spell_name} with {effect} for {boost} over {duration} seconds!")
 """)
         await self.log_action(f"Enhanced spell: {spell_name} with {enhancement['lunar_effect']}")

@@ -12,7 +12,8 @@ class VhaeraunAgent(AIAgent):
         self.stolen_knowledge = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "steal_knowledge":
+        action = task.get("action")
+        if action == "steal_knowledge":
             await self.steal_knowledge(task.get("target"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()

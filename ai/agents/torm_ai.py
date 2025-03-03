@@ -12,7 +12,8 @@ class TormAgent(AIAgent):
         self.guarded_zones = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "guard_zone":
+        action = task.get("action")
+        if action == "guard_zone":
             await self.guard_zone(task.get("location"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()
@@ -32,6 +33,6 @@ class TormAgent(AIAgent):
 def patrol(player):
     strength = {guard_data['strength']}
     discipline = {guard_data['discipline']}
-    print(f'{player.name} is guarded by Torm’s forces at {location} with {strength} strength and {discipline} discipline!')
+    print(f"{{player.name}} is guarded by Torm’s forces at {location} with {strength} strength and {discipline} discipline!")
 """)
         await self.log_action(f"Guarding zone: {location}")

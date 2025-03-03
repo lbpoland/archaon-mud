@@ -10,17 +10,8 @@ from datetime import datetime
 from typing import Dict, List, Callable, Optional
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor
-import re
-import shutil
-import time
-import hashlib
-import socket
-import ssl
-import threading
 
 # Dependencies: pip install aiohttp aiofiles beautifulsoup4
-# Fully autonomous, exhaustive AI handler
-
 logging.basicConfig(filename='/mnt/home2/mud/logs/ai.log', level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -95,6 +86,7 @@ class AIHandler:
         self.session = aiohttp.ClientSession()
         self.executor = ThreadPoolExecutor(max_workers=100)
         self.knowledge_base = {"mechanics": {}, "lore": {}, "tasks_completed": 0, "projects": {}}
+        self.load_agents()
 
     def load_agents(self) -> None:
         sys.path.append("/mnt/home2/mud/ai/agents")
@@ -261,7 +253,6 @@ class AIHandler:
 
 async def main():
     handler = AIHandler()
-    handler.load_agents()  # Load agents synchronously here
     tasks = [
         handler.monitor_agents(),
         handler.generate_tasks(),

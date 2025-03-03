@@ -31,7 +31,7 @@ class OghmaAgent(AIAgent):
             f.write(f"""\
 # Optimized by Oghma - Version {self.codebase[module]['version']}
 def optimize():
-    print('Module {module} optimized by Oghma with {self.codebase[module]['lines']} lines')
+    print("Module {module} optimized by Oghma with {self.codebase[module]['lines']} lines")
 """)
         await self.log_action(f"Organized and optimized module: {module}")
 

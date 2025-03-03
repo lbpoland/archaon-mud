@@ -13,7 +13,8 @@ class DeneirAgent(AIAgent):
         self.marketing_content = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "design_website":
+        action = task.get("action")
+        if action == "design_website":
             await self.design_website(task.get("page"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()

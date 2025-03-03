@@ -13,7 +13,8 @@ class LolthAgent(AIAgent):
         self.schemes = {}
 
     async def execute_task(self, task: Dict) -> None:
-        if task.get("action") == "weave_trap":
+        action = task.get("action")
+        if action == "weave_trap":
             await self.weave_trap(task.get("location"))
         await self.log_action(f"Executed task: {json.dumps(task)}")
         await self.save_knowledge()
@@ -37,8 +38,8 @@ def trigger(player):
     stealth = {trap_data['stealth']}
     trap_type = '{trap_data['type']}'
     if player.perception < stealth:
-        print(f'{player.name} triggers a {trap_data['trigger']} {trap_type} trap at {location} for {damage} damage!')
+        print(f"{{player.name}} triggers a {trap_data['trigger']} {trap_type} trap at {location} for {damage} damage!")
     else:
-        print(f'{player.name} detects and avoids a {trap_type} trap at {location}!')
+        print(f"{{player.name}} detects and avoids a {trap_type} trap at {location}!")
 """)
         await self.log_action(f"Wove {trap_data['type']} trap at {location}")

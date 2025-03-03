@@ -50,9 +50,9 @@ def cast(caster, target):
     if caster.mana >= mana_cost:
         caster.mana -= mana_cost
         caster.cooldowns['{spell_name}'] = cooldown
-        print(f'{caster.name} casts {spell_name} ({spell_data['element']}, {spell_data['school']}) on {target.name} for {damage} damage!')
+        print(f"{{caster.name}} casts {spell_name} ({spell_data['element']}, {spell_data['school']}) on {{target.name}} for {{damage}} damage!")
     else:
-        print(f'{caster.name} lacks mana for {spell_name}!')
+        print(f"{{caster.name}} lacks mana for {spell_name}!")
 """)
         await self.log_action(f"Created spell: {spell_name} ({element}, {school})")
 
