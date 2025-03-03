@@ -41,6 +41,6 @@ def start_fight(player):
     enemies = {bg_data['enemies']}
     terrain = '{bg_data['terrain']}'
     initiative = '{bg_data['rules']['initiative']}'
-    print(f"{{player.name}} enters {location} battleground ({terrain}) with {enemies} foes using {initiative} initiative!")
+    print(f"{{player.name}} enters {location} battleground ({{terrain}}) with {{enemies}} foes using {{initiative}} initiative!")
 """)
         await self.log_action(f"Built battleground at {location} ({bg_data['terrain']})")

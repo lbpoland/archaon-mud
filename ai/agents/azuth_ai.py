@@ -34,6 +34,6 @@ def optimize_cast(caster):
     mana_reduction = {optimization['mana_reduction']}
     cast_time = {optimization['cast_time']}
     efficiency = {optimization['efficiency']}
-    print(f"Azuth optimizes {spell_name}: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!")
+    print(f"Azuth optimizes {spell_name}: -{{mana_reduction}} mana, {{cast_time}}s cast time, +{{efficiency}}% efficiency!")
 """)
         await self.log_action(f"Optimized spell: {spell_name}")

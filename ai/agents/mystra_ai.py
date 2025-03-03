@@ -47,10 +47,12 @@ def cast(caster, target):
     range = {spell_data['range']}
     mana_cost = {spell_data['mana_cost']}
     cooldown = {spell_data['cooldown']}
+    element = '{spell_data['element']}'
+    school = '{spell_data['school']}'
     if caster.mana >= mana_cost:
         caster.mana -= mana_cost
         caster.cooldowns['{spell_name}'] = cooldown
-        print(f"{{caster.name}} casts {spell_name} ({spell_data['element']}, {spell_data['school']}) on {{target.name}} for {{damage}} damage!")
+        print(f"{{caster.name}} casts {spell_name} ({{element}}, {{school}}) on {{target.name}} for {{damage}} damage!")
     else:
         print(f"{{caster.name}} lacks mana for {spell_name}!")
 """)

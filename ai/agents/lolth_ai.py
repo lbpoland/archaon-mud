@@ -37,9 +37,10 @@ def trigger(player):
     damage = {trap_data['damage']}
     stealth = {trap_data['stealth']}
     trap_type = '{trap_data['type']}'
+    trigger_type = '{trap_data['trigger']}'
     if player.perception < stealth:
-        print(f"{{player.name}} triggers a {trap_data['trigger']} {trap_type} trap at {location} for {damage} damage!")
+        print(f"{{player.name}} triggers a {{trigger_type}} {{trap_type}} trap at {location} for {{damage}} damage!")
     else:
-        print(f"{{player.name}} detects and avoids a {trap_type} trap at {location}!")
+        print(f"{{player.name}} detects and avoids a {{trap_type}} trap at {location}!")
 """)
         await self.log_action(f"Wove {trap_data['type']} trap at {location}")

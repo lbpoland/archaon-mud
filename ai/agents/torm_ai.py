@@ -33,6 +33,6 @@ class TormAgent(AIAgent):
 def patrol(player):
     strength = {guard_data['strength']}
     discipline = {guard_data['discipline']}
-    print(f"{{player.name}} is guarded by Torm’s forces at {location} with {strength} strength and {discipline} discipline!")
+    print(f"{{player.name}} is guarded by Torm’s forces at {location} with {{strength}} strength and {{discipline}} discipline!")
 """)
         await self.log_action(f"Guarding zone: {location}")
