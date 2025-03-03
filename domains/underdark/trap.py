@@ -1,9 +1,9 @@
 # Trap at underdark
 def trigger(player):
-    damage = 86
-    stealth = 22
-    trap_type = 'web'
-    trigger_type = 'magic'
+    damage = 80
+    stealth = 9
+    trap_type = 'illusion'
+    trigger_type = 'proximity'
     if player.perception < stealth:
         print(f"{player.name} triggers a {trigger_type} {trap_type} trap at underdark for {damage} damage!")
     else:

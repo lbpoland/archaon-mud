@@ -30,3 +30,11 @@ def optimize():
 def optimize():
     lines = 12143
     print(f"Module mud.py optimized by Oghma with {lines} lines")
+# Optimized by Oghma - Version 1.0
+def optimize():
+    lines = 11053
+    print(f"Module mud.py optimized by Oghma with {lines} lines")
+# Optimized by Oghma - Version 1.0
+def optimize():
+    lines = 5506
+    print(f"Module mud.py optimized by Oghma with {lines} lines")

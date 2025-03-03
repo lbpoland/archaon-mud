@@ -236,13 +236,11 @@ class AIHandler:
             logger.info(f"Loaded agent: {name} (Rank {HIERARCHY[name]})")
 
     async def scrape_web(self, url: str) -> Optional[Dict]:
-    async def log_scrape(self, url: str, data: Dict) -> None:
-        logger.info(f"Scraped website: {url}", extra={"level": "scraped"})
         try:
-         async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+          async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
             if response.status == 200:
                 html = await response.text()
-                    await self.log_scrape(url, {"content_length": len(text)})
+                await self.log_scrape(url, {"content_length": len(text)})
                 soup = BeautifulSoup(html, 'html.parser')
                 text = soup.get_text(separator=' ', strip=True)
                 links = [a['href'] for a in soup.find_all('a', href=True)]
@@ -252,6 +250,8 @@ class AIHandler:
         except Exception as e:
             logger.error(f"Scrape error for {url}: {str(e)}")
             return None
+    async def log_scrape(self, url: str, data: Dict) -> None:
+        logger.info(f"Scraped website: {url}", extra={"level": "scraped"})
 
     async def process_task(self, task: Dict) -> None:
         agent_name = task.get("agent")

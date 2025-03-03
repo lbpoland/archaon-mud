@@ -1,0 +1,248 @@
+2025-03-03 09:12:08,749 - Loaded agent: ao (Rank 10)
+
+2025-03-03 09:12:08,749 - Loaded agent: mystra (Rank 9)
+
+2025-03-03 09:12:08,750 - Loaded agent: tyr (Rank 9)
+
+2025-03-03 09:12:08,750 - Loaded agent: lolth (Rank 9)
+
+2025-03-03 09:12:08,750 - Loaded agent: oghma (Rank 8)
+
+2025-03-03 09:12:08,750 - Loaded agent: deneir (Rank 8)
+
+2025-03-03 09:12:08,750 - Loaded agent: selune (Rank 7)
+
+2025-03-03 09:12:08,750 - Loaded agent: torm (Rank 7)
+
+2025-03-03 09:12:08,750 - Loaded agent: vhaeraun (Rank 7)
+
+2025-03-03 09:12:08,750 - Loaded agent: azuth (Rank 7)
+
+2025-03-03 09:12:08,753 - Bootstrapping MUD - Full initialization
+
+2025-03-03 09:12:08,755 - AI Handler started - Full autonomy engaged
+
+2025-03-03 09:12:08,755 - ao: Planned strategy for initialize MUD structure with 5 sub-tasks
+
+2025-03-03 09:12:08,755 - ao Completed: Executed task: {"agent": "ao", "action": "plan", "objective": "initialize MUD structure"}
+
+2025-03-03 09:12:08,760 - Error loading knowledge for ao: Expecting value: line 1 column 1 (char 0)
+
+2025-03-03 09:12:08,762 - ao Completed: Task completed: {"agent": "ao", "action": "plan", "objective": "initialize MUD structure"}
+
+2025-03-03 09:12:08,764 - mystra Created: /mnt/home2/mud/modules/spells/generic/fireball.py
+
+2025-03-03 09:12:08,764 - mystra: Created spell: fireball (divine, abjuration)
+
+2025-03-03 09:12:08,765 - mystra Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,765 - mystra Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,767 - tyr Created: /mnt/home2/mud/domains/waterdeep/battleground.py
+
+2025-03-03 09:12:08,767 - tyr: Built battleground at waterdeep (mountain)
+
+2025-03-03 09:12:08,767 - tyr Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+
+2025-03-03 09:12:08,768 - tyr Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+
+2025-03-03 09:12:08,770 - lolth Created: /mnt/home2/mud/domains/menzoberranzan/trap.py
+
+2025-03-03 09:12:08,770 - lolth: Wove web trap at menzoberranzan
+
+2025-03-03 09:12:08,770 - lolth Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+
+2025-03-03 09:12:08,771 - lolth Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+
+2025-03-03 09:12:08,772 - oghma Edited: /mnt/home2/mud/modules/mud.py - Reason: Added optimization function, Lines: 2
+
+2025-03-03 09:12:08,772 - oghma: Organized and optimized module: mud.py
+
+2025-03-03 09:12:08,773 - oghma Completed: Executed task: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+
+2025-03-03 09:12:08,773 - oghma Completed: Task completed: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+
+2025-03-03 09:12:08,775 - deneir Created: /mnt/home2/mud/website/index.html
+
+2025-03-03 09:12:08,775 - deneir: Designed website page: index.html
+
+2025-03-03 09:12:08,775 - deneir Completed: Executed task: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+
+2025-03-03 09:12:08,776 - deneir Completed: Task completed: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+
+2025-03-03 09:12:08,777 - selune Edited: /mnt/home2/mud/modules/spells/generic/fireball.py - Reason: Added lunar enhancement, Lines: 6
+
+2025-03-03 09:12:08,778 - selune: Enhanced spell: fireball with boost
+
+2025-03-03 09:12:08,778 - selune Completed: Executed task: {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,779 - selune Completed: Task completed: {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,780 - torm Created: /mnt/home2/mud/domains/waterdeep/guards.py
+
+2025-03-03 09:12:08,780 - torm: Guarding zone: waterdeep
+
+2025-03-03 09:12:08,781 - torm Completed: Executed task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+
+2025-03-03 09:12:08,781 - torm Completed: Task completed: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+
+2025-03-03 09:12:08,783 - vhaeraun: Stole knowledge from tyr: 150 value
+
+2025-03-03 09:12:08,783 - vhaeraun Completed: Executed task: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
+
+2025-03-03 09:12:08,784 - vhaeraun Completed: Task completed: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
+
+2025-03-03 09:12:08,785 - azuth Edited: /mnt/home2/mud/modules/spells/generic/fireball.py - Reason: Added optimization function, Lines: 6
+
+2025-03-03 09:12:08,785 - azuth: Optimized spell: fireball
+
+2025-03-03 09:12:08,785 - azuth Completed: Executed task: {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,786 - azuth Completed: Task completed: {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
+
+2025-03-03 09:12:08,787 - mystra Created: /mnt/home2/mud/modules/spells/generic/initialize MUD structure_spell.py
+
+2025-03-03 09:12:08,788 - mystra: Created spell: initialize MUD structure_spell (arcane, evocation)
+
+2025-03-03 09:12:08,788 - mystra Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
+
+2025-03-03 09:12:08,788 - mystra Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
+
+2025-03-03 09:12:08,790 - tyr Created: /mnt/home2/mud/domains/waterdeep/battleground.py
+
+2025-03-03 09:12:08,790 - tyr: Built battleground at waterdeep (forest)
+
+2025-03-03 09:12:08,791 - tyr Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+
+2025-03-03 09:12:08,792 - tyr Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+
+2025-03-03 09:12:08,793 - lolth Created: /mnt/home2/mud/domains/underdark/trap.py
+
+2025-03-03 09:12:08,793 - lolth: Wove illusion trap at underdark
+
+2025-03-03 09:12:08,793 - lolth Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
+
+2025-03-03 09:12:08,794 - lolth Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
+
+2025-03-03 09:12:08,795 - oghma Edited: /mnt/home2/mud/modules/mud.py - Reason: Added optimization function, Lines: 2
+
+2025-03-03 09:12:08,796 - oghma: Organized and optimized module: mud.py
+
+2025-03-03 09:12:08,796 - oghma Completed: Executed task: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+
+2025-03-03 09:12:08,797 - oghma Completed: Task completed: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+
+2025-03-03 09:12:08,798 - deneir Created: /mnt/home2/mud/website/index.html
+
+2025-03-03 09:12:08,798 - deneir: Designed website page: index.html
+
+2025-03-03 09:12:08,798 - deneir Completed: Executed task: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+
+2025-03-03 09:12:08,799 - deneir Completed: Task completed: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+
+2025-03-03 09:12:08,928 - Scrape error for https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:11,952 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Locations_in_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:14,970 - Scrape error for https://forgottenrealms.fandom.com/wiki/Races_of_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:17,137 - Scrape error for https://discworld.starturtle.net/lpc: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:17,990 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Classes: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:20,428 - Scrape error for https://discworld.starturtle.net/lpc/playing/documentation.c?path=/: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:21,011 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Organizations_in_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:24,031 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Guilds: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:25,079 - Scrape error for https://dwwiki.mooo.com/: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:27,054 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Drow_houses: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:28,505 - Scrape error for https://dwwiki.mooo.com/wiki/Syntax: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:30,074 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Inhabitants_of_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:31,937 - Scrape error for https://dwwiki.mooo.com/wiki/Options: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:33,094 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Items_from_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:35,390 - Scrape error for https://dwwiki.mooo.com/wiki/Tactics: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:36,113 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Events_in_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:38,841 - Scrape error for https://dwwiki.mooo.com/wiki/Dodge: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:39,132 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Maps_of_Faer%C3%BBn: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:42,150 - Scrape error for https://forgottenrealms.fandom.com/wiki/List_of_armor: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:42,295 - Scrape error for https://dwwiki.mooo.com/wiki/Block: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:45,173 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Weapons: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:45,738 - Scrape error for https://dwwiki.mooo.com/wiki/Parry: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:48,192 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Clothing: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:49,183 - Scrape error for https://dwwiki.mooo.com/wiki/Defend: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:51,216 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Potions: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:52,621 - Scrape error for https://dwwiki.mooo.com/wiki/Protect: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:54,235 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Climate_and_weather_events: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:56,060 - Scrape error for https://dwwiki.mooo.com/wiki/Action_points: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:57,253 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Professions: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:12:59,607 - Scrape error for https://dwwiki.mooo.com/wiki/Friend: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:00,279 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Spells: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:03,246 - Scrape error for https://dwwiki.mooo.com/wiki/Inform: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:03,304 - Scrape error for https://forgottenrealms.fandom.com/wiki/Category:Deities: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:06,709 - Scrape error for https://dwwiki.mooo.com/wiki/Achievements: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:10,152 - Scrape error for https://dwwiki.mooo.com/wiki/Quests: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:13,596 - Scrape error for https://dwwiki.mooo.com/wiki/Soul: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:17,045 - Scrape error for https://dwwiki.mooo.com/wiki/Roleplaying_(command): cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:20,735 - Scrape error for https://dwwiki.mooo.com/wiki/Customization: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:24,191 - Scrape error for https://dwwiki.mooo.com/wiki/Writing_a_description: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:27,885 - Scrape error for https://dwwiki.mooo.com/wiki/Title: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:31,349 - Scrape error for https://dwwiki.mooo.com/wiki/Who: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:34,987 - Scrape error for https://dwwiki.mooo.com/wiki/Position: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:38,465 - Scrape error for https://dwwiki.mooo.com/wiki/Layers: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:42,161 - Scrape error for https://dwwiki.mooo.com/wiki/Armours: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:45,954 - Scrape error for https://dwwiki.mooo.com/wiki/Scabbard: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:49,419 - Scrape error for https://dwwiki.mooo.com/wiki/Temperature: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:52,908 - Scrape error for https://dwwiki.mooo.com/wiki/Clothing: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:56,366 - Scrape error for https://dwwiki.mooo.com/wiki/Weather: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:13:59,797 - Scrape error for https://dwwiki.mooo.com/wiki/Attack_messages: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:14:03,456 - Scrape error for https://dwwiki.mooo.com/wiki/Alignment: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:14:07,360 - Scrape error for https://www.gunde.de/discworld/sekiri/introduction.html: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:14:11,531 - Scrape error for https://www.gunde.de/discworld/sekiri/spells1.html#eff: cannot access local variable 'text' where it is not associated with a value
+
+2025-03-03 09:14:15,304 - Scrape error for https://dwwiki.mooo.com/wiki/Spells: cannot access local variable 'text' where it is not associated with a value
+

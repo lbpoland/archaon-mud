@@ -6,3 +6,11 @@
 2025-03-03 08:34:35,652 - Built battleground at waterdeep (plains)
 2025-03-03 08:34:35,652 - Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
 2025-03-03 08:34:35,653 - Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 09:12:08,767 - Created: /mnt/home2/mud/domains/waterdeep/battleground.py
+2025-03-03 09:12:08,767 - Built battleground at waterdeep (mountain)
+2025-03-03 09:12:08,767 - Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 09:12:08,768 - Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 09:12:08,790 - Created: /mnt/home2/mud/domains/waterdeep/battleground.py
+2025-03-03 09:12:08,790 - Built battleground at waterdeep (forest)
+2025-03-03 09:12:08,791 - Completed: Executed task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 09:12:08,791 - Completed: Task completed: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
