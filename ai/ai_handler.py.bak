@@ -232,19 +232,30 @@ class AIHandler:
             logger.info(f"Loaded agent: {name} (Rank {HIERARCHY[name]})")
 
     async def scrape_web(self, url: str) -> Optional[Dict]:
+    try:
         try:
-         async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+        async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+            async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
             if response.status == 200:
-                html = await response.text()
-                soup = BeautifulSoup(html, 'html.parser')
-                text = soup.get_text(separator=' ', strip=True)
-                links = [a['href'] for a in soup.find_all('a', href=True)]
-                return {"url": url, "content": text, "links": links[:200]}
-            logger.error(f"Scrape failed for {url}: Status {response.status}")
+                if response.status == 200:
+                    html = await response.text()
+                    soup = BeautifulSoup(html, 'html.parser')
+                    text = soup.get_text(separator=' ', strip=True)
+                    links = [a['href'] for a in soup.find_all('a', href=True)]
+                    return {"url": url, "content": text, "links": links[:200]}
+                logger.error(f"Scrape failed for {url}: Status {response.status}")
+                return None
             return None
+    except Exception as e:
+        logger.error(f"Scrape error for {url}: {str(e)}")
+        return None
         except Exception as e:
             logger.error(f"Scrape error for {url}: {str(e)}")
             return None
+            return None
+    except Exception as e:
+        logger.error(f"Scrape error for {url}: {str(e)}")
+        return None
 
     async def process_task(self, task: Dict) -> None:
         agent_name = task.get("agent")

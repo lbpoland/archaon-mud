@@ -1,5 +1,1 @@
-2025-03-03 07:53:00,997 - ERROR - Error loading knowledge for ao: Expecting value: line 1 column 1 (char 0)
-2025-03-03 07:53:01,975 - ERROR - Scrape failed for https://discworld.starturtle.net/lpc/secure/finger.c: Status 401
-2025-03-03 07:53:10,337 - ERROR - Scrape error for https://bonuses.irreducible.org/: Cannot connect to host bonuses.irreducible.org:443 ssl:default [None]
-2025-03-03 07:53:14,961 - ERROR - Scrape failed for https://gunde.de/sekiri/: Status 404
-2025-03-03 07:53:27,038 - ERROR - Scrape failed for https://discworld.starturtle.net/lpc/secure/nomic_system.c: Status 404
+2025-03-03 08:34:35,621 - ERROR - Error loading knowledge for ao: Expecting value: line 1 column 1 (char 0)
