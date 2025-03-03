@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgotten Realms MUD</title>
+    <style>
+        body { background: #1a0d00; color: #d4a373; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
+        #map { width: 100%; height: auto; border: 2px solid #d4a373; }
+        #mud-client { width: 100%; height: 600px; background: black; color: #d4a373; border: 2px solid #d4a373; }
+        .button { background: #2f1a00; color: #d4a373; border: 1px solid #d4a373; padding: 5px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Forgotten Realms MUD</h1>
+    <img id="map" src="/static/images/{{ map_path }}" alt="Forgotten Realms Map">
+    <div id="mud-client"></div>
+    <div>
+        <button class="button" onclick="sendCommand('look')">Look</button>
+        <button class="button" onclick="sendCommand('north')">North</button>
+    </div>
+    <script>
+        let ws = new WebSocket('ws://127.0.0.1:3000');
+        ws.onmessage = (event) => document.getElementById('mud-client').innerHTML += event.data + '<br>';
+        function sendCommand(cmd) { ws.send(cmd); }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Enter') ws.send(document.getElementById('mud-client').value); });
+    </script>
+</body>
+</html>
