@@ -2,8 +2,75 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {},
-    "history": [],
+    "projects": {
+        "initialize MUD structure": {
+            "objective": "initialize MUD structure",
+            "timestamp": "2025-03-03 12:28:18.505741",
+            "sub_tasks": [
+                {
+                    "agent": "mystra",
+                    "action": "create_spell",
+                    "spell_name": "initialize MUD structure_spell",
+                    "depends_on": "plan"
+                },
+                {
+                    "agent": "tyr",
+                    "action": "build_battleground",
+                    "location": "waterdeep",
+                    "depends_on": "mystra"
+                },
+                {
+                    "agent": "oghma",
+                    "action": "analyze_lore",
+                    "source": "https://forgottenrealms.fandom.com/wiki/Category:Crystals",
+                    "depends_on": "tyr"
+                }
+            ]
+        },
+        "expand_calimshan": {
+            "objective": "expand_calimshan",
+            "timestamp": "2025-03-03 12:28:18.507475",
+            "sub_tasks": [
+                {
+                    "agent": "mystra",
+                    "action": "create_spell",
+                    "spell_name": "expand_calimshan_spell",
+                    "depends_on": "plan"
+                },
+                {
+                    "agent": "tyr",
+                    "action": "build_battleground",
+                    "location": "calimshan",
+                    "depends_on": "mystra"
+                },
+                {
+                    "agent": "oghma",
+                    "action": "analyze_lore",
+                    "source": "https://forgottenrealms.fandom.com/wiki/Category:Crystals",
+                    "depends_on": "tyr"
+                }
+            ]
+        }
+    },
+    "history": [
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan",
+                "objective": "initialize MUD structure"
+            },
+            "timestamp": "2025-03-03 12:28:18.505872"
+        },
+        {
+            "task": {
+                "agent": "ao",
+                "action": "plan",
+                "objective": "expand_calimshan"
+            },
+            "timestamp": "2025-03-03 12:28:18.507946"
+        }
+    ],
     "embeddings": {},
-    "health": 100
+    "health": 15,
+    "expertise": 1.0
 }

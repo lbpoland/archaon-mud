@@ -2,5 +2,42 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:30:48.525262"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:32:18.533944"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:33:03.538193"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:35:03.550870"
+        }
+    ],
+    "embeddings": {},
+    "health": 35,
+    "expertise": 1.0
 }

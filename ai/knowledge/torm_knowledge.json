@@ -3,7 +3,146 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:29:18.513878"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:29:48.517658"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:33:18.540549"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_940"
+            },
+            "timestamp": "2025-03-03 13:08:29.207032"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_715"
+            },
+            "timestamp": "2025-03-03 13:08:29.224847"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "cormanthor"
+            },
+            "timestamp": "2025-03-03 13:08:49.139469"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_125"
+            },
+            "timestamp": "2025-03-03 13:09:09.163044"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_567"
+            },
+            "timestamp": "2025-03-03 13:09:29.145615"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_171"
+            },
+            "timestamp": "2025-03-03 13:09:39.167667"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "calimshan"
+            },
+            "timestamp": "2025-03-03 13:09:59.149424"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_48"
+            },
+            "timestamp": "2025-03-03 13:10:09.169233"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_218"
+            },
+            "timestamp": "2025-03-03 13:10:29.200034"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "sword_coast"
+            },
+            "timestamp": "2025-03-03 13:11:09.200164"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_780"
+            },
+            "timestamp": "2025-03-03 13:11:29.150622"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_torm_514"
+            },
+            "timestamp": "2025-03-03 13:11:29.220207"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "underdark"
+            },
+            "timestamp": "2025-03-03 13:11:49.206076"
+        }
+    ],
     "embeddings": {},
-    "health": 97
+    "health": 32,
+    "expertise": 2.300000000000001
 }

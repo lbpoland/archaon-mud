@@ -3,7 +3,160 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:48.509721"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:31:18.527815"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:34:18.546763"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:34:48.548372"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_438"
+            },
+            "timestamp": "2025-03-03 13:08:29.212900"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_131"
+            },
+            "timestamp": "2025-03-03 13:08:29.228441"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:08:59.140900"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_292"
+            },
+            "timestamp": "2025-03-03 13:09:09.165872"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_309"
+            },
+            "timestamp": "2025-03-03 13:09:29.148065"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:09:29.153641"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_158"
+            },
+            "timestamp": "2025-03-03 13:09:39.170768"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:09:49.148349"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_967"
+            },
+            "timestamp": "2025-03-03 13:10:09.171993"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_521"
+            },
+            "timestamp": "2025-03-03 13:10:29.202798"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:10:29.207779"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_320"
+            },
+            "timestamp": "2025-03-03 13:11:29.153123"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_vhaeraun_905"
+            },
+            "timestamp": "2025-03-03 13:11:29.222690"
+        }
+    ],
     "embeddings": {},
-    "health": 98
+    "health": 16,
+    "stolen": {
+        "mystra": {
+            "value": 449,
+            "time": "2025-03-03 13:10:29.207735"
+        }
+    },
+    "expertise": 2.300000000000001
 }

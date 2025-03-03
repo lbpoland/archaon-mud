@@ -2,5 +2,82 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:28:18.510271"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "initialize MUD structure_spell",
+                "depends_on": "plan"
+            },
+            "timestamp": "2025-03-03 12:28:18.513657"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "expand_calimshan_spell",
+                "depends_on": "plan"
+            },
+            "timestamp": "2025-03-03 12:28:18.517316"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_12658"
+            },
+            "timestamp": "2025-03-03 12:31:33.529138"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_60458"
+            },
+            "timestamp": "2025-03-03 12:32:03.532759"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_4421"
+            },
+            "timestamp": "2025-03-03 12:34:33.547683"
+        }
+    ],
+    "embeddings": {},
+    "health": 14,
+    "spells": {
+        "fireball": {
+            "damage": 79,
+            "mana_cost": 38,
+            "element": "fire"
+        },
+        "arcane_12658": {
+            "damage": 196,
+            "mana_cost": 31,
+            "element": "arcane"
+        },
+        "arcane_60458": {
+            "damage": 136,
+            "mana_cost": 20,
+            "element": "fire"
+        },
+        "arcane_4421": {
+            "damage": 146,
+            "mana_cost": 20,
+            "element": "fire"
+        }
+    },
+    "expertise": 1.0
 }

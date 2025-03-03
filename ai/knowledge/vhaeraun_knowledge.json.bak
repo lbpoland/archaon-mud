@@ -2,5 +2,48 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:48.509721"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:31:18.527815"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:34:18.546763"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 12:34:48.548372"
+        }
+    ],
+    "embeddings": {},
+    "health": 29,
+    "stolen": {
+        "mystra": {
+            "value": 176,
+            "time": "2025-03-03 12:34:48.548276"
+        }
+    },
+    "expertise": 1.0
 }

@@ -3,7 +3,208 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:28:18.510271"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "initialize MUD structure_spell",
+                "depends_on": "plan"
+            },
+            "timestamp": "2025-03-03 12:28:18.513657"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "expand_calimshan_spell",
+                "depends_on": "plan"
+            },
+            "timestamp": "2025-03-03 12:28:18.517316"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_12658"
+            },
+            "timestamp": "2025-03-03 12:31:33.529138"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_60458"
+            },
+            "timestamp": "2025-03-03 12:32:03.532759"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_4421"
+            },
+            "timestamp": "2025-03-03 12:34:33.547683"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 13:08:29.139355"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_272"
+            },
+            "timestamp": "2025-03-03 13:08:29.145457"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_976"
+            },
+            "timestamp": "2025-03-03 13:08:29.157028"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_743"
+            },
+            "timestamp": "2025-03-03 13:09:09.145374"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_573",
+                "priority": null
+            },
+            "timestamp": "2025-03-03 13:09:29.124962"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_874"
+            },
+            "timestamp": "2025-03-03 13:09:29.129066"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_251"
+            },
+            "timestamp": "2025-03-03 13:09:39.150269"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_127"
+            },
+            "timestamp": "2025-03-03 13:10:09.153129"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_273",
+                "priority": null
+            },
+            "timestamp": "2025-03-03 13:10:29.128841"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_mystra_498"
+            },
+            "timestamp": "2025-03-03 13:10:29.133182"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_17678"
+            },
+            "timestamp": "2025-03-03 13:10:59.199213"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "create_spell",
+                "spell_name": "arcane_72442"
+            },
+            "timestamp": "2025-03-03 13:12:09.207961"
+        },
+        {
+            "task": {
+                "agent": "mystra",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_5",
+                "priority": null
+            },
+            "timestamp": "2025-03-03 13:12:29.139101"
+        }
+    ],
     "embeddings": {},
-    "health": 95
+    "health": 46,
+    "spells": {
+        "fireball": {
+            "damage": 90,
+            "mana_cost": 93,
+            "element": "fire"
+        },
+        "arcane_12658": {
+            "damage": 196,
+            "mana_cost": 31,
+            "element": "arcane"
+        },
+        "arcane_60458": {
+            "damage": 136,
+            "mana_cost": 20,
+            "element": "fire"
+        },
+        "arcane_4421": {
+            "damage": 146,
+            "mana_cost": 20,
+            "element": "fire"
+        },
+        "arcane_17678": {
+            "damage": 162,
+            "mana_cost": 76,
+            "element": "ice"
+        },
+        "arcane_72442": {
+            "damage": 179,
+            "mana_cost": 49,
+            "element": "arcane"
+        }
+    },
+    "expertise": 2.300000000000001
 }

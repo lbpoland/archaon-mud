@@ -1,49 +1,64 @@
-2025-03-03 12:28:33 | ERROR | Agent # unavailable
-2025-03-03 12:28:44 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:48 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:48 | ERROR | Agent # unavailable
-2025-03-03 12:28:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:03 | ERROR | Agent # unavailable
-2025-03-03 12:29:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:29:18 | ERROR | Agent # unavailable
-2025-03-03 12:29:20 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:23 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:26 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:29 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:32 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:33 | ERROR | Agent # unavailable
-2025-03-03 12:29:35 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:38 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:41 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:44 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:48 | ERROR | Agent # unavailable
-2025-03-03 12:29:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:03 | ERROR | Agent # unavailable
-2025-03-03 12:30:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:30:18 | ERROR | Agent # unavailable
-2025-03-03 12:30:33 | ERROR | Agent # unavailable
-2025-03-03 12:30:48 | ERROR | Agent # unavailable
-2025-03-03 12:31:03 | ERROR | Agent # unavailable
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | ERROR | Agent # unavailable
+2025-03-03 13:08:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:08:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:08:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:08:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:09:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:16 | ERROR | oghma: Agent health depleted, going inactive
+2025-03-03 13:10:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:19 | ERROR | Agent oghma unavailable
+2025-03-03 13:10:22 | ERROR | Agent oghma unavailable
+2025-03-03 13:10:25 | ERROR | Agent oghma unavailable
+2025-03-03 13:10:28 | ERROR | Agent oghma unavailable
+2025-03-03 13:10:29 | ERROR | oghma: Agent health depleted, going inactive
+2025-03-03 13:10:29 | ERROR | Agent oghma unavailable
+2025-03-03 13:10:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:29 | ERROR | oghma: Agent health depleted, going inactive
+2025-03-03 13:10:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:10:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:29 | ERROR | mystra: Agent health depleted, going inactive
+2025-03-03 13:11:29 | ERROR | Agent mystra unavailable
+2025-03-03 13:11:29 | ERROR | Agent mystra unavailable
+2025-03-03 13:11:29 | ERROR | Agent mystra unavailable
+2025-03-03 13:11:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:39 | ERROR | Agent mystra unavailable
+2025-03-03 13:11:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:11:59 | ERROR | mystra: Agent health depleted, going inactive
+2025-03-03 13:11:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:29 | ERROR | ao: Agent health depleted, going inactive
+2025-03-03 13:12:29 | ERROR | ao: Agent health depleted, going inactive
+2025-03-03 13:12:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:49 | ERROR | Agent ao unavailable
+2025-03-03 13:12:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:12:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:13:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:14:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:19 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:29 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:39 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:49 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:15:59 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent
+2025-03-03 13:16:09 | ERROR | Invalid task: {"agent": "#", "action": "Add", "region": "tasks"} - missing or invalid agent

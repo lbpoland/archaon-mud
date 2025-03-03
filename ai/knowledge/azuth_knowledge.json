@@ -3,7 +3,114 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "optimize_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:30:33.522490"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "optimize_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:32:48.537643"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_508"
+            },
+            "timestamp": "2025-03-03 13:08:29.217119"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_559"
+            },
+            "timestamp": "2025-03-03 13:08:29.232126"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_169"
+            },
+            "timestamp": "2025-03-03 13:09:09.168622"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_95"
+            },
+            "timestamp": "2025-03-03 13:09:29.151166"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_445"
+            },
+            "timestamp": "2025-03-03 13:09:39.173580"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_229"
+            },
+            "timestamp": "2025-03-03 13:10:09.174572"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_534"
+            },
+            "timestamp": "2025-03-03 13:10:29.205339"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_858"
+            },
+            "timestamp": "2025-03-03 13:11:29.155578"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_azuth_613"
+            },
+            "timestamp": "2025-03-03 13:11:29.225190"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "optimize_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 13:11:59.206900"
+        }
+    ],
     "embeddings": {},
-    "health": 99
+    "health": 33,
+    "expertise": 2.000000000000001
 }

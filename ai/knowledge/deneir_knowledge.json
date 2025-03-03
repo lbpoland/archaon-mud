@@ -3,7 +3,130 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "design_website",
+                "page": "page_5672.html"
+            },
+            "timestamp": "2025-03-03 12:28:33.509692"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "design_website",
+                "page": "page_3520.html"
+            },
+            "timestamp": "2025-03-03 12:30:18.521245"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "design_website",
+                "page": "page_2634.html"
+            },
+            "timestamp": "2025-03-03 12:31:03.526293"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "design_website",
+                "page": "page_3906.html"
+            },
+            "timestamp": "2025-03-03 12:33:48.543832"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_98"
+            },
+            "timestamp": "2025-03-03 13:08:29.174275"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_2"
+            },
+            "timestamp": "2025-03-03 13:08:29.182698"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_267"
+            },
+            "timestamp": "2025-03-03 13:09:09.157183"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_478"
+            },
+            "timestamp": "2025-03-03 13:09:29.139846"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_607"
+            },
+            "timestamp": "2025-03-03 13:09:39.162210"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_465"
+            },
+            "timestamp": "2025-03-03 13:10:09.163663"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_28"
+            },
+            "timestamp": "2025-03-03 13:10:29.193329"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "design_website",
+                "page": "page_7525.html"
+            },
+            "timestamp": "2025-03-03 13:10:39.197245"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_339"
+            },
+            "timestamp": "2025-03-03 13:11:29.144873"
+        },
+        {
+            "task": {
+                "agent": "deneir",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_deneir_625"
+            },
+            "timestamp": "2025-03-03 13:11:29.214826"
+        }
+    ],
     "embeddings": {},
-    "health": 95
+    "health": 23,
+    "expertise": 2.000000000000001
 }

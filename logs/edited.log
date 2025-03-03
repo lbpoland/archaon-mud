@@ -1,184 +1,136 @@
-2025-03-03 12:28:18 | INFO | Initializing Master AI
-2025-03-03 12:28:18 | INFO | ao knowledge empty - resetting
-2025-03-03 12:28:18 | INFO | Loaded ao (Rank 10)
-2025-03-03 12:28:18 | INFO | Loaded mystra (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded tyr (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded lolth (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded oghma (Rank 8)
-2025-03-03 12:28:18 | INFO | Loaded deneir (Rank 8)
-2025-03-03 12:28:18 | INFO | Loaded selune (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded torm (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded vhaeraun (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded azuth (Rank 7)
-2025-03-03 12:28:18 | INFO | Started aiohttp session
-2025-03-03 12:28:18 | INFO | Master AI started
-2025-03-03 12:28:18 | INFO | Bootstrapped AI
-2025-03-03 12:28:18 | INFO | Agent Status - Tasks Completed: 0, Progress: {'ao': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496111)}, 'mystra': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496114)}, 'tyr': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'lolth': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'oghma': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'deneir': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'selune': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496116)}, 'torm': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496116)}, 'vhaeraun': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496117)}, 'azuth': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496117)}}
-2025-03-03 12:28:18 | INFO | /mnt/home2/mud/tasks.txt not found, creating default
-2025-03-03 12:28:18 | INFO | ao: Planned initialize MUD structure with 3 sub-tasks
-2025-03-03 12:28:18 | INFO | ao: Executed plan
-2025-03-03 12:28:18 | INFO | Saved ao knowledge
-2025-03-03 12:28:18 | INFO | ao: Planned expand_calimshan with 3 sub-tasks
-2025-03-03 12:28:18 | INFO | ao: Executed plan
-2025-03-03 12:28:18 | INFO | Saved mystra knowledge
-2025-03-03 12:28:18 | INFO | Saved tyr knowledge
-2025-03-03 12:28:18 | INFO | mystra: Created fireball at /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | Saved lolth knowledge
-2025-03-03 12:28:18 | INFO | Saved oghma knowledge
-2025-03-03 12:28:18 | INFO | tyr: Built battleground at /mnt/home2/mud/domains/waterdeep/battleground.py (took 0.00s)
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | Saved deneir knowledge
-2025-03-03 12:28:18 | INFO | Saved selune knowledge
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | Saved torm knowledge
-2025-03-03 12:28:18 | INFO | Saved vhaeraun knowledge
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | Saved azuth knowledge
-2025-03-03 12:28:18 | INFO | Performed knowledge backup
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:18 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Armor (356139 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Currency (230234 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Inhabitants_of_Faer%C3%BBn (300586 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Shields (285050 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_type (234424 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Maps_of_Faer%C3%BBn (244444 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Clothing (329151 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Food_and_drink_from_Faer%C3%BBn (296861 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Relics (211771 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Aphrodisiacs (204848 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Events_in_Faer%C3%BBn (289279 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_from_Faer%C3%BBn (337599 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Religious_items (247448 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Belts (245286 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Ships_and_vehicles (329231 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Fabrics (208357 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/List_of_armor (205079 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Alchemical_items (225494 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Poisons (246773 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Drow_houses (246985 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Weapons (330726 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Books_(in-universe) (314138 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Professions (215334 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Circle_of_Greater_Powers (215405 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn (3379083 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Crystals (219131 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_race (221443 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Climate_and_weather_events (203507 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Guilds (241231 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Locations_in_Faer%C3%BBn (347269 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Races_of_Faer%C3%BBn (225462 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Organizations_in_Faer%C3%BBn (290595 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Classes (337965 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBnian_pantheon (364861 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Artifacts (331850 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Deity (353468 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Potions (328908 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Containers (244154 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Instruments (336173 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn?file=1479-faerun_low-res.jpg (3379220 chars)
-2025-03-03 12:28:20 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.09s)
-2025-03-03 12:28:20 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:20 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:23 | INFO | oghma: Analyzed lore from forgotten_realms (7973 chars) (took 0.03s)
-2025-03-03 12:28:23 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:23 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:26 | INFO | oghma: Analyzed lore from forgotten_realms (9420 chars) (took 0.02s)
-2025-03-03 12:28:26 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:29 | INFO | oghma: Analyzed lore from forgotten_realms (8433 chars) (took 0.03s)
-2025-03-03 12:28:29 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:29 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:32 | INFO | oghma: Analyzed lore from forgotten_realms (8286 chars) (took 0.02s)
-2025-03-03 12:28:32 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:33 | INFO | deneir: Designed /mnt/home2/mud/website/page_5672.html (took 0.00s)
-2025-03-03 12:28:33 | INFO | deneir: Executed design_website
-2025-03-03 12:28:33 | ERROR | Agent # unavailable
-2025-03-03 12:28:35 | INFO | oghma: Analyzed lore from forgotten_realms (7035 chars) (took 0.03s)
-2025-03-03 12:28:35 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:35 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:38 | INFO | oghma: Analyzed lore from forgotten_realms (6491 chars) (took 0.03s)
-2025-03-03 12:28:38 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:41 | INFO | oghma: Analyzed lore from forgotten_realms (7424 chars) (took 0.02s)
-2025-03-03 12:28:41 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:44 | INFO | oghma: Analyzed lore from forgotten_realms (9048 chars) (took 0.03s)
-2025-03-03 12:28:44 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:44 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:48 | INFO | vhaeraun: Stole knowledge from mystra (value: 115) (took 0.00s)
-2025-03-03 12:28:48 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:48 | INFO | vhaeraun: Executed steal_knowledge
-2025-03-03 12:28:48 | ERROR | Agent # unavailable
-2025-03-03 12:28:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:03 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
-2025-03-03 12:29:03 | INFO | lolth: Executed weave_trap
-2025-03-03 12:29:03 | ERROR | Agent # unavailable
-2025-03-03 12:29:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:29:18 | INFO | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py (took 0.00s)
-2025-03-03 12:29:18 | INFO | torm: Executed guard_zone
-2025-03-03 12:29:18 | ERROR | Agent # unavailable
-2025-03-03 12:29:20 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:23 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:26 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:29 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:32 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:33 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
-2025-03-03 12:29:33 | INFO | lolth: Executed weave_trap
-2025-03-03 12:29:33 | ERROR | Agent # unavailable
-2025-03-03 12:29:35 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:38 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:41 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:44 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:48 | INFO | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py (took 0.00s)
-2025-03-03 12:29:48 | INFO | torm: Executed guard_zone
-2025-03-03 12:29:48 | ERROR | Agent # unavailable
-2025-03-03 12:29:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:03 | INFO | tyr: Built battleground at /mnt/home2/mud/domains/sword_coast/battleground.py (took 0.00s)
-2025-03-03 12:30:03 | INFO | tyr: Executed build_battleground
-2025-03-03 12:30:03 | ERROR | Agent # unavailable
-2025-03-03 12:30:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:30:18 | INFO | selune: Low activity, health reduced to 81
-2025-03-03 12:30:18 | INFO | azuth: Low activity, health reduced to 83
-2025-03-03 12:30:18 | INFO | deneir: Designed /mnt/home2/mud/website/page_3520.html (took 0.00s)
-2025-03-03 12:30:18 | INFO | deneir: Executed design_website
-2025-03-03 12:30:18 | ERROR | Agent # unavailable
-2025-03-03 12:30:33 | INFO | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:30:33 | INFO | azuth: Executed optimize_spell
-2025-03-03 12:30:33 | ERROR | Agent # unavailable
-2025-03-03 12:30:48 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:30:48 | INFO | selune: Executed enhance_spell
-2025-03-03 12:30:48 | ERROR | Agent # unavailable
-2025-03-03 12:31:03 | INFO | deneir: Designed /mnt/home2/mud/website/page_2634.html (took 0.00s)
-2025-03-03 12:31:03 | INFO | deneir: Executed design_website
-2025-03-03 12:31:03 | ERROR | Agent # unavailable
-2025-03-03 12:31:18 | INFO | ao: Low activity, health reduced to 65
-2025-03-03 12:31:18 | INFO | mystra: Low activity, health reduced to 56
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | INFO | oghma: Low activity, health reduced to 0
-2025-03-03 12:31:18 | INFO | vhaeraun: Low activity, health reduced to 72
-2025-03-03 12:31:18 | INFO | Agent Status - Tasks Completed: 35, Progress: {'ao': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 507422)}, 'mystra': {'tasks_completed': 3, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 517268)}, 'tyr': {'tasks_completed': 4, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 3, 518192)}, 'lolth': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 29, 33, 514731)}, 'oghma': {'tasks_completed': 16, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 44, 778114)}, 'deneir': {'tasks_completed': 3, 'last_active': datetime.datetime(2025, 3, 3, 12, 31, 3, 526123)}, 'selune': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 48, 525148)}, 'torm': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 29, 48, 517450)}, 'vhaeraun': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 48, 509593)}, 'azuth': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 33, 522302)}}
-2025-03-03 12:31:18 | INFO | vhaeraun: Stole knowledge from mystra (value: 68) (took 0.00s)
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | INFO | vhaeraun: Executed steal_knowledge
-2025-03-03 12:31:18 | ERROR | Agent # unavailable
+2025-03-03 13:08:29 | INFO | mystra: Created fireball at /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:08:29 | INFO | tyr: Built combat system at /mnt/home2/mud/modules/systems/combat.py (took 0.00s)
+2025-03-03 13:08:29 | INFO | mystra: Built 100 rooms in Region_mystra_272 (took 0.00s)
+2025-03-03 13:08:29 | INFO | tyr: Built 100 rooms in Region_tyr_174 (took 0.00s)
+2025-03-03 13:08:29 | INFO | lolth: Built 100 rooms in Region_lolth_452 (took 0.00s)
+2025-03-03 13:08:29 | INFO | mystra: Built 100 rooms in Region_mystra_976 (took 0.00s)
+2025-03-03 13:08:29 | INFO | tyr: Built 100 rooms in Region_tyr_690 (took 0.00s)
+2025-03-03 13:08:29 | INFO | lolth: Built 100 rooms in Region_lolth_67 (took 0.00s)
+2025-03-03 13:08:29 | INFO | oghma: Built 100 rooms in Region_oghma_317 (took 0.00s)
+2025-03-03 13:08:29 | INFO | deneir: Built 100 rooms in Region_deneir_98 (took 0.00s)
+2025-03-03 13:08:29 | INFO | oghma: Organized /mnt/home2/mud/modules/quests_handler.py (took 0.00s)
+2025-03-03 13:08:29 | INFO | oghma: Built 100 rooms in Region_oghma_442 (took 0.00s)
+2025-03-03 13:08:29 | INFO | deneir: Built 100 rooms in Region_deneir_2 (took 0.00s)
+2025-03-03 13:08:29 | INFO | selune: Built 100 rooms in Region_selune_33 (took 0.00s)
+2025-03-03 13:08:29 | INFO | torm: Built 100 rooms in Region_torm_940 (took 0.00s)
+2025-03-03 13:08:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_438 (took 0.00s)
+2025-03-03 13:08:29 | INFO | azuth: Built 100 rooms in Region_azuth_508 (took 0.00s)
+2025-03-03 13:08:29 | INFO | selune: Built 100 rooms in Region_selune_174 (took 0.00s)
+2025-03-03 13:08:29 | INFO | torm: Built 100 rooms in Region_torm_715 (took 0.00s)
+2025-03-03 13:08:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_131 (took 0.00s)
+2025-03-03 13:08:29 | INFO | azuth: Built 100 rooms in Region_azuth_559 (took 0.00s)
+2025-03-03 13:08:39 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
+2025-03-03 13:08:49 | INFO | torm: Guarded /mnt/home2/mud/domains/cormanthor/guards.py (took 0.00s)
+2025-03-03 13:09:09 | INFO | mystra: Built 100 rooms in Region_mystra_743 (took 0.00s)
+2025-03-03 13:09:09 | INFO | tyr: Built 100 rooms in Region_tyr_622 (took 0.00s)
+2025-03-03 13:09:09 | INFO | lolth: Built 100 rooms in Region_lolth_152 (took 0.00s)
+2025-03-03 13:09:09 | INFO | oghma: Built 100 rooms in Region_oghma_773 (took 0.00s)
+2025-03-03 13:09:09 | INFO | deneir: Built 100 rooms in Region_deneir_267 (took 0.00s)
+2025-03-03 13:09:09 | INFO | selune: Built 100 rooms in Region_selune_799 (took 0.00s)
+2025-03-03 13:09:09 | INFO | torm: Built 100 rooms in Region_torm_125 (took 0.00s)
+2025-03-03 13:09:09 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_292 (took 0.00s)
+2025-03-03 13:09:09 | INFO | azuth: Built 100 rooms in Region_azuth_169 (took 0.00s)
+2025-03-03 13:09:19 | INFO | oghma: Organized /mnt/home2/mud/modules/combat_handler.py (took 0.00s)
+2025-03-03 13:09:29 | INFO | mystra: Built 100 rooms in Region_573 (took 0.00s)
+2025-03-03 13:09:29 | INFO | mystra: Built 100 rooms in Region_mystra_874 (took 0.00s)
+2025-03-03 13:09:29 | INFO | tyr: Built 100 rooms in Region_tyr_987 (took 0.00s)
+2025-03-03 13:09:29 | INFO | lolth: Built 100 rooms in Region_lolth_483 (took 0.00s)
+2025-03-03 13:09:29 | INFO | oghma: Built 100 rooms in Region_oghma_181 (took 0.00s)
+2025-03-03 13:09:29 | INFO | deneir: Built 100 rooms in Region_deneir_478 (took 0.00s)
+2025-03-03 13:09:29 | INFO | selune: Built 100 rooms in Region_selune_524 (took 0.00s)
+2025-03-03 13:09:29 | INFO | torm: Built 100 rooms in Region_torm_567 (took 0.00s)
+2025-03-03 13:09:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_309 (took 0.00s)
+2025-03-03 13:09:29 | INFO | azuth: Built 100 rooms in Region_azuth_95 (took 0.00s)
+2025-03-03 13:09:39 | INFO | mystra: Built 100 rooms in Region_mystra_251 (took 0.00s)
+2025-03-03 13:09:39 | INFO | tyr: Built 100 rooms in Region_tyr_136 (took 0.00s)
+2025-03-03 13:09:39 | INFO | lolth: Built 100 rooms in Region_lolth_209 (took 0.00s)
+2025-03-03 13:09:39 | INFO | oghma: Built 100 rooms in Region_oghma_846 (took 0.00s)
+2025-03-03 13:09:39 | INFO | deneir: Built 100 rooms in Region_deneir_607 (took 0.00s)
+2025-03-03 13:09:39 | INFO | selune: Built 100 rooms in Region_selune_689 (took 0.00s)
+2025-03-03 13:09:39 | INFO | torm: Built 100 rooms in Region_torm_171 (took 0.00s)
+2025-03-03 13:09:39 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_158 (took 0.00s)
+2025-03-03 13:09:39 | INFO | azuth: Built 100 rooms in Region_azuth_445 (took 0.00s)
+2025-03-03 13:09:59 | INFO | torm: Guarded /mnt/home2/mud/domains/calimshan/guards.py (took 0.00s)
+2025-03-03 13:10:09 | INFO | mystra: Built 100 rooms in Region_mystra_127 (took 0.00s)
+2025-03-03 13:10:09 | INFO | tyr: Built 100 rooms in Region_tyr_528 (took 0.00s)
+2025-03-03 13:10:09 | INFO | lolth: Built 100 rooms in Region_lolth_873 (took 0.00s)
+2025-03-03 13:10:09 | INFO | oghma: Built 100 rooms in Region_oghma_167 (took 0.00s)
+2025-03-03 13:10:09 | INFO | deneir: Built 100 rooms in Region_deneir_465 (took 0.00s)
+2025-03-03 13:10:09 | INFO | selune: Built 100 rooms in Region_selune_251 (took 0.00s)
+2025-03-03 13:10:09 | INFO | torm: Built 100 rooms in Region_torm_48 (took 0.00s)
+2025-03-03 13:10:09 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_967 (took 0.00s)
+2025-03-03 13:10:09 | INFO | azuth: Built 100 rooms in Region_azuth_229 (took 0.00s)
+2025-03-03 13:10:19 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
+2025-03-03 13:10:29 | INFO | mystra: Built 100 rooms in Region_273 (took 0.00s)
+2025-03-03 13:10:29 | INFO | mystra: Built 100 rooms in Region_mystra_498 (took 0.00s)
+2025-03-03 13:10:29 | INFO | tyr: Built 100 rooms in Region_tyr_978 (took 0.00s)
+2025-03-03 13:10:29 | INFO | lolth: Built 100 rooms in Region_lolth_617 (took 0.00s)
+2025-03-03 13:10:29 | INFO | deneir: Built 100 rooms in Region_deneir_28 (took 0.05s)
+2025-03-03 13:10:29 | INFO | selune: Built 100 rooms in Region_selune_896 (took 0.00s)
+2025-03-03 13:10:29 | INFO | torm: Built 100 rooms in Region_torm_218 (took 0.00s)
+2025-03-03 13:10:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_521 (took 0.00s)
+2025-03-03 13:10:29 | INFO | azuth: Built 100 rooms in Region_azuth_534 (took 0.00s)
+2025-03-03 13:10:39 | INFO | deneir: Designed /mnt/home2/mud/website/page_7525.html (took 0.00s)
+2025-03-03 13:10:49 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:10:59 | INFO | mystra: Created arcane_17678 at /mnt/home2/mud/modules/spells/generic/arcane_17678.py (took 0.00s)
+2025-03-03 13:11:09 | INFO | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py (took 0.00s)
+2025-03-03 13:11:19 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:11:29 | INFO | tyr: Built 100 rooms in Region_tyr_16 (took 0.00s)
+2025-03-03 13:11:29 | INFO | lolth: Built 100 rooms in Region_lolth_729 (took 0.00s)
+2025-03-03 13:11:29 | INFO | oghma: Built 100 rooms in Region_oghma_200 (took 0.00s)
+2025-03-03 13:11:29 | INFO | deneir: Built 100 rooms in Region_deneir_339 (took 0.00s)
+2025-03-03 13:11:29 | INFO | selune: Built 100 rooms in Region_selune_484 (took 0.00s)
+2025-03-03 13:11:29 | INFO | torm: Built 100 rooms in Region_torm_780 (took 0.00s)
+2025-03-03 13:11:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_320 (took 0.00s)
+2025-03-03 13:11:29 | INFO | azuth: Built 100 rooms in Region_azuth_858 (took 0.00s)
+2025-03-03 13:11:29 | INFO | tyr: Built 100 rooms in Region_tyr_790 (took 0.00s)
+2025-03-03 13:11:29 | INFO | lolth: Built 100 rooms in Region_lolth_747 (took 0.00s)
+2025-03-03 13:11:29 | INFO | oghma: Built 100 rooms in Region_oghma_186 (took 0.00s)
+2025-03-03 13:11:29 | INFO | deneir: Built 100 rooms in Region_deneir_625 (took 0.00s)
+2025-03-03 13:11:29 | INFO | selune: Built 100 rooms in Region_selune_62 (took 0.00s)
+2025-03-03 13:11:29 | INFO | torm: Built 100 rooms in Region_torm_514 (took 0.00s)
+2025-03-03 13:11:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_905 (took 0.00s)
+2025-03-03 13:11:29 | INFO | azuth: Built 100 rooms in Region_azuth_613 (took 0.00s)
+2025-03-03 13:11:49 | INFO | torm: Guarded /mnt/home2/mud/domains/underdark/guards.py (took 0.00s)
+2025-03-03 13:11:59 | INFO | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:12:09 | INFO | mystra: Created arcane_72442 at /mnt/home2/mud/modules/spells/generic/arcane_72442.py (took 0.00s)
+2025-03-03 13:12:19 | INFO | tyr: Built combat system at /mnt/home2/mud/modules/systems/combat.py (took 0.00s)
+2025-03-03 13:12:29 | INFO | mystra: Built 100 rooms in Region_5 (took 0.00s)
+2025-03-03 13:12:29 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:12:39 | INFO | mystra: Created arcane_45642 at /mnt/home2/mud/modules/spells/generic/arcane_45642.py (took 0.00s)
+2025-03-03 13:12:59 | INFO | mystra: Built 100 rooms in Region_mystra_78 (took 0.00s)
+2025-03-03 13:12:59 | INFO | tyr: Built 100 rooms in Region_tyr_437 (took 0.00s)
+2025-03-03 13:12:59 | INFO | lolth: Built 100 rooms in Region_lolth_110 (took 0.00s)
+2025-03-03 13:12:59 | INFO | oghma: Built 100 rooms in Region_oghma_1000 (took 0.00s)
+2025-03-03 13:12:59 | INFO | deneir: Built 100 rooms in Region_deneir_468 (took 0.00s)
+2025-03-03 13:12:59 | INFO | selune: Built 100 rooms in Region_selune_32 (took 0.00s)
+2025-03-03 13:12:59 | INFO | torm: Built 100 rooms in Region_torm_851 (took 0.00s)
+2025-03-03 13:12:59 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_231 (took 0.00s)
+2025-03-03 13:12:59 | INFO | azuth: Built 100 rooms in Region_azuth_526 (took 0.00s)
+2025-03-03 13:13:29 | INFO | mystra: Built 100 rooms in Region_999 (took 0.00s)
+2025-03-03 13:13:29 | INFO | mystra: Built 100 rooms in Region_mystra_863 (took 0.00s)
+2025-03-03 13:13:29 | INFO | tyr: Built 100 rooms in Region_tyr_277 (took 0.00s)
+2025-03-03 13:13:29 | INFO | lolth: Built 100 rooms in Region_lolth_223 (took 0.00s)
+2025-03-03 13:13:29 | INFO | oghma: Built 100 rooms in Region_oghma_239 (took 0.00s)
+2025-03-03 13:13:29 | INFO | deneir: Built 100 rooms in Region_deneir_161 (took 0.00s)
+2025-03-03 13:13:29 | INFO | selune: Built 100 rooms in Region_selune_638 (took 0.00s)
+2025-03-03 13:13:29 | INFO | torm: Built 100 rooms in Region_torm_899 (took 0.00s)
+2025-03-03 13:13:29 | INFO | vhaeraun: Built 100 rooms in Region_vhaeraun_537 (took 0.00s)
+2025-03-03 13:13:29 | INFO | azuth: Built 100 rooms in Region_azuth_336 (took 0.00s)
+2025-03-03 13:13:29 | INFO | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:13:39 | INFO | mystra: Created arcane_84684 at /mnt/home2/mud/modules/spells/generic/arcane_84684.py (took 0.00s)
+2025-03-03 13:13:49 | INFO | deneir: Designed /mnt/home2/mud/website/page_1589.html (took 0.00s)
+2025-03-03 13:13:59 | INFO | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:14:09 | INFO | mystra: Created arcane_91610 at /mnt/home2/mud/modules/spells/generic/arcane_91610.py (took 0.00s)
+2025-03-03 13:14:29 | INFO | mystra: Built 100 rooms in Region_698 (took 0.00s)
+2025-03-03 13:14:29 | INFO | torm: Guarded /mnt/home2/mud/domains/icewind_dale/guards.py (took 0.00s)
+2025-03-03 13:14:39 | INFO | mystra: Created arcane_71531 at /mnt/home2/mud/modules/spells/generic/arcane_71531.py (took 0.00s)
+2025-03-03 13:14:49 | INFO | tyr: Built combat system at /mnt/home2/mud/modules/systems/combat.py (took 0.00s)
+2025-03-03 13:14:59 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
+2025-03-03 13:15:09 | INFO | torm: Guarded /mnt/home2/mud/domains/cormanthor/guards.py (took 0.00s)
+2025-03-03 13:15:19 | INFO | tyr: Built combat system at /mnt/home2/mud/modules/systems/combat.py (took 0.00s)
+2025-03-03 13:15:29 | INFO | mystra: Built 100 rooms in Region_594 (took 0.00s)
+2025-03-03 13:15:39 | INFO | tyr: Built combat system at /mnt/home2/mud/modules/systems/combat.py (took 0.00s)
+2025-03-03 13:15:49 | INFO | mystra: Created arcane_29430 at /mnt/home2/mud/modules/spells/generic/arcane_29430.py (took 0.00s)
+2025-03-03 13:15:59 | INFO | mystra: Created arcane_58585 at /mnt/home2/mud/modules/spells/generic/arcane_58585.py (took 0.00s)
+2025-03-03 13:16:09 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)

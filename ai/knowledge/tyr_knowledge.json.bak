@@ -2,5 +2,69 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "waterdeep"
+            },
+            "timestamp": "2025-03-03 12:28:18.512062"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "waterdeep",
+                "depends_on": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:18.515584"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "calimshan",
+                "depends_on": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:18.519166"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:30:03.518467"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:31:48.530721"
+        }
+    ],
+    "embeddings": {},
+    "health": 30,
+    "battlegrounds": {
+        "waterdeep": {
+            "size": 1050,
+            "enemies": 76,
+            "terrain": "plains"
+        },
+        "sword_coast": {
+            "size": 2387,
+            "enemies": 170,
+            "terrain": "forest"
+        },
+        "underdark": {
+            "size": 2669,
+            "enemies": 45,
+            "terrain": "plains"
+        }
+    },
+    "expertise": 1.0
 }

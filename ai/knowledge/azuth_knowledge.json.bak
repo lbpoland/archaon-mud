@@ -2,5 +2,26 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "optimize_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:30:33.522490"
+        },
+        {
+            "task": {
+                "agent": "azuth",
+                "action": "optimize_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:32:48.537643"
+        }
+    ],
+    "embeddings": {},
+    "health": 46,
+    "expertise": 1.0
 }

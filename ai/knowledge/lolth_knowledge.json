@@ -3,7 +3,144 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_trap",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:29:03.511794"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_trap",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:29:33.515075"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_trap",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:33:33.542280"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_trap",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:34:03.545452"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_452"
+            },
+            "timestamp": "2025-03-03 13:08:29.153114"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_67"
+            },
+            "timestamp": "2025-03-03 13:08:29.163297"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_traps",
+                "region": "underdark"
+            },
+            "timestamp": "2025-03-03 13:08:39.138459"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_152"
+            },
+            "timestamp": "2025-03-03 13:09:09.151817"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_483"
+            },
+            "timestamp": "2025-03-03 13:09:29.134218"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_209"
+            },
+            "timestamp": "2025-03-03 13:09:39.156138"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_873"
+            },
+            "timestamp": "2025-03-03 13:10:09.158220"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "weave_traps",
+                "region": "underdark"
+            },
+            "timestamp": "2025-03-03 13:10:19.151753"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_617"
+            },
+            "timestamp": "2025-03-03 13:10:29.138746"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_729"
+            },
+            "timestamp": "2025-03-03 13:11:29.139904"
+        },
+        {
+            "task": {
+                "agent": "lolth",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_lolth_747"
+            },
+            "timestamp": "2025-03-03 13:11:29.209488"
+        }
+    ],
     "embeddings": {},
-    "health": 98
+    "health": 22,
+    "traps": {
+        "underdark": {
+            "damage": 134,
+            "type": "poison"
+        }
+    },
+    "expertise": 2.100000000000001
 }

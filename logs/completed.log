@@ -1,184 +1,567 @@
-2025-03-03 12:28:18 | INFO | Initializing Master AI
-2025-03-03 12:28:18 | INFO | ao knowledge empty - resetting
-2025-03-03 12:28:18 | INFO | Loaded ao (Rank 10)
-2025-03-03 12:28:18 | INFO | Loaded mystra (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded tyr (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded lolth (Rank 9)
-2025-03-03 12:28:18 | INFO | Loaded oghma (Rank 8)
-2025-03-03 12:28:18 | INFO | Loaded deneir (Rank 8)
-2025-03-03 12:28:18 | INFO | Loaded selune (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded torm (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded vhaeraun (Rank 7)
-2025-03-03 12:28:18 | INFO | Loaded azuth (Rank 7)
-2025-03-03 12:28:18 | INFO | Started aiohttp session
-2025-03-03 12:28:18 | INFO | Master AI started
-2025-03-03 12:28:18 | INFO | Bootstrapped AI
-2025-03-03 12:28:18 | INFO | Agent Status - Tasks Completed: 0, Progress: {'ao': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496111)}, 'mystra': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496114)}, 'tyr': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'lolth': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'oghma': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'deneir': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496115)}, 'selune': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496116)}, 'torm': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496116)}, 'vhaeraun': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496117)}, 'azuth': {'tasks_completed': 0, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 496117)}}
-2025-03-03 12:28:18 | INFO | /mnt/home2/mud/tasks.txt not found, creating default
-2025-03-03 12:28:18 | INFO | ao: Planned initialize MUD structure with 3 sub-tasks
-2025-03-03 12:28:18 | INFO | ao: Executed plan
-2025-03-03 12:28:18 | INFO | Saved ao knowledge
-2025-03-03 12:28:18 | INFO | ao: Planned expand_calimshan with 3 sub-tasks
-2025-03-03 12:28:18 | INFO | ao: Executed plan
-2025-03-03 12:28:18 | INFO | Saved mystra knowledge
-2025-03-03 12:28:18 | INFO | Saved tyr knowledge
-2025-03-03 12:28:18 | INFO | mystra: Created fireball at /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | Saved lolth knowledge
-2025-03-03 12:28:18 | INFO | Saved oghma knowledge
-2025-03-03 12:28:18 | INFO | tyr: Built battleground at /mnt/home2/mud/domains/waterdeep/battleground.py (took 0.00s)
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | Saved deneir knowledge
-2025-03-03 12:28:18 | INFO | Saved selune knowledge
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | Saved torm knowledge
-2025-03-03 12:28:18 | INFO | Saved vhaeraun knowledge
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | Saved azuth knowledge
-2025-03-03 12:28:18 | INFO | Performed knowledge backup
-2025-03-03 12:28:18 | INFO | mystra: Executed create_spell
-2025-03-03 12:28:18 | INFO | tyr: Executed build_battleground
-2025-03-03 12:28:18 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:18 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Armor (356139 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Currency (230234 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Inhabitants_of_Faer%C3%BBn (300586 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Shields (285050 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_type (234424 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Maps_of_Faer%C3%BBn (244444 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Clothing (329151 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Food_and_drink_from_Faer%C3%BBn (296861 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Relics (211771 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Aphrodisiacs (204848 chars)
-2025-03-03 12:28:18 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Events_in_Faer%C3%BBn (289279 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_from_Faer%C3%BBn (337599 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Religious_items (247448 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Belts (245286 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Ships_and_vehicles (329231 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Fabrics (208357 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/List_of_armor (205079 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Alchemical_items (225494 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Poisons (246773 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Drow_houses (246985 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Weapons (330726 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Books_(in-universe) (314138 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Professions (215334 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Circle_of_Greater_Powers (215405 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn (3379083 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Crystals (219131 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Items_by_race (221443 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Climate_and_weather_events (203507 chars)
-2025-03-03 12:28:19 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Guilds (241231 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Locations_in_Faer%C3%BBn (347269 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Races_of_Faer%C3%BBn (225462 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Organizations_in_Faer%C3%BBn (290595 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Classes (337965 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBnian_pantheon (364861 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Artifacts (331850 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Deity (353468 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Potions (328908 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Containers (244154 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Category:Instruments (336173 chars)
-2025-03-03 12:28:20 | INFO | Scraped https://forgottenrealms.fandom.com/wiki/Faer%C3%BBn?file=1479-faerun_low-res.jpg (3379220 chars)
-2025-03-03 12:28:20 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.09s)
-2025-03-03 12:28:20 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:20 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:23 | INFO | oghma: Analyzed lore from forgotten_realms (7973 chars) (took 0.03s)
-2025-03-03 12:28:23 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:23 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:26 | INFO | oghma: Analyzed lore from forgotten_realms (9420 chars) (took 0.02s)
-2025-03-03 12:28:26 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:29 | INFO | oghma: Analyzed lore from forgotten_realms (8433 chars) (took 0.03s)
-2025-03-03 12:28:29 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:29 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:32 | INFO | oghma: Analyzed lore from forgotten_realms (8286 chars) (took 0.02s)
-2025-03-03 12:28:32 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:33 | INFO | deneir: Designed /mnt/home2/mud/website/page_5672.html (took 0.00s)
-2025-03-03 12:28:33 | INFO | deneir: Executed design_website
-2025-03-03 12:28:33 | ERROR | Agent # unavailable
-2025-03-03 12:28:35 | INFO | oghma: Analyzed lore from forgotten_realms (7035 chars) (took 0.03s)
-2025-03-03 12:28:35 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:35 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:38 | INFO | oghma: Analyzed lore from forgotten_realms (6491 chars) (took 0.03s)
-2025-03-03 12:28:38 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:41 | INFO | oghma: Analyzed lore from forgotten_realms (7424 chars) (took 0.02s)
-2025-03-03 12:28:41 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:44 | INFO | oghma: Analyzed lore from forgotten_realms (9048 chars) (took 0.03s)
-2025-03-03 12:28:44 | INFO | oghma: Executed analyze_lore
-2025-03-03 12:28:44 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:48 | INFO | vhaeraun: Stole knowledge from mystra (value: 115) (took 0.00s)
-2025-03-03 12:28:48 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:28:48 | INFO | vhaeraun: Executed steal_knowledge
-2025-03-03 12:28:48 | ERROR | Agent # unavailable
-2025-03-03 12:28:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:28:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:03 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
-2025-03-03 12:29:03 | INFO | lolth: Executed weave_trap
-2025-03-03 12:29:03 | ERROR | Agent # unavailable
-2025-03-03 12:29:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:29:18 | INFO | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py (took 0.00s)
-2025-03-03 12:29:18 | INFO | torm: Executed guard_zone
-2025-03-03 12:29:18 | ERROR | Agent # unavailable
-2025-03-03 12:29:20 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:23 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:26 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:29 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:32 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:33 | INFO | lolth: Wove trap at /mnt/home2/mud/domains/underdark/trap.py (took 0.00s)
-2025-03-03 12:29:33 | INFO | lolth: Executed weave_trap
-2025-03-03 12:29:33 | ERROR | Agent # unavailable
-2025-03-03 12:29:35 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:38 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:41 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:44 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:47 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:48 | INFO | torm: Guarded /mnt/home2/mud/domains/sword_coast/guards.py (took 0.00s)
-2025-03-03 12:29:48 | INFO | torm: Executed guard_zone
-2025-03-03 12:29:48 | ERROR | Agent # unavailable
-2025-03-03 12:29:50 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:53 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:56 | ERROR | Agent oghma unavailable
-2025-03-03 12:29:59 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:02 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:03 | INFO | tyr: Built battleground at /mnt/home2/mud/domains/sword_coast/battleground.py (took 0.00s)
-2025-03-03 12:30:03 | INFO | tyr: Executed build_battleground
-2025-03-03 12:30:03 | ERROR | Agent # unavailable
-2025-03-03 12:30:05 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:08 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:11 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:14 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:17 | ERROR | Agent oghma unavailable
-2025-03-03 12:30:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:30:18 | INFO | selune: Low activity, health reduced to 81
-2025-03-03 12:30:18 | INFO | azuth: Low activity, health reduced to 83
-2025-03-03 12:30:18 | INFO | deneir: Designed /mnt/home2/mud/website/page_3520.html (took 0.00s)
-2025-03-03 12:30:18 | INFO | deneir: Executed design_website
-2025-03-03 12:30:18 | ERROR | Agent # unavailable
-2025-03-03 12:30:33 | INFO | azuth: Optimized /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:30:33 | INFO | azuth: Executed optimize_spell
-2025-03-03 12:30:33 | ERROR | Agent # unavailable
-2025-03-03 12:30:48 | INFO | selune: Enhanced /mnt/home2/mud/modules/spells/generic/fireball.py (took 0.00s)
-2025-03-03 12:30:48 | INFO | selune: Executed enhance_spell
-2025-03-03 12:30:48 | ERROR | Agent # unavailable
-2025-03-03 12:31:03 | INFO | deneir: Designed /mnt/home2/mud/website/page_2634.html (took 0.00s)
-2025-03-03 12:31:03 | INFO | deneir: Executed design_website
-2025-03-03 12:31:03 | ERROR | Agent # unavailable
-2025-03-03 12:31:18 | INFO | ao: Low activity, health reduced to 65
-2025-03-03 12:31:18 | INFO | mystra: Low activity, health reduced to 56
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | INFO | oghma: Low activity, health reduced to 0
-2025-03-03 12:31:18 | INFO | vhaeraun: Low activity, health reduced to 72
-2025-03-03 12:31:18 | INFO | Agent Status - Tasks Completed: 35, Progress: {'ao': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 507422)}, 'mystra': {'tasks_completed': 3, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 18, 517268)}, 'tyr': {'tasks_completed': 4, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 3, 518192)}, 'lolth': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 29, 33, 514731)}, 'oghma': {'tasks_completed': 16, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 44, 778114)}, 'deneir': {'tasks_completed': 3, 'last_active': datetime.datetime(2025, 3, 3, 12, 31, 3, 526123)}, 'selune': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 48, 525148)}, 'torm': {'tasks_completed': 2, 'last_active': datetime.datetime(2025, 3, 3, 12, 29, 48, 517450)}, 'vhaeraun': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 28, 48, 509593)}, 'azuth': {'tasks_completed': 1, 'last_active': datetime.datetime(2025, 3, 3, 12, 30, 33, 522302)}}
-2025-03-03 12:31:18 | INFO | vhaeraun: Stole knowledge from mystra (value: 68) (took 0.00s)
-2025-03-03 12:31:18 | ERROR | oghma: Agent health depleted, going inactive
-2025-03-03 12:31:18 | INFO | vhaeraun: Executed steal_knowledge
-2025-03-03 12:31:18 | ERROR | Agent # unavailable
+2025-03-03 13:08:29 | INFO | Initializing Master AI
+2025-03-03 13:08:29 | INFO | Loaded ao (Rank 10)
+2025-03-03 13:08:29 | INFO | Loaded mystra (Rank 9)
+2025-03-03 13:08:29 | INFO | Loaded tyr (Rank 9)
+2025-03-03 13:08:29 | INFO | Loaded lolth (Rank 9)
+2025-03-03 13:08:29 | INFO | Loaded oghma (Rank 8)
+2025-03-03 13:08:29 | INFO | Loaded deneir (Rank 8)
+2025-03-03 13:08:29 | INFO | Loaded selune (Rank 7)
+2025-03-03 13:08:29 | INFO | Loaded torm (Rank 7)
+2025-03-03 13:08:29 | INFO | Loaded vhaeraun (Rank 7)
+2025-03-03 13:08:29 | INFO | Loaded azuth (Rank 7)
+2025-03-03 13:08:29 | INFO | Started aiohttp session
+2025-03-03 13:08:29 | INFO | Master AI started
+2025-03-03 13:08:29 | INFO | Bootstrapped AI
+2025-03-03 13:08:29 | INFO | Agent Status - Tasks Completed: 0, Rooms: 0
+2025-03-03 13:08:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:08:29 | INFO | ao: Learned from plan_world - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | ao: Executed plan_world
+2025-03-03 13:08:29 | INFO | Saved ao knowledge
+2025-03-03 13:08:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:08:29 | INFO | ao: Learned from plan_world - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | ao: Executed plan_world
+2025-03-03 13:08:29 | INFO | Saved mystra knowledge
+2025-03-03 13:08:29 | INFO | Saved tyr knowledge
+2025-03-03 13:08:29 | INFO | Saved lolth knowledge
+2025-03-03 13:08:29 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:08:29 | INFO | mystra: Learned from create_spell - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | mystra: Executed create_spell
+2025-03-03 13:08:29 | INFO | Saved oghma knowledge
+2025-03-03 13:08:29 | INFO | tyr: Learned from build_system - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | tyr: Executed build_system
+2025-03-03 13:08:29 | INFO | Saved deneir knowledge
+2025-03-03 13:08:29 | INFO | Saved selune knowledge
+2025-03-03 13:08:29 | INFO | mystra: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:08:29 | INFO | Saved torm knowledge
+2025-03-03 13:08:29 | INFO | tyr: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:08:29 | INFO | Saved vhaeraun knowledge
+2025-03-03 13:08:29 | INFO | lolth: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:08:29 | INFO | Saved azuth knowledge
+2025-03-03 13:08:29 | INFO | Performed knowledge backup
+2025-03-03 13:08:29 | INFO | mystra: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:08:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:08:29 | INFO | tyr: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:08:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:08:29 | INFO | lolth: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:08:29 | INFO | oghma: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:08:29 | INFO | deneir: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:08:29 | INFO | oghma: Learned from organize_code - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | oghma: Executed organize_code
+2025-03-03 13:08:29 | INFO | oghma: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:08:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:08:29 | INFO | deneir: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:08:29 | INFO | selune: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:08:29 | INFO | torm: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:08:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:08:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.10
+2025-03-03 13:08:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:08:29 | INFO | selune: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:08:29 | INFO | torm: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:08:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:08:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.20
+2025-03-03 13:08:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:08:31 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.01s)
+2025-03-03 13:08:31 | INFO | oghma: Learned from analyze_lore - Expertise now 1.40
+2025-03-03 13:08:31 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:31 | INFO | oghma: Learned from analyze_lore - Expertise now 1.50
+2025-03-03 13:08:31 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:34 | INFO | oghma: Analyzed lore from forgotten_realms (7973 chars) (took 0.01s)
+2025-03-03 13:08:34 | INFO | oghma: Learned from analyze_lore - Expertise now 1.60
+2025-03-03 13:08:34 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:34 | INFO | oghma: Learned from analyze_lore - Expertise now 1.70
+2025-03-03 13:08:34 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:37 | INFO | oghma: Analyzed lore from forgotten_realms (9420 chars) (took 0.01s)
+2025-03-03 13:08:37 | INFO | oghma: Learned from analyze_lore - Expertise now 1.80
+2025-03-03 13:08:37 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:37 | INFO | oghma: Learned from analyze_lore - Expertise now 1.90
+2025-03-03 13:08:37 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:39 | INFO | lolth: Learned from weave_traps - Expertise now 1.30
+2025-03-03 13:08:39 | INFO | lolth: Executed weave_traps
+2025-03-03 13:08:40 | INFO | oghma: Analyzed lore from forgotten_realms (8433 chars) (took 0.01s)
+2025-03-03 13:08:40 | INFO | oghma: Learned from analyze_lore - Expertise now 2.00
+2025-03-03 13:08:40 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:40 | INFO | oghma: Learned from analyze_lore - Expertise now 2.10
+2025-03-03 13:08:40 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:43 | INFO | oghma: Analyzed lore from forgotten_realms (8286 chars) (took 0.01s)
+2025-03-03 13:08:43 | INFO | oghma: Learned from analyze_lore - Expertise now 2.20
+2025-03-03 13:08:43 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:43 | INFO | oghma: Learned from analyze_lore - Expertise now 2.30
+2025-03-03 13:08:43 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:46 | INFO | oghma: Analyzed lore from forgotten_realms (7035 chars) (took 0.01s)
+2025-03-03 13:08:46 | INFO | oghma: Learned from analyze_lore - Expertise now 2.40
+2025-03-03 13:08:46 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:46 | INFO | oghma: Learned from analyze_lore - Expertise now 2.50
+2025-03-03 13:08:46 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:49 | INFO | torm: Learned from guard_zone - Expertise now 1.30
+2025-03-03 13:08:49 | INFO | torm: Executed guard_zone
+2025-03-03 13:08:49 | INFO | oghma: Analyzed lore from forgotten_realms (6491 chars) (took 0.01s)
+2025-03-03 13:08:49 | INFO | oghma: Learned from analyze_lore - Expertise now 2.60
+2025-03-03 13:08:49 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:49 | INFO | oghma: Learned from analyze_lore - Expertise now 2.70
+2025-03-03 13:08:49 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:52 | INFO | oghma: Analyzed lore from forgotten_realms (7424 chars) (took 0.01s)
+2025-03-03 13:08:52 | INFO | oghma: Learned from analyze_lore - Expertise now 2.80
+2025-03-03 13:08:52 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:52 | INFO | oghma: Learned from analyze_lore - Expertise now 2.90
+2025-03-03 13:08:52 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:55 | INFO | oghma: Analyzed lore from forgotten_realms (9048 chars) (took 0.01s)
+2025-03-03 13:08:55 | INFO | oghma: Learned from analyze_lore - Expertise now 3.00
+2025-03-03 13:08:55 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:55 | INFO | oghma: Learned from analyze_lore - Expertise now 3.10
+2025-03-03 13:08:55 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:58 | INFO | oghma: Analyzed lore from forgotten_realms (7427 chars) (took 0.01s)
+2025-03-03 13:08:58 | INFO | oghma: Learned from analyze_lore - Expertise now 3.20
+2025-03-03 13:08:58 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:58 | INFO | oghma: Learned from analyze_lore - Expertise now 3.30
+2025-03-03 13:08:58 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:08:59 | INFO | Agent Status - Tasks Completed: 45, Rooms: 1800
+2025-03-03 13:08:59 | INFO | vhaeraun: Stole knowledge from mystra (value: 380) (took 0.00s)
+2025-03-03 13:08:59 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:08:59 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 1.30
+2025-03-03 13:08:59 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:09:01 | INFO | oghma: Analyzed lore from forgotten_realms (8676 chars) (took 0.01s)
+2025-03-03 13:09:01 | INFO | oghma: Learned from analyze_lore - Expertise now 3.40
+2025-03-03 13:09:01 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:01 | INFO | oghma: Learned from analyze_lore - Expertise now 3.50
+2025-03-03 13:09:01 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:04 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.01s)
+2025-03-03 13:09:04 | INFO | oghma: Learned from analyze_lore - Expertise now 3.60
+2025-03-03 13:09:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:04 | INFO | oghma: Learned from analyze_lore - Expertise now 3.70
+2025-03-03 13:09:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:07 | INFO | oghma: Analyzed lore from forgotten_realms (6101 chars) (took 0.01s)
+2025-03-03 13:09:07 | INFO | oghma: Learned from analyze_lore - Expertise now 3.80
+2025-03-03 13:09:07 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:07 | INFO | oghma: Learned from analyze_lore - Expertise now 3.90
+2025-03-03 13:09:07 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:09 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:09:09 | INFO | ao: Learned from plan_world - Expertise now 1.30
+2025-03-03 13:09:09 | INFO | ao: Executed plan_world
+2025-03-03 13:09:09 | INFO | mystra: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:09 | INFO | mystra: Executed build_rooms
+2025-03-03 13:09:09 | INFO | tyr: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:09 | INFO | tyr: Executed build_rooms
+2025-03-03 13:09:09 | INFO | lolth: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:09 | INFO | lolth: Executed build_rooms
+2025-03-03 13:09:09 | INFO | oghma: Learned from build_rooms - Expertise now 4.00
+2025-03-03 13:09:09 | INFO | oghma: Executed build_rooms
+2025-03-03 13:09:09 | INFO | deneir: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:09:09 | INFO | deneir: Executed build_rooms
+2025-03-03 13:09:09 | INFO | selune: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:09:09 | INFO | selune: Executed build_rooms
+2025-03-03 13:09:09 | INFO | torm: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:09 | INFO | torm: Executed build_rooms
+2025-03-03 13:09:09 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:09 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:09:09 | INFO | azuth: Learned from build_rooms - Expertise now 1.30
+2025-03-03 13:09:09 | INFO | azuth: Executed build_rooms
+2025-03-03 13:09:10 | INFO | oghma: Analyzed lore from forgotten_realms (6424 chars) (took 0.01s)
+2025-03-03 13:09:10 | INFO | oghma: Learned from analyze_lore - Expertise now 4.10
+2025-03-03 13:09:10 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:10 | INFO | oghma: Learned from analyze_lore - Expertise now 4.20
+2025-03-03 13:09:10 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:13 | INFO | oghma: Analyzed lore from forgotten_realms (8398 chars) (took 0.01s)
+2025-03-03 13:09:13 | INFO | oghma: Learned from analyze_lore - Expertise now 4.30
+2025-03-03 13:09:13 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:13 | INFO | oghma: Learned from analyze_lore - Expertise now 4.40
+2025-03-03 13:09:13 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:16 | INFO | oghma: Analyzed lore from forgotten_realms (9156 chars) (took 0.01s)
+2025-03-03 13:09:16 | INFO | oghma: Learned from analyze_lore - Expertise now 4.50
+2025-03-03 13:09:16 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:16 | INFO | oghma: Learned from analyze_lore - Expertise now 4.60
+2025-03-03 13:09:16 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:19 | INFO | oghma: Learned from organize_code - Expertise now 4.70
+2025-03-03 13:09:19 | INFO | oghma: Executed organize_code
+2025-03-03 13:09:19 | INFO | oghma: Analyzed lore from forgotten_realms (8516 chars) (took 0.01s)
+2025-03-03 13:09:19 | INFO | oghma: Learned from analyze_lore - Expertise now 4.80
+2025-03-03 13:09:19 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:19 | INFO | oghma: Learned from analyze_lore - Expertise now 4.90
+2025-03-03 13:09:19 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:22 | INFO | oghma: Analyzed lore from forgotten_realms (5435 chars) (took 0.01s)
+2025-03-03 13:09:22 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:22 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:22 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:22 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:25 | INFO | oghma: Analyzed lore from forgotten_realms (4944 chars) (took 0.01s)
+2025-03-03 13:09:25 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:25 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:28 | INFO | oghma: Analyzed lore from forgotten_realms (8531 chars) (took 0.01s)
+2025-03-03 13:09:28 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:28 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:28 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:28 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:29 | INFO | mystra: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:09:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:09:29 | INFO | ao: Learned from plan_world - Expertise now 1.40
+2025-03-03 13:09:29 | INFO | ao: Executed plan_world
+2025-03-03 13:09:29 | INFO | mystra: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:09:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:09:29 | INFO | tyr: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:09:29 | INFO | lolth: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:09:29 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:09:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:09:29 | INFO | deneir: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:09:29 | INFO | selune: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:09:29 | INFO | torm: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:09:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:09:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.40
+2025-03-03 13:09:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:09:29 | INFO | vhaeraun: Stole knowledge from mystra (value: 135) (took 0.00s)
+2025-03-03 13:09:29 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:09:29 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 1.60
+2025-03-03 13:09:29 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:09:31 | INFO | oghma: Analyzed lore from forgotten_realms (5356 chars) (took 0.00s)
+2025-03-03 13:09:31 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:31 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:31 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:31 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:34 | INFO | oghma: Analyzed lore from forgotten_realms (4949 chars) (took 0.01s)
+2025-03-03 13:09:34 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:34 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:37 | INFO | oghma: Analyzed lore from forgotten_realms (7508 chars) (took 0.01s)
+2025-03-03 13:09:37 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:37 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:37 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:37 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:39 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:09:39 | INFO | ao: Learned from plan_world - Expertise now 1.50
+2025-03-03 13:09:39 | INFO | ao: Executed plan_world
+2025-03-03 13:09:39 | INFO | mystra: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:09:39 | INFO | mystra: Executed build_rooms
+2025-03-03 13:09:39 | INFO | tyr: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:09:39 | INFO | tyr: Executed build_rooms
+2025-03-03 13:09:39 | INFO | lolth: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:09:39 | INFO | lolth: Executed build_rooms
+2025-03-03 13:09:39 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:09:39 | INFO | oghma: Executed build_rooms
+2025-03-03 13:09:39 | INFO | deneir: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:39 | INFO | deneir: Executed build_rooms
+2025-03-03 13:09:39 | INFO | selune: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:39 | INFO | selune: Executed build_rooms
+2025-03-03 13:09:39 | INFO | torm: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:09:39 | INFO | torm: Executed build_rooms
+2025-03-03 13:09:39 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:09:39 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:09:39 | INFO | azuth: Learned from build_rooms - Expertise now 1.50
+2025-03-03 13:09:39 | INFO | azuth: Executed build_rooms
+2025-03-03 13:09:40 | INFO | oghma: Analyzed lore from forgotten_realms (6281 chars) (took 0.01s)
+2025-03-03 13:09:40 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:40 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:40 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:40 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:43 | INFO | oghma: Analyzed lore from forgotten_realms (8535 chars) (took 0.01s)
+2025-03-03 13:09:43 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:43 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:43 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:43 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:46 | INFO | oghma: Analyzed lore from forgotten_realms (5036 chars) (took 0.01s)
+2025-03-03 13:09:46 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:46 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:46 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:46 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:49 | INFO | vhaeraun: Stole knowledge from mystra (value: 77) (took 0.00s)
+2025-03-03 13:09:49 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:09:49 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 1.80
+2025-03-03 13:09:49 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:09:49 | INFO | oghma: Analyzed lore from forgotten_realms (6017 chars) (took 0.01s)
+2025-03-03 13:09:49 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:49 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:49 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:49 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:52 | INFO | oghma: Analyzed lore from forgotten_realms (6989 chars) (took 0.01s)
+2025-03-03 13:09:52 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:52 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:52 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:52 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:55 | INFO | oghma: Analyzed lore from forgotten_realms (7603 chars) (took 0.01s)
+2025-03-03 13:09:55 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:55 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:55 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:55 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:58 | INFO | oghma: Analyzed lore from forgotten_realms (4932 chars) (took 0.00s)
+2025-03-03 13:09:58 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:09:58 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:09:59 | INFO | torm: Learned from guard_zone - Expertise now 1.70
+2025-03-03 13:09:59 | INFO | torm: Executed guard_zone
+2025-03-03 13:10:01 | INFO | oghma: Analyzed lore from forgotten_realms (5068 chars) (took 0.00s)
+2025-03-03 13:10:01 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:01 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:01 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:01 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:04 | INFO | oghma: Analyzed lore from forgotten_realms (6087 chars) (took 0.01s)
+2025-03-03 13:10:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:07 | INFO | oghma: Analyzed lore from forgotten_realms (5686 chars) (took 0.00s)
+2025-03-03 13:10:07 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:07 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:07 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:07 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:09 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:10:09 | INFO | ao: Learned from plan_world - Expertise now 1.60
+2025-03-03 13:10:09 | INFO | ao: Executed plan_world
+2025-03-03 13:10:09 | INFO | mystra: Learned from build_rooms - Expertise now 1.80
+2025-03-03 13:10:09 | INFO | mystra: Executed build_rooms
+2025-03-03 13:10:09 | INFO | tyr: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:10:09 | INFO | tyr: Executed build_rooms
+2025-03-03 13:10:09 | INFO | lolth: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:10:09 | INFO | lolth: Executed build_rooms
+2025-03-03 13:10:09 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:10:09 | INFO | oghma: Executed build_rooms
+2025-03-03 13:10:09 | INFO | deneir: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:10:09 | INFO | deneir: Executed build_rooms
+2025-03-03 13:10:09 | INFO | selune: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:10:09 | INFO | selune: Executed build_rooms
+2025-03-03 13:10:09 | INFO | torm: Learned from build_rooms - Expertise now 1.80
+2025-03-03 13:10:09 | INFO | torm: Executed build_rooms
+2025-03-03 13:10:09 | INFO | vhaeraun: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:10:09 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:10:09 | INFO | azuth: Learned from build_rooms - Expertise now 1.60
+2025-03-03 13:10:09 | INFO | azuth: Executed build_rooms
+2025-03-03 13:10:10 | INFO | oghma: Analyzed lore from forgotten_realms (5078 chars) (took 0.01s)
+2025-03-03 13:10:10 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:10 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:10 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:10 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:13 | INFO | oghma: Analyzed lore from forgotten_realms (5504 chars) (took 0.01s)
+2025-03-03 13:10:13 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:13 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:13 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 13:10:13 | INFO | oghma: Executed analyze_lore
+2025-03-03 13:10:19 | INFO | lolth: Learned from weave_traps - Expertise now 1.80
+2025-03-03 13:10:19 | INFO | lolth: Executed weave_traps
+2025-03-03 13:10:29 | INFO | mystra: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:10:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:10:29 | INFO | Agent Status - Tasks Completed: 140, Rooms: 5600
+2025-03-03 13:10:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:10:29 | INFO | ao: Learned from plan_world - Expertise now 1.70
+2025-03-03 13:10:29 | INFO | ao: Executed plan_world
+2025-03-03 13:10:29 | INFO | mystra: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:10:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:10:29 | INFO | tyr: Learned from build_rooms - Expertise now 1.80
+2025-03-03 13:10:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:10:29 | INFO | lolth: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:10:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:10:29 | INFO | deneir: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:10:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:10:29 | INFO | selune: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:10:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:10:29 | INFO | torm: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:10:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:10:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:10:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:10:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.70
+2025-03-03 13:10:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:10:29 | INFO | vhaeraun: Stole knowledge from mystra (value: 449) (took 0.00s)
+2025-03-03 13:10:29 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 2.10
+2025-03-03 13:10:29 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:10:39 | INFO | deneir: Learned from design_website - Expertise now 1.80
+2025-03-03 13:10:39 | INFO | deneir: Executed design_website
+2025-03-03 13:10:46 | INFO | oghma: Recovered, health at 50
+2025-03-03 13:10:49 | INFO | selune: Learned from enhance_spell - Expertise now 1.80
+2025-03-03 13:10:49 | INFO | selune: Executed enhance_spell
+2025-03-03 13:10:59 | INFO | oghma: Recovered, health at 99
+2025-03-03 13:10:59 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:10:59 | INFO | mystra: Learned from create_spell - Expertise now 2.10
+2025-03-03 13:10:59 | INFO | mystra: Executed create_spell
+2025-03-03 13:11:09 | INFO | torm: Learned from guard_zone - Expertise now 2.00
+2025-03-03 13:11:09 | INFO | torm: Executed guard_zone
+2025-03-03 13:11:19 | INFO | selune: Learned from enhance_spell - Expertise now 1.90
+2025-03-03 13:11:19 | INFO | selune: Executed enhance_spell
+2025-03-03 13:11:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:11:29 | INFO | ao: Learned from plan_world - Expertise now 1.80
+2025-03-03 13:11:29 | INFO | ao: Executed plan_world
+2025-03-03 13:11:29 | INFO | tyr: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:11:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:11:29 | INFO | lolth: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:11:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:11:29 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:11:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:11:29 | INFO | deneir: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:11:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:11:29 | INFO | selune: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:11:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:11:29 | INFO | torm: Learned from build_rooms - Expertise now 2.10
+2025-03-03 13:11:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:11:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:11:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:11:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.80
+2025-03-03 13:11:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:11:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:11:29 | INFO | ao: Learned from plan_world - Expertise now 1.90
+2025-03-03 13:11:29 | INFO | ao: Executed plan_world
+2025-03-03 13:11:29 | INFO | tyr: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:11:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:11:29 | INFO | lolth: Learned from build_rooms - Expertise now 2.10
+2025-03-03 13:11:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:11:29 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:11:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:11:29 | INFO | deneir: Learned from build_rooms - Expertise now 2.00
+2025-03-03 13:11:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:11:29 | INFO | selune: Learned from build_rooms - Expertise now 2.10
+2025-03-03 13:11:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:11:29 | INFO | torm: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:11:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:11:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 2.30
+2025-03-03 13:11:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:11:29 | INFO | azuth: Learned from build_rooms - Expertise now 1.90
+2025-03-03 13:11:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:11:49 | INFO | torm: Learned from guard_zone - Expertise now 2.30
+2025-03-03 13:11:49 | INFO | torm: Executed guard_zone
+2025-03-03 13:11:59 | INFO | Agent Status - Tasks Completed: 175, Rooms: 8000
+2025-03-03 13:11:59 | INFO | mystra: Recovered, health at 50
+2025-03-03 13:11:59 | INFO | azuth: Learned from optimize_spell - Expertise now 2.00
+2025-03-03 13:11:59 | INFO | azuth: Executed optimize_spell
+2025-03-03 13:12:09 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:12:09 | INFO | mystra: Learned from create_spell - Expertise now 2.20
+2025-03-03 13:12:09 | INFO | mystra: Executed create_spell
+2025-03-03 13:12:19 | INFO | tyr: Learned from build_system - Expertise now 2.10
+2025-03-03 13:12:19 | INFO | tyr: Executed build_system
+2025-03-03 13:12:29 | INFO | ao: Learned from plan_world - Expertise now 2.00
+2025-03-03 13:12:29 | INFO | ao: Executed plan_world
+2025-03-03 13:12:29 | INFO | mystra: Learned from build_rooms - Expertise now 2.30
+2025-03-03 13:12:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:12:29 | INFO | Saved ao knowledge
+2025-03-03 13:12:29 | INFO | Saved mystra knowledge
+2025-03-03 13:12:29 | INFO | Saved tyr knowledge
+2025-03-03 13:12:29 | INFO | Saved lolth knowledge
+2025-03-03 13:12:29 | INFO | Saved oghma knowledge
+2025-03-03 13:12:29 | INFO | Saved deneir knowledge
+2025-03-03 13:12:29 | INFO | Saved selune knowledge
+2025-03-03 13:12:29 | INFO | Saved torm knowledge
+2025-03-03 13:12:29 | INFO | Saved vhaeraun knowledge
+2025-03-03 13:12:29 | INFO | Saved azuth knowledge
+2025-03-03 13:12:29 | INFO | Performed knowledge backup
+2025-03-03 13:12:29 | INFO | selune: Learned from enhance_spell - Expertise now 2.20
+2025-03-03 13:12:29 | INFO | selune: Executed enhance_spell
+2025-03-03 13:12:39 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:12:39 | INFO | mystra: Learned from create_spell - Expertise now 2.40
+2025-03-03 13:12:39 | INFO | mystra: Executed create_spell
+2025-03-03 13:12:59 | INFO | ao: Recovered, health at 50
+2025-03-03 13:12:59 | INFO | ao: Recovered, health at 99
+2025-03-03 13:12:59 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:12:59 | INFO | ao: Learned from plan_world - Expertise now 2.10
+2025-03-03 13:12:59 | INFO | ao: Executed plan_world
+2025-03-03 13:12:59 | INFO | mystra: Learned from build_rooms - Expertise now 2.50
+2025-03-03 13:12:59 | INFO | mystra: Executed build_rooms
+2025-03-03 13:12:59 | INFO | tyr: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:12:59 | INFO | tyr: Executed build_rooms
+2025-03-03 13:12:59 | INFO | lolth: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:12:59 | INFO | lolth: Executed build_rooms
+2025-03-03 13:12:59 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:12:59 | INFO | oghma: Executed build_rooms
+2025-03-03 13:12:59 | INFO | deneir: Learned from build_rooms - Expertise now 2.10
+2025-03-03 13:12:59 | INFO | deneir: Executed build_rooms
+2025-03-03 13:12:59 | INFO | selune: Learned from build_rooms - Expertise now 2.30
+2025-03-03 13:12:59 | INFO | selune: Executed build_rooms
+2025-03-03 13:12:59 | INFO | torm: Learned from build_rooms - Expertise now 2.40
+2025-03-03 13:12:59 | INFO | torm: Executed build_rooms
+2025-03-03 13:12:59 | INFO | vhaeraun: Learned from build_rooms - Expertise now 2.40
+2025-03-03 13:12:59 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:12:59 | INFO | azuth: Learned from build_rooms - Expertise now 2.10
+2025-03-03 13:12:59 | INFO | azuth: Executed build_rooms
+2025-03-03 13:13:09 | INFO | vhaeraun: Stole knowledge from mystra (value: 176) (took 0.00s)
+2025-03-03 13:13:09 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:13:09 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 2.50
+2025-03-03 13:13:09 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:13:19 | INFO | vhaeraun: Stole knowledge from mystra (value: 285) (took 0.00s)
+2025-03-03 13:13:19 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:13:19 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 2.60
+2025-03-03 13:13:19 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:13:29 | INFO | ao: Planned world with 1000 rooms across agents
+2025-03-03 13:13:29 | INFO | ao: Learned from plan_world - Expertise now 2.20
+2025-03-03 13:13:29 | INFO | ao: Executed plan_world
+2025-03-03 13:13:29 | INFO | mystra: Learned from build_rooms - Expertise now 2.60
+2025-03-03 13:13:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:13:29 | INFO | mystra: Learned from build_rooms - Expertise now 2.70
+2025-03-03 13:13:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:13:29 | INFO | tyr: Learned from build_rooms - Expertise now 2.30
+2025-03-03 13:13:29 | INFO | tyr: Executed build_rooms
+2025-03-03 13:13:29 | INFO | lolth: Learned from build_rooms - Expertise now 2.30
+2025-03-03 13:13:29 | INFO | lolth: Executed build_rooms
+2025-03-03 13:13:29 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 13:13:29 | INFO | oghma: Executed build_rooms
+2025-03-03 13:13:29 | INFO | deneir: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:13:29 | INFO | deneir: Executed build_rooms
+2025-03-03 13:13:29 | INFO | selune: Learned from build_rooms - Expertise now 2.40
+2025-03-03 13:13:29 | INFO | selune: Executed build_rooms
+2025-03-03 13:13:29 | INFO | torm: Learned from build_rooms - Expertise now 2.50
+2025-03-03 13:13:29 | INFO | torm: Executed build_rooms
+2025-03-03 13:13:29 | INFO | vhaeraun: Learned from build_rooms - Expertise now 2.70
+2025-03-03 13:13:29 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 13:13:29 | INFO | azuth: Learned from build_rooms - Expertise now 2.20
+2025-03-03 13:13:29 | INFO | azuth: Executed build_rooms
+2025-03-03 13:13:29 | INFO | azuth: Learned from optimize_spell - Expertise now 2.30
+2025-03-03 13:13:29 | INFO | azuth: Executed optimize_spell
+2025-03-03 13:13:39 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:13:39 | INFO | mystra: Learned from create_spell - Expertise now 2.80
+2025-03-03 13:13:39 | INFO | mystra: Executed create_spell
+2025-03-03 13:13:49 | INFO | deneir: Learned from design_website - Expertise now 2.30
+2025-03-03 13:13:49 | INFO | deneir: Executed design_website
+2025-03-03 13:13:59 | INFO | azuth: Learned from optimize_spell - Expertise now 2.40
+2025-03-03 13:13:59 | INFO | azuth: Executed optimize_spell
+2025-03-03 13:14:09 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:14:09 | INFO | mystra: Learned from create_spell - Expertise now 2.90
+2025-03-03 13:14:09 | INFO | mystra: Executed create_spell
+2025-03-03 13:14:19 | INFO | vhaeraun: Stole knowledge from mystra (value: 297) (took 0.00s)
+2025-03-03 13:14:19 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:14:19 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 2.80
+2025-03-03 13:14:19 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:14:29 | INFO | mystra: Learned from build_rooms - Expertise now 3.00
+2025-03-03 13:14:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:14:29 | INFO | torm: Learned from guard_zone - Expertise now 2.60
+2025-03-03 13:14:29 | INFO | torm: Executed guard_zone
+2025-03-03 13:14:39 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:14:39 | INFO | mystra: Learned from create_spell - Expertise now 3.10
+2025-03-03 13:14:39 | INFO | mystra: Executed create_spell
+2025-03-03 13:14:49 | INFO | tyr: Learned from build_system - Expertise now 2.40
+2025-03-03 13:14:49 | INFO | tyr: Executed build_system
+2025-03-03 13:14:59 | INFO | Agent Status - Tasks Completed: 215, Rooms: 10100
+2025-03-03 13:14:59 | INFO | selune: Learned from enhance_spell - Expertise now 2.50
+2025-03-03 13:14:59 | INFO | selune: Executed enhance_spell
+2025-03-03 13:15:09 | INFO | torm: Learned from guard_zone - Expertise now 2.70
+2025-03-03 13:15:09 | INFO | torm: Executed guard_zone
+2025-03-03 13:15:19 | INFO | tyr: Learned from build_system - Expertise now 2.50
+2025-03-03 13:15:19 | INFO | tyr: Executed build_system
+2025-03-03 13:15:29 | INFO | mystra: Learned from build_rooms - Expertise now 3.20
+2025-03-03 13:15:29 | INFO | mystra: Executed build_rooms
+2025-03-03 13:15:29 | INFO | ao: Low activity, health reduced to 93
+2025-03-03 13:15:29 | INFO | vhaeraun: Stole knowledge from mystra (value: 193) (took 0.00s)
+2025-03-03 13:15:29 | INFO | oghma: Received collaboration from vhaeraun
+2025-03-03 13:15:29 | INFO | vhaeraun: Learned from steal_knowledge - Expertise now 2.90
+2025-03-03 13:15:29 | INFO | vhaeraun: Executed steal_knowledge
+2025-03-03 13:15:39 | INFO | tyr: Learned from build_system - Expertise now 2.60
+2025-03-03 13:15:39 | INFO | tyr: Executed build_system
+2025-03-03 13:15:49 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:15:49 | INFO | mystra: Learned from create_spell - Expertise now 3.30
+2025-03-03 13:15:49 | INFO | mystra: Executed create_spell
+2025-03-03 13:15:59 | INFO | ao: Low activity, health reduced to 88
+2025-03-03 13:15:59 | INFO | lolth: Low activity, health reduced to 12
+2025-03-03 13:15:59 | INFO | oghma: Low activity, health reduced to 76
+2025-03-03 13:15:59 | INFO | deneir: Low activity, health reduced to 13
+2025-03-03 13:15:59 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:15:59 | INFO | mystra: Learned from create_spell - Expertise now 3.40
+2025-03-03 13:15:59 | INFO | mystra: Executed create_spell
+2025-03-03 13:16:09 | INFO | lolth: Learned from weave_traps - Expertise now 2.40
+2025-03-03 13:16:09 | INFO | lolth: Executed weave_traps

@@ -3,7 +3,138 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:30:48.525262"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:32:18.533944"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:33:03.538193"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 12:35:03.550870"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_33"
+            },
+            "timestamp": "2025-03-03 13:08:29.187813"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_174"
+            },
+            "timestamp": "2025-03-03 13:08:29.221294"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_799"
+            },
+            "timestamp": "2025-03-03 13:09:09.160516"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_524"
+            },
+            "timestamp": "2025-03-03 13:09:29.142408"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_689"
+            },
+            "timestamp": "2025-03-03 13:09:39.164762"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_251"
+            },
+            "timestamp": "2025-03-03 13:10:09.166260"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_896"
+            },
+            "timestamp": "2025-03-03 13:10:29.197177"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 13:10:49.198564"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "enhance_spell",
+                "spell_name": "fireball"
+            },
+            "timestamp": "2025-03-03 13:11:19.201427"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_484"
+            },
+            "timestamp": "2025-03-03 13:11:29.147606"
+        },
+        {
+            "task": {
+                "agent": "selune",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_selune_62"
+            },
+            "timestamp": "2025-03-03 13:11:29.217674"
+        }
+    ],
     "embeddings": {},
-    "health": 96
+    "health": 22,
+    "expertise": 2.100000000000001
 }

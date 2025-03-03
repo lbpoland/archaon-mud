@@ -3,7 +3,165 @@
     "lore": {},
     "tasks": [],
     "projects": {},
-    "history": [],
+    "history": [
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "waterdeep"
+            },
+            "timestamp": "2025-03-03 12:28:18.512062"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "waterdeep",
+                "depends_on": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:18.515584"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "calimshan",
+                "depends_on": "mystra"
+            },
+            "timestamp": "2025-03-03 12:28:18.519166"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:30:03.518467"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_battleground",
+                "location": "underdark"
+            },
+            "timestamp": "2025-03-03 12:31:48.530721"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:08:29.142640"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_174"
+            },
+            "timestamp": "2025-03-03 13:08:29.149410"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_690"
+            },
+            "timestamp": "2025-03-03 13:08:29.160139"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_622"
+            },
+            "timestamp": "2025-03-03 13:09:09.148645"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_987"
+            },
+            "timestamp": "2025-03-03 13:09:29.131647"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_136"
+            },
+            "timestamp": "2025-03-03 13:09:39.153220"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_528"
+            },
+            "timestamp": "2025-03-03 13:10:09.155765"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_978"
+            },
+            "timestamp": "2025-03-03 13:10:29.136036"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_16"
+            },
+            "timestamp": "2025-03-03 13:11:29.137075"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_rooms",
+                "count": 100,
+                "region": "Region_tyr_790"
+            },
+            "timestamp": "2025-03-03 13:11:29.206935"
+        },
+        {
+            "task": {
+                "agent": "tyr",
+                "action": "build_system",
+                "system": "combat"
+            },
+            "timestamp": "2025-03-03 13:12:19.209458"
+        }
+    ],
     "embeddings": {},
-    "health": 97
+    "health": 17,
+    "battlegrounds": {
+        "waterdeep": {
+            "size": 1050,
+            "enemies": 76,
+            "terrain": "plains"
+        },
+        "sword_coast": {
+            "size": 2387,
+            "enemies": 170,
+            "terrain": "forest"
+        },
+        "underdark": {
+            "size": 2669,
+            "enemies": 45,
+            "terrain": "plains"
+        }
+    },
+    "expertise": 2.100000000000001
 }

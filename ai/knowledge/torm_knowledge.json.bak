@@ -2,5 +2,34 @@
     "mechanics": {},
     "lore": {},
     "tasks": [],
-    "projects": {}
+    "projects": {},
+    "history": [
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:29:18.513878"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:29:48.517658"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "location": "sword_coast"
+            },
+            "timestamp": "2025-03-03 12:33:18.540549"
+        }
+    ],
+    "embeddings": {},
+    "health": 49,
+    "expertise": 1.0
 }
