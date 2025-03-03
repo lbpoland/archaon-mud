@@ -21,7 +21,8 @@ class DeneirAgent(AIAgent):
         page_data = {
             "content": f"Welcome to Archaon MUD - {page}",
             "created": str(datetime.now()),
-            "views": 0
+            "views": 0,
+            "styles": "body { font-family: Arial; }"
         }
         self.website_pages[page] = page_data
         website_dir = "/mnt/home2/mud/website"
@@ -29,7 +30,8 @@ class DeneirAgent(AIAgent):
         with open(f"{website_dir}/{page}", "w") as f:
             f.write(f"""\
 <html>
-<head><title>Archaon MUD - {page}</title></head>
+<head><title>Archaon MUD - {page}</title>
+<style>{page_data['styles']}</style></head>
 <body>
 <h1>{page_data['content']}</h1>
 <p>Created: {page_data['created']}</p>

@@ -1,0 +1,53 @@
+2025-03-03 06:26:44,174 - DEBUG - Using selector: EpollSelector
+2025-03-03 06:26:44,178 - INFO - Loaded agent: ao (Rank 10)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: mystra (Rank 9)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: tyr (Rank 9)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: lolth (Rank 9)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: oghma (Rank 8)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: deneir (Rank 8)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: selune (Rank 7)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: torm (Rank 7)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: vhaeraun (Rank 7)
+2025-03-03 06:26:44,178 - INFO - Loaded agent: azuth (Rank 7)
+2025-03-03 06:26:44,180 - INFO - AIHandler: Bootstrapping MUD - Full initialization
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "ao", "action": "plan", "objective": "initialize MUD structure"}
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+2025-03-03 06:26:44,180 - DEBUG - Added task: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+2025-03-03 06:26:44,180 - INFO - AI Handler started - Full autonomy engaged
+2025-03-03 06:33:47,757 - DEBUG - Using selector: EpollSelector
+2025-03-03 06:33:47,763 - INFO - Loaded agent: ao (Rank 10)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: mystra (Rank 9)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: tyr (Rank 9)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: lolth (Rank 9)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: oghma (Rank 8)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: deneir (Rank 8)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: selune (Rank 7)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: torm (Rank 7)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: vhaeraun (Rank 7)
+2025-03-03 06:33:47,763 - INFO - Loaded agent: azuth (Rank 7)
+2025-03-03 06:33:47,765 - INFO - AIHandler: Bootstrapping MUD - Full initialization
+2025-03-03 06:33:47,765 - DEBUG - Added task: {"agent": "ao", "action": "plan", "objective": "initialize MUD structure"}
+2025-03-03 06:33:47,765 - DEBUG - Added task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+2025-03-03 06:33:47,765 - DEBUG - Added task: {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"}
+2025-03-03 06:33:47,765 - DEBUG - Added task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "oghma", "action": "organize_code", "module": "mud.py"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "deneir", "action": "design_website", "page": "index.html"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
+2025-03-03 06:33:47,766 - DEBUG - Added task: {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
+2025-03-03 06:33:47,766 - INFO - AI Handler started - Full autonomy engaged
+2025-03-03 06:33:47,768 - DEBUG - Saved knowledge for ao
+2025-03-03 06:33:47,769 - DEBUG - Saved knowledge for mystra
+2025-03-03 06:33:47,770 - DEBUG - Saved knowledge for tyr
+2025-03-03 06:33:47,770 - DEBUG - Saved knowledge for lolth
+2025-03-03 06:33:47,771 - DEBUG - Saved knowledge for oghma
+2025-03-03 06:33:47,771 - DEBUG - Saved knowledge for deneir
+2025-03-03 06:33:47,772 - DEBUG - Saved knowledge for selune
+2025-03-03 06:33:47,772 - DEBUG - Saved knowledge for torm
+2025-03-03 06:33:47,773 - DEBUG - Saved knowledge for vhaeraun
+2025-03-03 06:33:47,774 - DEBUG - Saved knowledge for azuth
+2025-03-03 06:33:47,774 - INFO - AIHandler: AI Handler shut down

@@ -18,8 +18,9 @@ class AzuthAgent(AIAgent):
 
     async def optimize_spell(self, spell_name: str) -> None:
         optimization = {
-            "mana_reduction": random.randint(10, 30),
-            "cast_time": random.randint(-5, -1)
+            "mana_reduction": random.randint(15, 50),
+            "cast_time": random.randint(-10, -2),
+            "efficiency": random.randint(10, 30)
         }
         self.spell_optimizations[spell_name] = optimization
         spell_path = f"/mnt/home2/mud/modules/spells/generic/{spell_name}.py"
@@ -30,6 +31,7 @@ class AzuthAgent(AIAgent):
 def optimize_cast(caster):
     mana_reduction = {optimization['mana_reduction']}
     cast_time = {optimization['cast_time']}
-    print(f'Azuth optimizes {spell_name}: -{mana_reduction} mana, {cast_time}s cast time!')
+    efficiency = {optimization['efficiency']}
+    print(f'Azuth optimizes {spell_name}: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!')
 """)
         await self.log_action(f"Optimized spell: {spell_name}")

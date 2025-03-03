@@ -9,7 +9,11 @@ class TyrAgent(AIAgent):
     def __init__(self, name: str, role: str, rank: int):
         super().__init__(name, role, rank)
         self.battlegrounds = {}
-        self.combat_rules = {"initiative": "d20+DEX", "damage_types": ["slashing", "piercing", "bludgeoning"]}
+        self.combat_rules = {
+            "initiative": "d20+DEX",
+            "damage_types": ["slashing", "piercing", "bludgeoning", "magical"],
+            "stances": ["offensive", "defensive"]
+        }
 
     async def execute_task(self, task: Dict) -> None:
         if task.get("action") == "build_battleground":
@@ -20,9 +24,10 @@ class TyrAgent(AIAgent):
     async def build_battleground(self, location: str) -> None:
         bg_data = {
             "location": location,
-            "size": random.randint(500, 2000),
-            "enemies": random.randint(10, 100),
-            "rules": self.combat_rules
+            "size": random.randint(1000, 5000),
+            "enemies": random.randint(20, 200),
+            "rules": self.combat_rules,
+            "terrain": random.choice(["plains", "forest", "mountain"])
         }
         self.battlegrounds[location] = bg_data
         domain_dir = f"/mnt/home2/mud/domains/{location}"
@@ -32,6 +37,8 @@ class TyrAgent(AIAgent):
 # Battleground for {location}
 def start_fight(player):
     enemies = {bg_data['enemies']}
-    print(f'{player.name} enters {location} battleground with {enemies} foes using {bg_data['rules']['initiative']} initiative!')
+    terrain = '{bg_data['terrain']}'
+    initiative = '{bg_data['rules']['initiative']}'
+    print(f'{player.name} enters {location} battleground ({terrain}) with {enemies} foes using {initiative} initiative!')
 """)
-        await self.log_action(f"Built battleground at {location}")
+        await self.log_action(f"Built battleground at {location} ({bg_data['terrain']})")

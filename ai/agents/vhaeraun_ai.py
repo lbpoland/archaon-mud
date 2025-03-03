@@ -19,7 +19,8 @@ class VhaeraunAgent(AIAgent):
     async def steal_knowledge(self, target: str) -> None:
         stolen_data = {
             "info": f"Secrets stolen from {target}",
-            "value": random.randint(10, 200)
+            "value": random.randint(50, 500),
+            "source": target
         }
         self.stolen_knowledge[target] = stolen_data
         await self.log_action(f"Stole knowledge from {target}: {stolen_data['value']} value")

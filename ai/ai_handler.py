@@ -19,7 +19,7 @@ import ssl
 import threading
 
 # Dependencies: pip install aiohttp aiofiles beautifulsoup4
-# The most advanced AI handler possible
+# The ultimate AI handler - exhaustive and autonomous
 
 # Logging setup
 logging.basicConfig(filename='/mnt/home2/mud/logs/ai.log', level=logging.DEBUG,
@@ -59,7 +59,7 @@ FORGOTTEN_REALMS_RESOURCES = [
     "https://forgottenrealms.fandom.com/wiki/Category:Deities"
 ]
 
-# Global constants
+# Hierarchy
 HIERARCHY = {
     "ao": 10, "mystra": 9, "tyr": 9, "lolth": 9, "oghma": 8, "deneir": 8,
     "selune": 7, "torm": 7, "vhaeraun": 7, "azuth": 7
@@ -95,8 +95,8 @@ class AIHandler:
         self.task_queue: List[Dict] = []
         self.knowledge_dir = "/mnt/home2/mud/ai/knowledge/"
         self.running = False
-        self.session = None
-        self.executor = ThreadPoolExecutor(max_workers=50)
+        self.session = aiohttp.ClientSession()
+        self.executor = ThreadPoolExecutor(max_workers=100)
         self.knowledge_base = {"mechanics": {}, "lore": {}, "tasks_completed": 0, "projects": {}}
         self.load_agents()
 
@@ -125,14 +125,18 @@ class AIHandler:
             logger.info(f"Loaded agent: {name} (Rank {HIERARCHY[name]})")
 
     async def scrape_web(self, url: str) -> Optional[Dict]:
-        async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
-            if response.status == 200:
-                html = await response.text()
-                soup = BeautifulSoup(html, 'html.parser')
-                text = soup.get_text(separator=' ', strip=True)
-                links = [a['href'] for a in soup.find_all('a', href=True)]
-                return {"url": url, "content": text, "links": links[:100]}
-            logger.error(f"Scrape failed for {url}: Status {response.status}")
+        try:
+            async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+                if response.status == 200:
+                    html = await response.text()
+                    soup = BeautifulSoup(html, 'html.parser')
+                    text = soup.get_text(separator=' ', strip=True)
+                    links = [a['href'] for a in soup.find_all('a', href=True)]
+                    return {"url": url, "content": text, "links": links[:200]}
+                logger.error(f"Scrape failed for {url}: Status {response.status}")
+                return None
+        except Exception as e:
+            logger.error(f"Scrape error for {url}: {str(e)}")
             return None
 
     async def process_task(self, task: Dict) -> None:
@@ -145,13 +149,12 @@ class AIHandler:
 
     async def run(self) -> None:
         self.running = True
-        async with aiohttp.ClientSession() as self.session:
-            logger.info("AI Handler started - Full autonomy engaged")
-            while self.running:
-                if self.task_queue:
-                    task = self.task_queue.pop(0)
-                    await self.process_task(task)
-                await asyncio.sleep(0.005)
+        logger.info("AI Handler started - Full autonomy engaged")
+        while self.running:
+            if self.task_queue:
+                task = self.task_queue.pop(0)
+                await self.process_task(task)
+            await asyncio.sleep(0.001)
 
     def add_task(self, task: Dict) -> None:
         self.task_queue.append(task)
@@ -180,22 +183,26 @@ class AIHandler:
                     logger.warning(f"Agent {name} inactive - restarting")
                     agent.active = True
                 await agent.log_action(f"Status: Active, Tasks: {len(agent.tasks)}, Projects: {len(agent.knowledge_base['projects'])}")
-            await asyncio.sleep(15)
+            await asyncio.sleep(10)
 
     async def generate_tasks(self) -> None:
         domains = ["sword_coast", "underdark", "cormanthor", "icewind_dale", "calimshan"]
-        modules = ["combat_handler.py", "spell_handler.py", "mud.py"]
+        modules = ["combat_handler.py", "spell_handler.py", "mud.py", "quests_handler.py"]
         while self.running:
             task = random.choice([
-                {"agent": "mystra", "action": "create_spell", "spell_name": f"arcane_{random.randint(1, 10000)}"},
+                {"agent": "mystra", "action": "create_spell", "spell_name": f"arcane_{random.randint(1, 100000)}"},
                 {"agent": "tyr", "action": "build_battleground", "location": random.choice(domains)},
                 {"agent": "lolth", "action": "weave_trap", "location": "underdark"},
                 {"agent": "oghma", "action": "organize_code", "module": random.choice(modules)},
-                {"agent": "deneir", "action": "design_website", "page": f"page_{random.randint(1, 1000)}.html"},
-                {"agent": "ao", "action": "plan", "objective": f"expand_{random.choice(domains)}"}
+                {"agent": "deneir", "action": "design_website", "page": f"page_{random.randint(1, 10000)}.html"},
+                {"agent": "ao", "action": "plan", "objective": f"expand_{random.choice(domains)}"},
+                {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"},
+                {"agent": "torm", "action": "guard_zone", "location": random.choice(domains)},
+                {"agent": "vhaeraun", "action": "steal_knowledge", "target": "mystra"},
+                {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
             ])
             self.add_task(task)
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
 
     async def scrape_discworld(self) -> None:
         for url in DISCWORLD_RESOURCES:
@@ -208,7 +215,7 @@ class AIHandler:
                     "data": data,
                     "source": "discworld"
                 })
-            await asyncio.sleep(5)
+            await asyncio.sleep(3)
 
     async def scrape_forgotten_realms(self) -> None:
         for url in FORGOTTEN_REALMS_RESOURCES:
@@ -221,7 +228,7 @@ class AIHandler:
                     "data": data,
                     "source": "forgotten_realms"
                 })
-            await asyncio.sleep(5)
+            await asyncio.sleep(3)
 
     async def bootstrap_mud(self) -> None:
         await self.log_action("Bootstrapping MUD - Full initialization")
@@ -231,7 +238,11 @@ class AIHandler:
             {"agent": "tyr", "action": "build_battleground", "location": "waterdeep"},
             {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"},
             {"agent": "oghma", "action": "organize_code", "module": "mud.py"},
-            {"agent": "deneir", "action": "design_website", "page": "index.html"}
+            {"agent": "deneir", "action": "design_website", "page": "index.html"},
+            {"agent": "selune", "action": "enhance_spell", "spell_name": "fireball"},
+            {"agent": "torm", "action": "guard_zone", "location": "waterdeep"},
+            {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"},
+            {"agent": "azuth", "action": "optimize_spell", "spell_name": "fireball"}
         ]
         for task in tasks:
             self.add_task(task)
@@ -239,7 +250,15 @@ class AIHandler:
     async def optimize_performance(self) -> None:
         while self.running:
             await self.log_action(f"Optimizing performance - Tasks completed: {self.knowledge_base['tasks_completed']}")
-            await asyncio.sleep(300)
+            await asyncio.sleep(120)
+
+    async def shutdown(self) -> None:
+        self.running = False
+        for agent in self.agents.values():
+            await agent.save_knowledge()
+        await self.session.close()
+        self.executor.shutdown()
+        await self.log_action("AI Handler shut down")
 
     async def log_action(self, message: str) -> None:
         logger.info(f"AIHandler: {message}")
@@ -255,7 +274,10 @@ async def main():
         handler.optimize_performance(),
         handler.run()
     ]
-    await asyncio.gather(*tasks)
+    try:
+        await asyncio.gather(*tasks)
+    finally:
+        await handler.shutdown()
 
 if __name__ == "__main__":
     asyncio.run(main())

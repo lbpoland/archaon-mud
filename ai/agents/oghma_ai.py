@@ -24,20 +24,20 @@ class OghmaAgent(AIAgent):
         await self.save_knowledge()
 
     async def organize_code(self, module: str) -> None:
-        self.codebase[module] = {"status": "optimized", "lines": random.randint(2000, 10000)}
+        self.codebase[module] = {"status": "optimized", "lines": random.randint(5000, 20000), "version": "1.0"}
         module_path = f"/mnt/home2/mud/modules/{module}"
         with open(module_path, "a") as f:
             f.write(f"""\
-# Optimized by Oghma
+# Optimized by Oghma - Version {self.codebase[module]['version']}
 def optimize():
-    print('Module {module} optimized by Oghma')
+    print('Module {module} optimized by Oghma with {self.codebase[module]['lines']} lines')
 """)
         await self.log_action(f"Organized and optimized module: {module}")
 
     async def process_mechanics(self, data: Dict, source: str) -> None:
         self.mechanics_db[source] = data["content"]
-        await self.log_action(f"Processed mechanics from {source}")
+        await self.log_action(f"Processed mechanics from {source} ({len(data['content'])} chars)")
 
     async def process_lore(self, data: Dict, source: str) -> None:
         self.lore_db[source] = data["content"]
-        await self.log_action(f"Processed lore from {source}")
+        await self.log_action(f"Processed lore from {source} ({len(data['content'])} chars)")

@@ -18,8 +18,9 @@ class TormAgent(AIAgent):
 
     async def guard_zone(self, location: str) -> None:
         guard_data = {
-            "patrols": random.randint(10, 50),
-            "strength": random.randint(100, 500)
+            "patrols": random.randint(20, 100),
+            "strength": random.randint(200, 1000),
+            "discipline": random.randint(5, 20)
         }
         self.guarded_zones[location] = guard_data
         domain_dir = f"/mnt/home2/mud/domains/{location}"
@@ -29,6 +30,7 @@ class TormAgent(AIAgent):
 # Guards for {location}
 def patrol(player):
     strength = {guard_data['strength']}
-    print(f'{player.name} is guarded by Torm’s forces at {location} with {strength} strength!')
+    discipline = {guard_data['discipline']}
+    print(f'{player.name} is guarded by Torm’s forces at {location} with {strength} strength and {discipline} discipline!')
 """)
         await self.log_action(f"Guarding zone: {location}")
