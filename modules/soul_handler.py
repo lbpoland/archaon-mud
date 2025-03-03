@@ -8,9 +8,7 @@
 # - Plans: Integrate with mud.py via login_handler.py—complete and final
 
 import random
-from modules.skills_handler import Player
-from modules.term_handler import COLORS
-from modules.deities import DEITIES
+from modules.skills_handler import Player, DEITIES, COLORS
 from modules.term_handler import TermHandler
 
 # Massive emote list (300+ entries, ~5000+ lines alone)

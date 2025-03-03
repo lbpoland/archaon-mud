@@ -1,51 +1,277 @@
-This is the mud directory layout for future references 
-
-mnt/home2/mud/
-├── mud.py               # Main server
+/mnt/home2/mud/
+├── mud.py               # Main server (~1000 lines)
+├── PLAN.md              # Project plan and directory overview
+├── AI_README.md         # Knowledge base for AI/Groks
 ├── std/                 # Base classes
-│   ├── object.py
-│   ├── living.py
-│   ├── room.py
-│   ├── wearable.py
-│   ├── container.py
-│   ├── command.py
+│   ├── object.py        # Base class for all objects (~500 lines)
+│   ├── living.py        # Base class for living entities (players, NPCs) (~1000 lines)
+│   ├── room.py          # Room class for zones (~1000 lines)
+│   ├── wearable.py      # Wearable items (armor, clothing) (~800 lines)
+│   ├── container.py     # Containers (chests, bags) (~600 lines)
+│   ├── command.py       # Base command class (~500 lines)
 ├── modules/             # Core systems (handlers)
-│   ├── login_handler.py
-│   ├── spell_handler.py
-│   ├── combat_handler.py
-│   ├── skills_handler.py
-│   ├── ritual_handler.py
-|   |——— dieties.py
-│   ├── inventory_handler.py
-│   ├── soul_handler.py
-│   ├── term_handler.py
-│   ├── network_handler.py
-│   ├── quests_handler.py
-│   ├── spells/          # Individual spell files
-│   │   ├── arcane_aegis.py
-│   │   ├── flame_ward.py
-│   │   ├── abyssal_summons.py
-│   │   ├── thunder_lance.py
-│   │   ├── lunar_wyrm.py
-│   │   ├── shadow_gate.py
-│   ├── rituals/         # Individual ritual files (to be populated)
-│   └── commands/        # Individual command files
-│       ├── kill.py
-│       ├── look.py
-│       ├── inventory.py
-├── domains/             # Region-specific zones (partial list)
-│   ├── sword_coast/
-│   │   ├── waterdeep/
+│   ├── login_handler.py # Player login/creation (~5000 lines)
+│   ├── spell_handler.py # Spell system management (~5000 lines)
+│   │   ├── spells/      # Generic and branched spell files
+│   │   │   ├── generic/ # Generic spells (e.g., fireball, heal)
+│   │   │   │   ├── fireball.py
+│   │   │   │   ├── heal.py
+│   │   │   ├── racial/  # Race-specific spells (e.g., drow shadowbolt)
+│   │   │   │   ├── drow/
+│   │   │   │   │   ├── shadowbolt.py
+│   │   │   │   ├── elf/
+│   │   │   │   │   ├── moonbeam.py
+│   │   │   ├── class/   # Class-specific spells (e.g., wizard arcane blast)
+│   │   │   │   ├── wizard/
+│   │   │   │   │   ├── arcane_blast.py
+│   │   │   │   ├── cleric/
+│   │   │   │   │   ├── divine_smite.py
+│   ├── combat_handler.py # Combat system (~5000 lines)
+│   ├── skills_handler.py # Skill system (~5000 lines)
+│   ├── ritual_handler.py # Ritual system (~5000 lines)
+│   │   ├── rituals/      # Ritual files (to be populated)
+│   │   │   ├── heal_ritual.py
+│   │   │   ├── banish_ritual.py
+│   ├── inventory_handler.py # Inventory management (~5000 lines)
+│   ├── soul_handler.py  # Social/emote system (~6000 lines)
+│   ├── term_handler.py  # Terminal handling (~5000 lines)
+│   ├── network_handler.py # Network management (~5000 lines)
+│   ├── quests_handler.py # Quest system (to be completed, ~5000 lines)
+│   ├── crafting_handler.py # Crafting system (~5000 lines)
+│   │   ├── crafts/      # Craftable items and professions
+│   │   │   ├── smithing/
+│   │   │   │   ├── sword_crafting.py
+│   │   │   │   ├── armor_crafting.py
+│   │   │   ├── mining/
+│   │   │   │   ├── ore_extraction.py
+│   │   │   ├── culinary/
+│   │   │   │   ├── cooking_recipe.py
+│   │   ├── weapons.py   # Weapon definitions, inherits from wearable (~2000 lines)
+│   │   ├── armors.py    # Armor definitions, inherits from wearable (~2000 lines)
+│   │   ├── clothing.py  # Clothing definitions, inherits from wearable (~2000 lines)
+│   ├── classes.py       # Generic classes with race branches
+│   │   ├── generic/
+│   │   │   ├── warrior.py
+│   │   │   ├── mage.py
+│   │   ├── racial/
+│   │   │   ├── drow/
+│   │   │   │   ├── drow_warrior.py
+│   │   │   │   ├── drow_mage.py
+│   │   │   ├── elf/
+│   │   │   │   ├── elf_ranger.py
+│   ├── races.py         # Race definitions
+│   │   ├── human.py
+│   │   ├── elf.py
+│   │   ├── drow.py
+│   │   ├── dwarf.py
+│   │   ├── orc.py
+│   │   ├── gnome.py
+│   │   ├── halfling.py
+│   │   ├── tiefling.py
+│   │   ├── aarakocra.py
+│   │   ├── dragonborn.py
+│   │   ├── goliath.py
+│   │   ├── genasi.py
+│   │   ├── tabaxi.py
+│   │   ├── triton.py
+│   │   ├── yuan_ti.py
+│   │   ├── firbolg.py
+│   │   ├── kenku.py
+│   │   ├── kobold.py
+│   │   ├── lizardfolk.py
+│   │   ├── changeling.py
+│   │   ├── warforged.py
+│   ├── organizations.py # Organizations with branches
+│   │   ├── harpers.py
+│   │   ├── zhentarim.py
+│   │   ├── red_wizards.py
+│   │   ├── cult_of_dragon.py
+│   │   ├── lords_alliance.py
+│   │   ├── seven_sisters.py
+│   │   ├── fire_knives.py
+│   │   ├── xanathars_guild.py
+│   │   ├── shades.py
+│   │   ├── drow_houses/
+│   │   │   ├── house_baenre.py
+│   │   │   ├── house_noquar.py
+│   │   ├── orc_clans/
+│   │   │   ├── clan_blade_of_the_black_dog.py
+│   │   │   ├── clan_blood_of_the_red_fang.py
+│   ├── commands/        # Individual command files
+│   │   ├── kill.py
+│   │   ├── look.py
+│   │   ├── inventory.py
+│   │   ├── say.py
+│   │   ├── shout.py
+│   │   ├── smile.py
+│   │   ├── help.py
+│   │   ├── who.py
+│   │   ├── score.py
+│   │   ├── train.py
+│   │   ├── advance.py
+│   │   ├── learn.py
+│   │   ├── teach.py
+│   │   ├── worship.py
+├── domains/             # Region-specific zones (Forgotten Realms locations)
+│   ├── sword_coast/     # Sword Coast region
+│   │   ├── waterdeep/   # City of Splendors
+│   │   │   ├── rooms.py # Room definitions (~1000+ lines)
+│   │   │   ├── npcs.py  # NPCs (e.g., guards, merchants) (~1000 lines)
+│   │   │   ├── items.py # Items (e.g., Waterdhavian goods) (~1000 lines)
+│   │   │   ├── guilds.py # Guilds (e.g., Harpers) (~500 lines)
+│   │   │   ├── docks/   # Docks district
+│   │   │   │   ├── rooms.py
+│   │   │   ├── market/  # Market district
+│   │   │   │   ├── rooms.py
+│   │   │   ├── castle/  # Castle district
+│   │   │   │   ├── rooms.py
+│   │   ├── neverwinter/ # City of Skilled Hands
 │   │   │   ├── rooms.py
 │   │   │   ├── npcs.py
 │   │   │   ├── items.py
 │   │   │   ├── guilds.py
-│   ├── underdark/
-│   ├── world/
-│   │   ├── terrain.py
-├── players/             # Player data
+│   │   ├── baldur_gate/ # City of Balduran
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   │   ├── guilds.py
+│   │   ├── candlekeep/  # Library-fortress
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── daggerford/  # Small town
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── luskan/      # Pirate city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── phandalin/   # Village
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   ├── underdark/       # Subterranean realm
+│   │   ├── menzoberranzan/ # Drow city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   │   ├── houses/  # Drow houses
+│   │   │   │   ├── house_baenre/
+│   │   │   │   │   ├── rooms.py
+│   │   │   │   ├── house_noquar/
+│   │   │   │   │   ├── rooms.py
+│   │   ├── ched_nasad/  # Ruined drow city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── gracklstugh/ # Duergar city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── sshamath/    # Mage drow city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   ├── cormanthor/      # Elven forest
+│   │   ├── rooms.py
+│   │   ├── npcs.py
+│   │   ├── items.py
+│   │   ├── villages/    # Elven villages
+│   │   │   ├── elventree/
+│   │   │   │   ├── rooms.py
+│   │   │   ├── tangled_trees/
+│   │   │   │   ├── rooms.py
+│   ├── icewind_dale/    # Frozen north
+│   │   ├── ten_towns/   # Ten Towns
+│   │   │   ├── bryn_shander/
+│   │   │   │   ├── rooms.py
+│   │   │   ├── targos/
+│   │   │   │   ├── rooms.py
+│   │   ├── rooms.py
+│   │   ├── npcs.py
+│   │   ├── items.py
+│   ├── calimshan/       # Desert realm
+│   │   ├── calimport/   # Port city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   │   ├── guilds.py
+│   │   ├── memnon/      # Trading city
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   ├── vast_swamp/      # Marshlands
+│   │   ├── rooms.py
+│   │   ├── npcs.py
+│   │   ├── items.py
+│   │   ├── villages/    # Swamp villages
+│   │   │   ├── mossbridge/
+│   │   │   │   ├── rooms.py
+│   ├── damara/          # Northern kingdom
+│   │   ├── heliogabalus/ # Capital
+│   │   │   ├── rooms.py
+│   │   │   ├── npcs.py
+│   │   │   ├── items.py
+│   │   ├── villages/    # Damaran villages
+│   │   │   ├── bloodstone/
+│   │   │   │   ├── rooms.py
+│   ├── anauroch/        # Desert waste
+│   │   ├── rooms.py
+│   │   ├── npcs.py
+│   │   ├── items.py
+│   ├── high_forest/     # Ancient forest
+│   │   ├── rooms.py
+│   │   ├── npcs.py
+│   │   ├── items.py
+│   │   ├── settlements/ # Forest settlements
+│   │   │   ├── star_mount/
+│   │   │   │   ├── rooms.py
+│   ├── world/           # Wilderness and global systems
+│   │   ├── terrain.py   # Terrain generation (~1000 lines)
+│   │   ├── weather.py   # Weather system (~1000 lines)
+│   │   ├── events.py    # Global events (e.g., raids, PK zones) (~1000 lines)
+├── players/             # Player data (JSON files)
+│   ├── mystra.json
+│   ├── tyr.json
+│   ├── lolth.json
+│   ├── oghma.json
+│   ├── deneir.json
+│   ├── selune.json
+│   ├── torm.json
+│   ├── vhaeraun.json
+│   ├── azuth.json
 ├── logs/                # Logs
-└── ai/                  # AI scripts
-
-
-GROKS TO GIVE UPDATE WHEN CREATING NEW PYTHON FILE ADD THIS LAYOUT ABOVE AND UPDATE 
+│   ├── server.log
+│   ├── ai.log
+├── ai/                  # AI scripts (see below)
+│   ├── ai_handler.py
+│   ├── agents/
+│   │   ├── ao_ai.py
+│   │   ├── mystra_ai.py
+│   │   ├── tyr_ai.py
+│   │   ├── lolth_ai.py
+│   │   ├── oghma_ai.py
+│   │   ├── deneir_ai.py
+│   │   ├── selune_ai.py
+│   │   ├── torm_ai.py
+│   │   ├── vhaeraun_ai.py
+│   │   ├── azuth_ai.py
+│   ├── knowledge/       # AI knowledge base
+│   │   ├── ao_*.json
+│   │   ├── mystra_*.json
+│   │   ├── tyr_*.json
+│   │   ├── lolth_*.json
+│   │   ├── oghma_*.json
+│   │   ├── deneir_*.json
+│   │   ├── selune_*.json
+│   │   ├── torm_*.json
+│   │   ├── vhaeraun_*.json
+│   │   ├── azuth_*.json
+│   │   ├── knowledge_base.json
+├── website/             # Website and client
+│   ├── index.html
+│   ├── client.js
+│   ├── marketing/
+│   │   ├── promo.html
+│   │   ├── banners/
