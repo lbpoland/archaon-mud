@@ -237,19 +237,20 @@ class AIHandler:
 
     async def scrape_web(self, url: str) -> Optional[Dict]:
         try:
-          async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
-            if response.status == 200:
-                html = await response.text()
-                await self.log_scrape(url, {"content_length": len(text)})
-                soup = BeautifulSoup(html, 'html.parser')
-                text = soup.get_text(separator=' ', strip=True)
-                links = [a['href'] for a in soup.find_all('a', href=True)]
-                return {"url": url, "content": text, "links": links[:200]}
-            logger.error(f"Scrape failed for {url}: Status {response.status}")
-            return None
+            async with self.session.get(url, timeout=aiohttp.ClientTimeout(total=60)) as response:
+                if response.status == 200:
+                    text = await response.text()
+                    await self.log_scrape(url, {"content_length": len(text)})
+                    soup = BeautifulSoup(text, 'html.parser')
+                    text = soup.get_text(separator=' ', strip=True)
+                    links = [a['href'] for a in soup.find_all('a', href=True)]
+                    return {"url": url, "content": text, "links": links[:200]}
+                logger.error(f"Scrape failed for {url}: Status {response.status}")
+                return None
         except Exception as e:
             logger.error(f"Scrape error for {url}: {str(e)}")
             return None
+
     async def log_scrape(self, url: str, data: Dict) -> None:
         logger.info(f"Scraped website: {url}", extra={"level": "scraped"})
 
@@ -284,11 +285,19 @@ class AIHandler:
         logger.debug(f"Saved knowledge for {agent_name}")
 
     async def load_knowledge(self, agent_name: str) -> Dict:
+        file_path = f"{self.knowledge_dir}{agent_name}_knowledge.json"
         try:
-            async with aiofiles.open(f"{self.knowledge_dir}{agent_name}_knowledge.json", "r") as f:
-                return json.loads(await f.read())
-        except FileNotFoundError:
-            return {"mechanics": {}, "lore": {}, "tasks": [], "projects": {}}
+            async with aiofiles.open(file_path, "r") as f:
+                content = await f.read()
+                if not content.strip():  # Check if file is empty
+                    raise ValueError("Empty knowledge file")
+                return json.loads(content)
+        except (FileNotFoundError, ValueError, json.JSONDecodeError) as e:
+            default_data = {"mechanics": {}, "lore": {}, "tasks": [], "projects": {}}
+            async with aiofiles.open(file_path, "w") as f:
+                await f.write(json.dumps(default_data, indent=4))
+            logger.warning(f"Initialized {agent_name}_knowledge.json due to {str(e)}")
+            return default_data
         except Exception as e:
             logger.error(f"Error loading knowledge for {agent_name}: {str(e)}")
             return {"mechanics": {}, "lore": {}, "tasks": [], "projects": {}}

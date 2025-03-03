@@ -1,6 +1,3 @@
-2025-03-03 08:34:35,643 - Stole knowledge from tyr: 457 value
-2025-03-03 08:34:35,643 - Completed: Executed task: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
-2025-03-03 08:34:35,644 - Completed: Task completed: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
-2025-03-03 09:12:08,783 - Stole knowledge from tyr: 150 value
-2025-03-03 09:12:08,783 - Completed: Executed task: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
-2025-03-03 09:12:08,784 - Completed: Task completed: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
+2025-03-03 09:36:02,036 - Stole knowledge from tyr: 253 value
+2025-03-03 09:36:02,036 - Completed: Executed task: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}
+2025-03-03 09:36:02,037 - Completed: Task completed: {"agent": "vhaeraun", "action": "steal_knowledge", "target": "tyr"}

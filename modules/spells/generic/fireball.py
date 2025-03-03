@@ -1,11 +1,11 @@
 # Spell: fireball
 def cast(caster, target):
-    damage = 129
-    range = 140
-    mana_cost = 29
-    cooldown = 3
-    element = 'divine'
-    school = 'abjuration'
+    damage = 199
+    range = 63
+    mana_cost = 32
+    cooldown = 9
+    element = 'shadow'
+    school = 'illusion'
     if caster.mana >= mana_cost:
         caster.mana -= mana_cost
         caster.cooldowns['fireball'] = cooldown
@@ -14,13 +14,13 @@ def cast(caster, target):
         print(f"{caster.name} lacks mana for fireball!")
 # Enhanced by Selune
 def lunar_effect(caster):
-    boost = 47
+    boost = 70
     effect = 'boost'
-    duration = 17
+    duration = 13
     print(f"Selune enhances fireball with {effect} for {boost} over {duration} seconds!")
 # Optimized by Azuth
 def optimize_cast(caster):
-    mana_reduction = 39
+    mana_reduction = 41
     cast_time = -4
-    efficiency = 29
+    efficiency = 25
     print(f"Azuth optimizes fireball: -{mana_reduction} mana, {cast_time}s cast time, +{efficiency}% efficiency!")

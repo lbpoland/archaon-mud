@@ -1,16 +1,8 @@
-2025-03-03 08:34:35,629 - Created: /mnt/home2/mud/domains/menzoberranzan/trap.py
-2025-03-03 08:34:35,629 - Wove illusion trap at menzoberranzan
-2025-03-03 08:34:35,629 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 08:34:35,630 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 08:34:35,654 - Created: /mnt/home2/mud/domains/underdark/trap.py
-2025-03-03 08:34:35,654 - Wove web trap at underdark
-2025-03-03 08:34:35,654 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
-2025-03-03 08:34:35,656 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
-2025-03-03 09:12:08,769 - Created: /mnt/home2/mud/domains/menzoberranzan/trap.py
-2025-03-03 09:12:08,770 - Wove web trap at menzoberranzan
-2025-03-03 09:12:08,770 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 09:12:08,771 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
-2025-03-03 09:12:08,793 - Created: /mnt/home2/mud/domains/underdark/trap.py
-2025-03-03 09:12:08,793 - Wove illusion trap at underdark
-2025-03-03 09:12:08,793 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
-2025-03-03 09:12:08,794 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
+2025-03-03 09:36:02,022 - Created: /mnt/home2/mud/domains/menzoberranzan/trap.py
+2025-03-03 09:36:02,022 - Wove illusion trap at menzoberranzan
+2025-03-03 09:36:02,022 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+2025-03-03 09:36:02,023 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "menzoberranzan"}
+2025-03-03 09:36:02,046 - Created: /mnt/home2/mud/domains/underdark/trap.py
+2025-03-03 09:36:02,046 - Wove illusion trap at underdark
+2025-03-03 09:36:02,047 - Completed: Executed task: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}
+2025-03-03 09:36:02,048 - Completed: Task completed: {"agent": "lolth", "action": "weave_trap", "location": "underdark"}

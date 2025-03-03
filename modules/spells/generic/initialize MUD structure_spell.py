@@ -1,11 +1,11 @@
 # Spell: initialize MUD structure_spell
 def cast(caster, target):
-    damage = 161
-    range = 72
-    mana_cost = 99
-    cooldown = 2
-    element = 'arcane'
-    school = 'evocation'
+    damage = 136
+    range = 80
+    mana_cost = 31
+    cooldown = 9
+    element = 'divine'
+    school = 'necromancy'
     if caster.mana >= mana_cost:
         caster.mana -= mana_cost
         caster.cooldowns['initialize MUD structure_spell'] = cooldown

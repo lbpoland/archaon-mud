@@ -1,10 +1,5 @@
-2025-03-03 08:34:35,641 - Working: Starting task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
-2025-03-03 08:34:35,641 - Created: /mnt/home2/mud/domains/waterdeep/guards.py
-2025-03-03 08:34:35,641 - Guarding zone: waterdeep
-2025-03-03 08:34:35,641 - Completed: Executed task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
-2025-03-03 08:34:35,642 - Completed: Task completed: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
-2025-03-03 09:12:08,780 - Working: Starting task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
-2025-03-03 09:12:08,780 - Created: /mnt/home2/mud/domains/waterdeep/guards.py
-2025-03-03 09:12:08,780 - Guarding zone: waterdeep
-2025-03-03 09:12:08,780 - Completed: Executed task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
-2025-03-03 09:12:08,781 - Completed: Task completed: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+2025-03-03 09:36:02,033 - Working: Starting task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+2025-03-03 09:36:02,033 - Created: /mnt/home2/mud/domains/waterdeep/guards.py
+2025-03-03 09:36:02,033 - Guarding zone: waterdeep
+2025-03-03 09:36:02,033 - Completed: Executed task: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}
+2025-03-03 09:36:02,034 - Completed: Task completed: {"agent": "torm", "action": "guard_zone", "location": "waterdeep"}

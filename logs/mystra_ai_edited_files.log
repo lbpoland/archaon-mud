@@ -1,16 +1,8 @@
-2025-03-03 08:34:35,624 - Created: /mnt/home2/mud/modules/spells/generic/fireball.py
-2025-03-03 08:34:35,624 - Created spell: fireball (arcane, evocation)
-2025-03-03 08:34:35,624 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
-2025-03-03 08:34:35,625 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
-2025-03-03 08:34:35,648 - Created: /mnt/home2/mud/modules/spells/generic/initialize MUD structure_spell.py
-2025-03-03 08:34:35,648 - Created spell: initialize MUD structure_spell (fire, abjuration)
-2025-03-03 08:34:35,648 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
-2025-03-03 08:34:35,650 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
-2025-03-03 09:12:08,764 - Created: /mnt/home2/mud/modules/spells/generic/fireball.py
-2025-03-03 09:12:08,764 - Created spell: fireball (divine, abjuration)
-2025-03-03 09:12:08,764 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
-2025-03-03 09:12:08,765 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
-2025-03-03 09:12:08,787 - Created: /mnt/home2/mud/modules/spells/generic/initialize MUD structure_spell.py
-2025-03-03 09:12:08,787 - Created spell: initialize MUD structure_spell (arcane, evocation)
-2025-03-03 09:12:08,788 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
-2025-03-03 09:12:08,788 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
+2025-03-03 09:36:02,016 - Created: /mnt/home2/mud/modules/spells/generic/fireball.py
+2025-03-03 09:36:02,017 - Created spell: fireball (shadow, illusion)
+2025-03-03 09:36:02,017 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+2025-03-03 09:36:02,018 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "fireball"}
+2025-03-03 09:36:02,041 - Created: /mnt/home2/mud/modules/spells/generic/initialize MUD structure_spell.py
+2025-03-03 09:36:02,041 - Created spell: initialize MUD structure_spell (divine, necromancy)
+2025-03-03 09:36:02,042 - Completed: Executed task: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
+2025-03-03 09:36:02,042 - Completed: Task completed: {"agent": "mystra", "action": "create_spell", "spell_name": "initialize MUD structure_spell"}
