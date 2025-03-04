@@ -142,3 +142,6 @@
 2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
 2025-03-03 13:26:57 | ERROR | Agent selune unavailable
 2025-03-03 13:26:57 | ERROR | Agent vhaeraun unavailable
+2025-03-03 14:06:53 | ERROR | Task failed for ao: 'rows' (Task: {"agent": "ao", "action": "enhance_world", "priority": "high"}, Attempt 1/3)
+2025-03-03 14:06:58 | ERROR | Task failed for ao: 'rows' (Task: {"agent": "ao", "action": "enhance_world", "priority": "high"}, Attempt 2/3)
+2025-03-03 14:07:03 | ERROR | Task failed for ao: 'rows' (Task: {"agent": "ao", "action": "enhance_world", "priority": "high"}, Attempt 3/3)

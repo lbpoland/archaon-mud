@@ -1228,6 +1228,30 @@
                 "region": "Menzoberranzan"
             },
             "timestamp": "2025-03-03 13:35:55.405452"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:38:15.378935"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:39:55.394191"
+        },
+        {
+            "task": {
+                "agent": "torm",
+                "action": "guard_zone",
+                "region": "Waterdeep"
+            },
+            "timestamp": "2025-03-03 13:41:15.403548"
         }
     ],
     "embeddings": {},

@@ -1,3 +1,0 @@
-# Room: Region_tyr_136_Room_99
-description = "A fortified hall in Region_tyr_136, echoing with the clash of steel."
-exits = {'north': None}

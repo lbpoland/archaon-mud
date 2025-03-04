@@ -1056,14 +1056,46 @@
                 "region": "Menzoberranzan"
             },
             "timestamp": "2025-03-03 13:35:55.406839"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:38:35.381666"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:38:55.384069"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:40:15.395898"
+        },
+        {
+            "task": {
+                "agent": "vhaeraun",
+                "action": "steal_knowledge",
+                "target": "mystra"
+            },
+            "timestamp": "2025-03-03 13:40:45.399335"
         }
     ],
     "embeddings": {},
     "health": 75,
     "stolen": {
         "mystra": {
-            "value": 306,
-            "time": "2025-03-03 13:35:45.354812"
+            "value": 93,
+            "time": "2025-03-03 13:40:45.399242"
         }
     },
     "expertise": 5.0

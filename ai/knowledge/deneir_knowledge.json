@@ -1232,5 +1232,8 @@
     ],
     "embeddings": {},
     "health": 50,
-    "expertise": 5.0
+    "expertise": 5.0,
+    "created_rooms": [],
+    "created_spells": [],
+    "created_systems": []
 }

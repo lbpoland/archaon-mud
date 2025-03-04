@@ -1527,5 +1527,8 @@
             "description": "A lightning-infused spell from Faer\u00fbn's arcane weave."
         }
     },
-    "expertise": 5.0
+    "expertise": 5.0,
+    "created_rooms": [],
+    "created_spells": [],
+    "created_systems": []
 }

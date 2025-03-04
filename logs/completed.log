@@ -3138,3 +3138,1281 @@
 2025-03-03 13:42:05 | INFO | lolth: Executed weave_traps
 2025-03-03 13:42:15 | INFO | tyr: Learned from build_system - Expertise now 5.00
 2025-03-03 13:42:15 | INFO | tyr: Executed build_system
+2025-03-03 13:42:25 | INFO | ao: Low activity detected
+2025-03-03 13:42:25 | INFO | oghma: Low activity detected
+2025-03-03 13:42:25 | INFO | deneir: Low activity detected
+2025-03-03 13:42:25 | INFO | azuth: Low activity detected
+2025-03-03 13:42:25 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:42:25 | INFO | mystra: Learned from create_spell - Expertise now 5.00
+2025-03-03 13:42:25 | INFO | mystra: Executed create_spell
+2025-03-03 13:42:35 | INFO | torm: Learned from guard_zone - Expertise now 5.00
+2025-03-03 13:42:35 | INFO | torm: Executed guard_zone
+2025-03-03 13:42:45 | INFO | oghma: Received collaboration from mystra
+2025-03-03 13:42:45 | INFO | mystra: Learned from create_spell - Expertise now 5.00
+2025-03-03 13:42:45 | INFO | mystra: Executed create_spell
+2025-03-03 13:42:55 | INFO | ao: Low activity detected
+2025-03-03 13:42:55 | INFO | oghma: Low activity detected
+2025-03-03 13:42:55 | INFO | deneir: Low activity detected
+2025-03-03 13:42:55 | INFO | vhaeraun: Low activity detected
+2025-03-03 13:42:55 | INFO | azuth: Low activity detected
+2025-03-03 13:42:55 | INFO | tyr: Learned from build_system - Expertise now 5.00
+2025-03-03 13:42:55 | INFO | tyr: Executed build_system
+2025-03-03 13:43:05 | INFO | selune: Learned from enhance_spell - Expertise now 5.00
+2025-03-03 13:43:05 | INFO | selune: Executed enhance_spell
+2025-03-03 13:43:15 | INFO | selune: Learned from enhance_spell - Expertise now 5.00
+2025-03-03 13:43:15 | INFO | selune: Executed enhance_spell
+2025-03-03 14:06:48 | INFO | Initializing Master AI
+2025-03-03 14:06:48 | INFO | Loaded ao (Rank 10)
+2025-03-03 14:06:48 | INFO | Loaded mystra (Rank 9)
+2025-03-03 14:06:48 | INFO | Loaded tyr (Rank 9)
+2025-03-03 14:06:48 | INFO | Loaded lolth (Rank 9)
+2025-03-03 14:06:48 | INFO | Loaded oghma (Rank 8)
+2025-03-03 14:06:48 | INFO | Loaded deneir (Rank 8)
+2025-03-03 14:06:48 | INFO | Loaded selune (Rank 7)
+2025-03-03 14:06:48 | INFO | Loaded torm (Rank 7)
+2025-03-03 14:06:48 | INFO | Loaded vhaeraun (Rank 7)
+2025-03-03 14:06:48 | INFO | Loaded azuth (Rank 7)
+2025-03-03 14:06:48 | INFO | Started aiohttp session
+2025-03-03 14:06:48 | INFO | Master AI started
+2025-03-03 14:06:48 | INFO | Bootstrapped AI
+2025-03-03 14:06:48 | INFO | Agent Status - Tasks Completed: 0, Rooms: 0
+2025-03-03 14:06:48 | INFO | ao: Initiated world enhancement
+2025-03-03 14:06:48 | INFO | Saved ao knowledge
+2025-03-03 14:06:48 | INFO | Saved mystra knowledge
+2025-03-03 14:06:48 | INFO | Saved tyr knowledge
+2025-03-03 14:06:48 | INFO | Saved lolth knowledge
+2025-03-03 14:06:48 | INFO | Saved oghma knowledge
+2025-03-03 14:06:48 | INFO | Saved deneir knowledge
+2025-03-03 14:06:48 | INFO | Saved selune knowledge
+2025-03-03 14:06:48 | INFO | Saved torm knowledge
+2025-03-03 14:06:48 | INFO | Saved vhaeraun knowledge
+2025-03-03 14:06:48 | INFO | Saved azuth knowledge
+2025-03-03 14:06:48 | INFO | Performed knowledge backup
+2025-03-03 14:06:53 | INFO | ao: Initiated world enhancement
+2025-03-03 14:06:58 | INFO | ao: Initiated world enhancement
+2025-03-03 14:07:03 | INFO | ao: Learned from enhance_world - Expertise now 3.30
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Waterdeep
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Underdark
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Baldur's Gate
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Neverwinter
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Silverymoon
+2025-03-03 14:07:03 | INFO | ao: Learned from plan_world - Expertise now 3.40
+2025-03-03 14:07:03 | INFO | ao: Executed plan_world
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Waterdeep
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Underdark
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Baldur's Gate
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Neverwinter
+2025-03-03 14:07:03 | INFO | ao: Planned 200 rooms for Silverymoon
+2025-03-03 14:07:03 | INFO | ao: Learned from plan_world - Expertise now 3.50
+2025-03-03 14:07:03 | INFO | ao: Executed plan_world
+2025-03-03 14:07:03 | INFO | oghma: Received collaboration from mystra
+2025-03-03 14:07:03 | INFO | mystra: Learned from create_spell - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed create_spell
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_system - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_system
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:03 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:03 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (7973 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (9420 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8433 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8286 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (7035 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (6491 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (7419 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (9048 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (7427 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8676 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (34681 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (6101 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (6424 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8414 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (9154 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8516 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (5435 chars) (took 0.00s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (4944 chars) (took 0.00s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8531 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (5356 chars) (took 0.00s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (4949 chars) (took 0.00s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (7508 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (6281 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (8535 chars) (took 0.01s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:03 | INFO | oghma: Analyzed lore from forgotten_realms (5036 chars) (took 0.00s)
+2025-03-03 14:07:03 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:03 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (6017 chars) (took 0.01s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (6989 chars) (took 0.01s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (7603 chars) (took 0.01s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (4932 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (5068 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (6087 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (5686 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (5078 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (5504 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (10443 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (6341 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (44993 chars) (took 0.01s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (56793 chars) (took 0.01s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Analyzed lore from forgotten_realms (8606 chars) (took 0.00s)
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from analyze_lore - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed analyze_lore
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:04 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:04 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:04 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:04 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:04 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:04 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | ao: Planned 200 rooms for Waterdeep
+2025-03-03 14:07:48 | INFO | ao: Planned 200 rooms for Underdark
+2025-03-03 14:07:48 | INFO | ao: Planned 200 rooms for Baldur's Gate
+2025-03-03 14:07:48 | INFO | ao: Planned 200 rooms for Neverwinter
+2025-03-03 14:07:48 | INFO | ao: Planned 200 rooms for Silverymoon
+2025-03-03 14:07:48 | INFO | ao: Learned from plan_world - Expertise now 3.60
+2025-03-03 14:07:48 | INFO | ao: Executed plan_world
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:07:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:07:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:07:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:07:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:07:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:07:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:07:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:07:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | ao: Planned 200 rooms for Waterdeep
+2025-03-03 14:08:48 | INFO | ao: Planned 200 rooms for Underdark
+2025-03-03 14:08:48 | INFO | ao: Planned 200 rooms for Baldur's Gate
+2025-03-03 14:08:48 | INFO | ao: Planned 200 rooms for Neverwinter
+2025-03-03 14:08:48 | INFO | ao: Planned 200 rooms for Silverymoon
+2025-03-03 14:08:48 | INFO | ao: Learned from plan_world - Expertise now 3.70
+2025-03-03 14:08:48 | INFO | ao: Executed plan_world
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:08:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:08:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:08:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:08:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:08:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:08:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:08:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:08:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | ao: Planned 200 rooms for Waterdeep
+2025-03-03 14:09:48 | INFO | ao: Planned 200 rooms for Underdark
+2025-03-03 14:09:48 | INFO | ao: Planned 200 rooms for Baldur's Gate
+2025-03-03 14:09:48 | INFO | ao: Planned 200 rooms for Neverwinter
+2025-03-03 14:09:48 | INFO | ao: Planned 200 rooms for Silverymoon
+2025-03-03 14:09:48 | INFO | ao: Learned from plan_world - Expertise now 3.80
+2025-03-03 14:09:48 | INFO | ao: Executed plan_world
+2025-03-03 14:09:48 | INFO | Agent Status - Tasks Completed: 480, Rooms: 3924
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | mystra: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | mystra: Executed build_rooms
+2025-03-03 14:09:48 | INFO | tyr: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | tyr: Executed build_rooms
+2025-03-03 14:09:48 | INFO | lolth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | lolth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | oghma: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | oghma: Executed build_rooms
+2025-03-03 14:09:48 | INFO | deneir: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | deneir: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms
+2025-03-03 14:09:48 | INFO | selune: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | selune: Executed build_rooms
+2025-03-03 14:09:48 | INFO | torm: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | torm: Executed build_rooms
+2025-03-03 14:09:48 | INFO | vhaeraun: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | vhaeraun: Executed build_rooms
+2025-03-03 14:09:48 | INFO | azuth: Learned from build_rooms - Expertise now 5.00
+2025-03-03 14:09:48 | INFO | azuth: Executed build_rooms

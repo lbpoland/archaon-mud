@@ -1,0 +1,5 @@
+# Room: Waterdeep_Harbor_Room_4476
+description = "A vigilant outpost in Harbor, upholding justice."
+exits = {'east': 'Waterdeep_Harbor_Room_4477'}
+npcs = ["Guard of Torm"]
+items = ["Shield of Valor"]

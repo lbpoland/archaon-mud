@@ -6,7 +6,7 @@ This is the master plan for *Archaon MUD*, a self-reliant, AI-driven MUD replica
 
 ### Goals
 1. **Fully Functional MUD**: Complete core systems (login, skills, combat, rituals, inventory, social, quests, player-killing, raids) by March 10, 2025.
-2. **AI Integration**: Train Groks for 5000-line outputs, self-evolving codebase (~1 week post-core).
+2. **AI Integration**: Train Groks for 10000-line outputs, self-evolving codebase (~1 week post-core).
 3. **Forgotten Realms Immersion**: 1000+ rooms across domains (e.g., Waterdeep), X-Y-Z wilderness, D&D 5e mechanics (e.g., 1d20, dice rolls), racial raids, deity-driven PK zones.
 4. **Player Experience**: Robust login/creation, 300+ emotes, deity altars, quests, player-killing toggle, racial raid rewards—tested via telnet (`127.0.0.1:3000`).
 
@@ -95,12 +95,12 @@ This is the master plan for *Archaon MUD*, a self-reliant, AI-driven MUD replica
 5. **Testing**: 
    - Current: `mud.py` with all handlers—log feedback critical!
    - Future: Full test post-`quests` (March 10, 2025).
-6. **AI Evolution**: Post-core, train Groks for 5000-line outputs—self-evolving (~1 week).
+6. **AI Evolution**: Post-core, train Groks for 10000-line outputs—self-evolving (~1 week).
 
 ### Guidelines for Groks
 - **Sync**: Pull from `https://github.com/lbpoland/archaon-mud.git` before coding—push with clear commits (e.g., `git commit -m "Fix combat_handler.py - X"`).
 - **No Overlap**: Work on assigned files—check `Current Focus`.
-- **Detail**: Files ~5000+ lines, fully functional—match Discworld depth, Forgotten Realms theme.
+- **Detail**: Files ~20000+ lines, fully functional—match Discworld depth, Forgotten Realms theme.
 - **Consistency**: Use `Player` from `skills_handler.py` (name, race, alignment), `COLORS` from `term_handler.py`, `DEITIES` from `skills_handler.py`.
 - **Testing**: Ensure `mud.py` runs post-file—report issues in logs.
 

@@ -118,3 +118,11 @@ def lunar_boost(caster):
 def lunar_boost(caster):
     caster.mana += 20
     print(f"{caster.name}'s fireball is boosted by Selune's moonlight!")
+# Enhanced by Selune
+def lunar_boost(caster):
+    caster.mana += 20
+    print(f"{caster.name}'s fireball is boosted by Selune's moonlight!")
+# Enhanced by Selune
+def lunar_boost(caster):
+    caster.mana += 20
+    print(f"{caster.name}'s fireball is boosted by Selune's moonlight!")

@@ -1098,5 +1098,8 @@
             "time": "2025-03-03 13:40:45.399242"
         }
     },
-    "expertise": 5.0
+    "expertise": 5.0,
+    "created_rooms": [],
+    "created_spells": [],
+    "created_systems": []
 }

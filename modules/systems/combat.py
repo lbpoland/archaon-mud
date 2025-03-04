@@ -12,7 +12,7 @@ def roll_d20():
     return random.randint(1, 20)
 
 def fight(attacker, defender):
-    attack_roll = roll_d20() + (5 if attacker.align > 0 else 0)  # Discworld alignment bonus
+    attack_roll = roll_d20() + (5 if attacker.align > 0 else 0)
     if attack_roll >= defender.ac:
         damage = random.randint(5, 15)
         defender.hp -= damage
