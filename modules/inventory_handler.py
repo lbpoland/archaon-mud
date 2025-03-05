@@ -1,5 +1,5 @@
 # inventory_handler.py - Complete inventory system handler
-# Status (March 3, 2025):
+# Status (March 5, 2025):
 # - Fully implements Discworld MUD 2025 inventory from /lib/std/container.c, /lib/obj/Clothing.c, discworld_log.txt, dwwiki.mooo.com/wiki/Inventory
 # - Features: Item management (carry/wear/wield/drop), weight/burden, containers (pouches), D&D 5e-inspired gear stats,
 #             starting items by race, detailed descriptions, deity-enhanced items
@@ -8,7 +8,8 @@
 # - Plans: Integrate with login_handler.py (starting gear), combat_handler.py (equipping), expand with full item catalog (~1000 lines pending)
 
 import random
-from modules.skills_handler import Player, COLORS
+from modules.utils import COLORS
+from modules.skills_handler import Player
 from modules.combat_handler import WEAPON_DAMAGES, WEAPON_WEIGHTS, ARMOR_TYPES
 
 # Item definitions
