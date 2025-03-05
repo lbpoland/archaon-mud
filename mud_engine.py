@@ -1,294 +1,223 @@
-# mud_engine.py - Main Driver for Archaon MUD
-# Updated: March 5, 2025, 06:30 PM AEST
-# Status: Integrated with inventory_handler.py, utils.py
+#!/usr/bin/env python3
+# mud_engine.py - Central driver for the MUD game, inspired by Discworld MUD's lib system
+# Status: March 5, 2025 - Initial standalone driver integrating existing modules
+# Description: Acts as the main game loop and orchestrator, inheriting functionality from
+#              individual handler modules (e.g., login, network, term, inventory) similar
+#              to Discworld's lib/std/ structure. Supports MCCP, MXP, and terminal settings.
+# Plans: Expand with room system, NPC AI, and additional handlers (combat, ritual, etc.)
 
 import asyncio
+import os
+import json
+import logging
 from typing import Dict, Optional
 from modules.login_handler import LoginHandler
-from modules.combat_handler import CombatHandler
-from modules.inventory_handler import InventoryHandler
-from modules.skills_handler import SkillHandler
-from modules.spell_handler import SpellHandler
-from modules.ritual_handler import RitualHandler
-from modules.soul_handler import SoulHandler
-from modules.term_handler import TermHandler
 from modules.network_handler import NetworkHandler
-from modules.quests_handler import QuestHandler
-from modules.crafting_handler import CraftingHandler
-from modules.deities import Deity
-from modules.utils import COLORS
-from std.room import Room
-from std.command import Command
-from std.living import Living
-from domains.world_map import WorldMap
-import ssl
-import aiofiles
-import json
+from modules.term_handler import TermHandler
+from modules.inventory_handler import InventoryHandler
+from modules.skills_handler import Player
+from modules.combat_handler import CombatHandler  # Placeholder stub
+from modules.deities import DEITIES  # Placeholder stub
+from modules.soul_handler import SoulHandler  # Placeholder stub
+from modules.ritual_handler import RitualHandler  # Placeholder stub
 
-class Player(Living):
-    def __init__(self, name: str):
-        super().__init__(name)
-        self.login = LoginHandler()
-        self.combat = CombatHandler(self)
-        self.inventory = InventoryHandler(self)
-        self.skills = SkillHandler(self)
-        self.spells = SpellHandler(self)
-        self.rituals = RitualHandler(self)
-        self.soul = SoulHandler(self)
-        self.term = TermHandler(self)
-        self.network = NetworkHandler(self.login)
-        self.quests = QuestHandler(self)
-        self.crafting = CraftingHandler(self)
-        self.deity = Deity.random_deity()
-        self.room = None
-        self.x, self.y, self.z = 0, 0, 0
-        self.ac = 10  # Base AC from D&D 5e
-        self.burden = 0.0  # Percentage of max weight
-        self.data_file = f"/mnt/home2/mud/players/{name.lower()}.json"
+# Set up logging
+logging.basicConfig(filename="/mnt/home2/mud/mud_engine.log", level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
-    async def load(self) -> None:
-        try:
-            async with aiofiles.open(self.data_file, "r") as f:
-                data = json.loads(await f.read())
-                self.hp = data["hp"]
-                self.max_hp = data["max_hp"]
-                self.mana = data.get("mana", 0)
-                self.gp = data["gp"]
-                self.x, self.y, self.z = data["x"], data["y"], data["z"]
-                self.ac = data.get("ac", 10)
-                self.burden = data.get("burden", 0.0)
-                self.room = Room(f"/mnt/home2/mud/domains/{self.world_map.get_region(self.x, self.y, self.z)}/rooms.py")
-                self.inventory = InventoryHandler(self)  # Reinitialize inventory
-        except FileNotFoundError:
-            self.room = Room("/mnt/home2/mud/domains/sword_coast/waterdeep/rooms.py")
-            await self.save()
-        except Exception as e:
-            print(f"Load error for {self.name}: {e}")
-
-    async def save(self) -> None:
-        data = {
-            "name": self.name, "hp": self.hp, "max_hp": self.max_hp,
-            "mana": getattr(self, "mana", 0), "gp": self.gp,
-            "x": self.x, "y": self.y, "z": self.z, "ac": self.ac,
-            "burden": self.burden
-        }
-        async with aiofiles.open(self.data_file, "w") as f:
-            await f.write(json.dumps(data, indent=4))
-
-    async def move(self, direction: str):
-        new_x, new_y, new_z = self.world_map.move(self.x, self.y, self.z, direction)
-        if new_x is not None:
-            self.x, self.y, self.z = new_x, new_y, new_z
-            self.room = Room(f"/mnt/home2/mud/domains/{self.world_map.get_region(self.x, self.y, self.z)}/rooms.py")
-            await self.term.send(f"You move to {self.room.name}")
-
-    def bonus(self, skill_name):
-        return self.skills.get_skill_level(skill_name) or 0
+class Room:
+    def __init__(self, name: str, description: str):
+        self.name = name
+        self.description = description
+        self.npcs = []
+        self.players = []
+        self.exits = {}
 
 class MudEngine:
     def __init__(self):
-        self.players: Dict[str, Player] = {}
-        self.world_map = WorldMap()
+        """Initialize the MUD engine with core handlers and game state."""
         self.login_handler = LoginHandler()
-        self.network = NetworkHandler(self.login_handler)
-
-    async def handle_client(self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter) -> None:
-        addr = writer.get_extra_info('peername')
-        print(f"New connection from {addr}")
-        context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-        player = await self.login_handler.handle_login(reader, writer)
-        if player:
-            await player.network.connect(reader, writer)
-            await player.network.set_mxp(True, writer)
-            self.players[player.name] = player
-            await player.load()
-            await player.term.send(f"Welcome to Archaon MUD, {player.name}! You are in {player.room.name}")
-            while player.network.connected:
-                data = await reader.read(1024)
-                if not data: break
-                cmd = Command.parse(data.decode().strip())
-                await self.execute_command(player, cmd)
-            await player.network.disconnect()
-            await player.save()
-            del self.players[player.name]
-            await writer.close()
-            print(f"{player.name} disconnected")
-
-    async def execute_command(self, player: Player, cmd: Command) -> None:
-        if not cmd.name:
-            await player.term.send("Unknown command. Type 'help' for assistance.")
-            return
-
-        async def look():
-            await player.term.send(player.room.description)
-
-        async def inventory():
-            await player.term.send(player.inventory.inventory())
-
-        async def kill():
-            if cmd.args:
-                await player.combat.kill(cmd.args[0], player.room)
-            else:
-                await player.term.send("Kill whom?")
-
-        async def cast():
-            if cmd.args:
-                await player.spells.cast(cmd.args[0], player)
-            else:
-                await player.term.send("Cast what?")
-
-        async def ritual():
-            if cmd.args:
-                await player.rituals.perform(cmd.args[0], player)
-            else:
-                await player.term.send("Perform which ritual?")
-
-        async def skills():
-            await player.term.send(player.skills.list_skills())
-
-        async def quest():
-            await player.quests.check_quests()
-
-        async def craft():
-            if cmd.args:
-                await player.crafting.craft_item(cmd.args[0])
-            else:
-                await player.term.send("Craft what?")
-
-        async def say():
-            if cmd.args:
-                await player.soul.say(cmd.args[0])
-            else:
-                await player.term.send("Say what?")
-
-        async def shout():
-            if cmd.args:
-                await player.soul.shout(cmd.args[0])
-            else:
-                await player.term.send("Shout what?")
-
-        async def smile():
-            await player.soul.emote("smiles")
-
-        async def help():
-            await player.term.send("Commands: look, inventory, kill, cast, ritual, skills, quest, craft, say, shout, smile, help, move, quit, wear, wield, unwear, unwield, put, take")
-
-        async def who():
-            await player.term.send("\n".join(self.players.keys()))
-
-        async def score():
-            await player.term.send(f"HP: {player.hp}/{player.max_hp}, Mana: {getattr(player, 'mana', 0)}, GP: {player.gp}, AC: {player.ac}, Burden: {player.burden:.1f}%")
-
-        async def train():
-            if cmd.args:
-                await player.skills.train(cmd.args[0])
-            else:
-                await player.term.send("Train what?")
-
-        async def advance():
-            await player.skills.advance()
-
-        async def learn():
-            if cmd.args:
-                await player.skills.learn(cmd.args[0])
-            else:
-                await player.term.send("Learn what?")
-
-        async def teach():
-            if cmd.args:
-                await player.skills.teach(cmd.args[0])
-            else:
-                await player.term.send("Teach what?")
-
-        async def worship():
-            await player.term.send(player.deity.worship(player))
-
-        async def move():
-            if cmd.args in ["north", "east", "south", "west", "up", "down"]:
-                await player.move(cmd.args)
-            else:
-                await player.term.send("Move where?")
-
-        async def quit():
-            player.network.connected = False
-
-        async def wear():
-            if cmd.args:
-                await player.term.send(player.inventory.wear(cmd.args[0]))
-            else:
-                await player.term.send("Wear what?")
-
-        async def wield():
-            if cmd.args:
-                await player.term.send(player.inventory.wield(cmd.args[0]))
-            else:
-                await player.term.send("Wield what?")
-
-        async def unwear():
-            if cmd.args:
-                await player.term.send(player.inventory.unwear(cmd.args[0]))
-            else:
-                await player.term.send("Unwear which slot?")
-
-        async def unwield():
-            await player.term.send(player.inventory.unwield())
-
-        async def put():
-            if len(cmd.args) >= 2:
-                await player.term.send(player.inventory.put_in(cmd.args[0], cmd.args[1]))
-            else:
-                await player.term.send("Put what in which container?")
-
-        async def take():
-            if len(cmd.args) >= 2:
-                await player.term.send(player.inventory.take_out(cmd.args[0], cmd.args[1]))
-            else:
-                await player.term.send("Take what from which container?")
-
-        async def unknown():
-            await player.term.send(f"Unknown command: {cmd.name}")
-
-        commands = {
-            "look": look,
-            "inventory": inventory,
-            "kill": kill,
-            "cast": cast,
-            "ritual": ritual,
-            "skills": skills,
-            "quest": quest,
-            "craft": craft,
-            "say": say,
-            "shout": shout,
-            "smile": smile,
-            "help": help,
-            "who": who,
-            "score": score,
-            "train": train,
-            "advance": advance,
-            "learn": learn,
-            "teach": teach,
-            "worship": worship,
-            "move": move,
-            "quit": quit,
-            "wear": wear,
-            "wield": wield,
-            "unwear": unwear,
-            "unwield": unwield,
-            "put": put,
-            "take": take
+        self.players: Dict[str, dict] = {}  # {player_name: {"player": Player, "writer": StreamWriter, ...}}
+        self.rooms = {
+            "Market Square": Room("Market Square", "A bustling trade hub in Waterdeep."),
+            "Docks": Room("Docks", "A gritty port with salty air."),
+            "Temple Precinct": Room("Temple Precinct", "A sacred ground bathed in divine light.")
         }
-        await commands.get(cmd.name.lower(), unknown)()
+        self.rooms["Market Square"].npcs.append(Player("Mean Gnoll", race="gnoll"))
+        # Ensure player directory exists
+        os.makedirs("/mnt/home2/mud/players/", exist_ok=True)
+        logging.info("MudEngine initialized with default rooms and player directory.")
 
-    async def start(self) -> None:
-        context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-        self.server = await asyncio.start_server(self.handle_client, "0.0.0.0", 3000, ssl=context)
-        print(f"Archaon MUD started on 0.0.0.0:3000 with SSL")
-        async with self.server:
-            await self.server.serve_forever()
+    async def handle_client(self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter):
+        """Handle individual client connections, managing login and game loop."""
+        logging.info("New client connection established.")
+        try:
+            player = await self.login_handler.handle_login(reader, writer)
+            if player:
+                # Initialize additional handlers for the player
+                inventory = InventoryHandler(player)
+                inventory.init_inventory()  # Set up starting items based on race
+                combat = CombatHandler(player)  # Placeholder
+                network = NetworkHandler(self.login_handler)
+                term = TermHandler(self.login_handler)
+                soul = SoulHandler(player)  # Placeholder
+                ritual = RitualHandler(player)  # Placeholder
+
+                # Store player data
+                self.players[player.name] = {
+                    "player": player,
+                    "writer": writer,
+                    "inventory": inventory,
+                    "combat": combat,
+                    "network": network,
+                    "term": term,
+                    "soul": soul,
+                    "ritual": ritual
+                }
+                player.domain = "Market Square"  # Default starting room
+                self.rooms[player.domain].players.append(player)
+
+                # Negotiate telnet options (MXP/MCCP)
+                await network.negotiate_telnet(reader, writer)
+                welcome_msg = f"{COLORS['success']}Welcome, {player.name}, to Faerûn’s Shattered Legacy!{COLORS['reset']}"
+                writer.write(term.format_output(welcome_msg).encode())
+                await writer.drain()
+
+                # Enter game loop
+                await self.game_loop(player, reader, writer)
+            else:
+                writer.write(term.format_output(f"{COLORS['error']}Login failed. Disconnecting.{COLORS['reset']}").encode())
+                await writer.drain()
+        except Exception as e:
+            error_msg = f"{COLORS['error']}Connection error: {str(e)}. Disconnecting.{COLORS['reset']}"
+            writer.write(term.format_output(error_msg).encode())
+            logging.error(f"Client error: {str(e)}")
+            await writer.drain()
+        finally:
+            self.cleanup_player(player)
+            writer.close()
+            logging.info(f"Client {player.name if player else 'unknown'} disconnected.")
+
+    async def game_loop(self, player: Player, reader: asyncio.StreamReader, writer: asyncio.StreamWriter):
+        """Main game loop for a connected player."""
+        handlers = self.players[player.name]
+        term = handlers["term"]
+        network = handlers["network"]
+        inventory = handlers["inventory"]
+        combat = handlers["combat"]
+        soul = handlers["soul"]
+        ritual = handlers["ritual"]
+        current_room = self.rooms[player.domain]
+
+        while True:
+            try:
+                writer.write(term.prompt.encode())
+                await writer.drain()
+                data = await reader.read(100)
+                if not data:
+                    break
+                command = data.decode().strip().lower()
+                logging.info(f"Player {player.name} issued command: {command}")
+                response = await self.process_command(player, command, current_room, handlers)
+                writer.write(term.format_output(response).encode())
+                await writer.drain()
+            except Exception as e:
+                error_msg = f"{COLORS['error']}Command error: {str(e)}. Try again.{COLORS['reset']}"
+                writer.write(term.format_output(error_msg).encode())
+                logging.error(f"Command error for {player.name}: {str(e)}")
+                await writer.drain()
+
+    async def process_command(self, player: Player, command: str, room: Room, handlers: dict) -> str:
+        """Process player commands and route to appropriate handlers."""
+        term = handlers["term"]
+        inventory = handlers["inventory"]
+        combat = handlers["combat"]
+        soul = handlers["soul"]
+        ritual = handlers["ritual"]
+
+        parts = command.split()
+        if not parts:
+            return f"{COLORS['error']}Speak, mortal!{COLORS['reset']}"
+
+        action = parts[0]
+        args = parts[1:] if len(parts) > 1 else []
+
+        if action == "look":
+            return f"{COLORS['info']}{room.name}: {room.description}\nExits: {', '.join(room.exits.keys())}\nNPCs: {', '.join(n.name for n in room.npcs)}{COLORS['reset']}"
+        elif action == "inventory":
+            return inventory.inventory()
+        elif action == "wear":
+            item = " ".join(args) if args else None
+            if not item:
+                return f"{COLORS['error']}What do you wish to wear?{COLORS['reset']}"
+            return inventory.wear(item)
+        elif action == "wield":
+            item = " ".join(args) if args else None
+            if not item:
+                return f"{COLORS['error']}What do you wish to wield?{COLORS['reset']}"
+            return inventory.wield(item)
+        elif action == "drop":
+            item = " ".join(args) if args else None
+            if not item:
+                return f"{COLORS['error']}What do you wish to drop?{COLORS['reset']}"
+            return inventory.remove_item(item)
+        elif action == "kill":
+            target = " ".join(args) if args else None
+            if not target:
+                return f"{COLORS['error']}Whom do you strike?{COLORS['reset']}"
+            return combat.kill(target, room)
+        elif action == "say":
+            msg = " ".join(args) if args else None
+            if not msg:
+                return f"{COLORS['error']}What do you wish to say?{COLORS['reset']}"
+            result = soul.perform("say", msg, None, room, self.players)
+            return self.broadcast(player, result, term)
+        elif action == "perform":
+            ritual_name = args[0] if args else None
+            target = args[1] if len(args) > 1 else None
+            if not ritual_name:
+                return f"{COLORS['error']}What ritual do you wish to perform?{COLORS['reset']}"
+            return ritual.perform(ritual_name, target, room)
+        elif action == "score":
+            return player.score() if hasattr(player, "score") else f"{COLORS['info']}No score data available yet.{COLORS['reset']}"
+        elif action == "quit":
+            return f"{COLORS['info']}Goodbye, {player.name}.{COLORS['reset']}"
+        else:
+            return f"{COLORS['error']}Unknown command: {action}{COLORS['reset']}"
+
+    def broadcast(self, player: Player, messages: dict, term: TermHandler) -> str:
+        """Broadcast messages to all players in the same room."""
+        room = self.rooms[player.domain]
+        for p_data in self.players.values():
+            if p_data["player"] in room.players and p_data["player"] != player:
+                p_data["writer"].write(term.format_output(messages["room"]).encode())
+                asyncio.ensure_future(p_data["writer"].drain())
+        return messages["self"]
+
+    def cleanup_player(self, player: Optional[Player]):
+        """Remove player from game state and room."""
+        if player and player.name in self.players:
+            room = self.rooms.get(player.domain)
+            if room and player in room.players:
+                room.players.remove(player)
+            del self.players[player.name]
+            logging.info(f"Player {player.name} cleaned up from game state.")
 
 async def main():
+    """Start the MUD server."""
     engine = MudEngine()
-    await engine.start()
+    try:
+        server = await asyncio.start_server(engine.handle_client, "127.0.0.1", 4000)
+        logging.info("MUD Engine started on 127.0.0.1:4000")
+        print("MUD Engine running on 127.0.0.1:4000. Press Ctrl+C to stop.")
+        async with server:
+            await server.serve_forever()
+    except KeyboardInterrupt:
+        logging.info("MUD Engine shutdown initiated by user.")
+        print("Shutting down MUD Engine...")
+    except Exception as e:
+        logging.error(f"MUD Engine crashed: {str(e)}")
+        print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     asyncio.run(main())
