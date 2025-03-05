@@ -1,2 +1,9 @@
-2025-03-05 03:49:16,444 - DEBUG - Using selector: EpollSelector
-2025-03-05 03:49:16,445 - DEBUG - Using selector: EpollSelector
+2025-03-05 07:22:16,040 - INFO - MudEngine initialized as driver with player and log directories.
+2025-03-05 07:22:16,040 - DEBUG - Using selector: EpollSelector
+2025-03-05 07:22:16,044 - INFO - Login server started on 0.0.0.0:4000
+2025-03-05 07:22:16,044 - INFO - Game server started on 0.0.0.0:3000 (placeholder)
+2025-03-05 07:22:19,441 - INFO - Game server placeholder active - awaiting module implementation
+2025-03-05 07:22:42,842 - INFO - MudEngine initialized as driver with player and log directories.
+2025-03-05 07:22:42,842 - DEBUG - Using selector: EpollSelector
+2025-03-05 07:22:42,844 - INFO - Login server started on 0.0.0.0:4000
+2025-03-05 07:22:42,844 - INFO - Game server started on 0.0.0.0:3000 (placeholder)
