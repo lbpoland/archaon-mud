@@ -23,29 +23,29 @@ logger.handlers = [mud_error_handler]
 sys.path.append("/mnt/home2/mud/modules")
 from login_handler import LoginHandler
 #from spell_handler import SpellHandler
-from combat_handler import CombatHandler
-from skills_handler import SkillHandler
-from ritual_handler import RitualHandler
+#from combat_handler import CombatHandler
+#from skills_handler import SkillHandler
+#from ritual_handler import RitualHandler
 from inventory_handler import InventoryHandler
-from soul_handler import SoulHandler
+#from soul_handler import SoulHandler
 from term_handler import TermHandler
 from network_handler import NetworkHandler
-from quests_handler import QuestHandler
-from crafting_handler import CraftingHandler
-from weapons import Weapons
-from armors import Armors
-from clothing import Clothing
-from classes import Classes
-from races import Races
-from organizations import Organizations
+#from quests_handler import QuestHandler
+#from crafting_handler import CraftingHandler
+#from weapons import Weapons
+#from armors import Armors
+#from clothing import Clothing
+#from classes import Classes
+#from races import Races
+#from organizations import Organizations
 
 sys.path.append("/mnt/home2/mud/std")
-from object import Object
-from living import Living
-from room import Room
-from wearable import Wearable
-from container import Container
-from command import Command
+#from object import Object
+#from living import Living
+#from room import Room
+#from wearable import Wearable
+#from container import Container
+#from command import Command
 
 # Server configuration
 HOST = "0.0.0.0"
